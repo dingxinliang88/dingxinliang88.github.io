@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5809/HttpServletRequestDemo02.png">
 <meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5809/Filter.png">
 <meta property="article:published_time" content="2022-11-27T02:51:38.000Z">
-<meta property="article:modified_time" content="2022-11-27T02:52:29.112Z">
+<meta property="article:modified_time" content="2022-12-03T04:28:23.595Z">
 <meta property="article:author" content="CodeJuzi">
 <meta property="article:tag" content="笔记 &amp;&amp; 博客 &amp;&amp; 讨论">
 <meta name="twitter:card" content="summary">
@@ -290,6 +290,8 @@
 <li><strong>Servlet</strong>由<strong>Servlet容器</strong>进行管理，Servlet容器将Servlet动态加载到服务器上，与HTTP协议相关的Servlet使用HTTP请求和HTTP请求和HTTP响应与客户端进行交互</li>
 <li>Servlet的请求首先会被HTTP服务器（比如Apache）接收，HTTP服务器只负责静态HTML界面的解析，而Servlet的请求则转交给Servlet容器，Servlet容器会根据请求路径以及Servlet之间的映射关系，调用相应的Servlet，Servlet将处理的结果返回给Servlet容器，并通过HTTP服务器将响应传输给客户端</li>
 </ul>
+<span id="more"></span>
+
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94%E5%AE%A2%E6%88%B7%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BF%87%E7%A8%8B.png"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">A[客户端] --&gt; |HTTP请求| B[HTTP服务器]</span><br><span class="line">B --&gt; C[Servlet服务器]</span><br><span class="line">C --&gt; D[Servlet]</span><br><span class="line">D --&gt; C</span><br><span class="line">C --&gt; B</span><br><span class="line">B --&gt; |HTTP响应| A</span><br></pre></td></tr></table></figure>
 

@@ -6,22 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hello World | 橘子</title>
+  <title>Django框架铺垫知识 | 橘子</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="Django框架铺垫知识 Django MTV和MVC的区别 1、MVC设计模式 2、MTV设计模式   Django ORM模块 1、什么是ORM 2、Django中定义数据表 1）模型类 2) 定义数据表   3、ORM管理器对象 4、ORM优势与不足   Django auth应用模板 1、Django的auth模板 2、auth应用模块的其他作用   Django Admin后台管">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/11/24/hello-world/index.html">
+<meta property="og:title" content="Django框架铺垫知识">
+<meta property="og:url" content="http://example.com/2022/12/09/Django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="橘子">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Django框架铺垫知识 Django MTV和MVC的区别 1、MVC设计模式 2、MTV设计模式   Django ORM模块 1、什么是ORM 2、Django中定义数据表 1）模型类 2) 定义数据表   3、ORM管理器对象 4、ORM优势与不足   Django auth应用模板 1、Django的auth模板 2、auth应用模块的其他作用   Django Admin后台管">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-24T11:47:29.455Z">
-<meta property="article:modified_time" content="2022-11-24T11:47:29.455Z">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/uTools_1670418714693.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221207211911.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221207212905.png">
+<meta property="og:image" content="https://docs.djangoproject.com/zh-hans/4.1/_images/admin01.png">
+<meta property="og:image" content="https://docs.djangoproject.com/zh-hans/4.1/_images/admin02.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221208175516.png">
+<meta property="article:published_time" content="2022-12-09T12:00:36.000Z">
+<meta property="article:modified_time" content="2022-12-09T12:04:30.555Z">
 <meta property="article:author" content="CodeJuzi">
-<meta property="article:tag" content="笔记 &amp;&amp; 博客 &amp;&amp; 讨论">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/uTools_1670418714693.png">
   
     <link rel="alternative" href="/atom.xml" title="橘子" type="application/atom+xml">
   
@@ -216,14 +224,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Django框架铺垫知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Django框架铺垫知识
     </h1>
   
 
@@ -235,8 +243,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/11/24/hello-world/" class="archive-article-date">
-        <time datetime="2022-11-24T11:47:29.455Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-24</time>
+<a href="/2022/12/09/Django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86/" class="archive-article-date">
+        <time datetime="2022-12-09T12:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-09</time>
 </a>
 
   
@@ -249,7 +257,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">75字</span>
+      <span class="post-count">5.9k字</span>
     </span>
   </span>
 
@@ -258,7 +266,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">22分</span>
     </span>
   </span>
 </div>
@@ -269,19 +277,415 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="#django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86">Django框架铺垫知识</a><ul>
+<li><a href="#django-mtv%E5%92%8Cmvc%E7%9A%84%E5%8C%BA%E5%88%AB">Django MTV和MVC的区别</a><ul>
+<li><a href="#1mvc%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">1、MVC设计模式</a></li>
+<li><a href="#2mtv%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">2、MTV设计模式</a></li>
+</ul>
+</li>
+<li><a href="#django-orm%E6%A8%A1%E5%9D%97">Django ORM模块</a><ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AForm">1、什么是ORM</a></li>
+<li><a href="#2django%E4%B8%AD%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E8%A1%A8">2、Django中定义数据表</a><ul>
+<li><a href="#1%E6%A8%A1%E5%9E%8B%E7%B1%BB">1）模型类</a></li>
+<li><a href="#2-%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E8%A1%A8">2) 定义数据表</a></li>
+</ul>
+</li>
+<li><a href="#3orm%E7%AE%A1%E7%90%86%E5%99%A8%E5%AF%B9%E8%B1%A1">3、ORM管理器对象</a></li>
+<li><a href="#4orm%E4%BC%98%E5%8A%BF%E4%B8%8E%E4%B8%8D%E8%B6%B3">4、ORM优势与不足</a></li>
+</ul>
+</li>
+<li><a href="#django-auth%E5%BA%94%E7%94%A8%E6%A8%A1%E6%9D%BF">Django auth应用模板</a><ul>
+<li><a href="#1django%E7%9A%84auth%E6%A8%A1%E6%9D%BF">1、Django的auth模板</a></li>
+<li><a href="#2auth%E5%BA%94%E7%94%A8%E6%A8%A1%E5%9D%97%E7%9A%84%E5%85%B6%E4%BB%96%E4%BD%9C%E7%94%A8">2、auth应用模块的其他作用</a></li>
+</ul>
+</li>
+<li><a href="#django-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">Django Admin后台管理系统</a></li>
+<li><a href="#django%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0">Django视图函数</a><ul>
+<li><a href="#1%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0">1、第一个视图函数</a></li>
+<li><a href="#2%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B">2、视图函数执行过程</a></li>
+</ul>
+</li>
+<li><a href="#django%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F">Django模板系统</a><ul>
+<li><a href="#1django%E7%9A%84%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F">1、Django的模板系统</a></li>
+<li><a href="#2%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%94%E7%94%A8">2、模板系统的应用</a></li>
+</ul>
+</li>
+<li><a href="#url">URL</a><ul>
+<li><a href="#1url%E7%AE%80%E4%BB%8B">1、URL简介</a></li>
+<li><a href="#2url%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3">2、URL语法格式详解</a><ul>
+<li><a href="#1protocol%E5%8D%8F%E8%AE%AE">1)protocol（协议）</a></li>
+<li><a href="#2-hostname%E4%B8%BB%E6%9C%BA%E5%90%8D">2) hostname（主机名）</a></li>
+<li><a href="#3-port%E7%AB%AF%E5%8F%A3%E5%8F%B7">3) port（端口号）</a></li>
+<li><a href="#4-path%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80">4) path（路由地址）</a></li>
+<li><a href="#5-query-%E6%9F%A5%E8%AF%A2">5) query (查询)</a></li>
+<li><a href="#6-fragment%E4%BF%A1%E6%81%AF%E7%89%87%E6%96%AD">6) fragment（信息片断）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#django%E8%B7%AF%E7%94%B1%E7%B3%BB%E7%BB%9F">Django路由系统</a><ul>
+<li><a href="#1django%E8%B7%AF%E7%94%B1%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8">1、Django路由系统应用</a></li>
+</ul>
+</li>
+<li><a href="#django%E4%B8%AD%E9%97%B4%E4%BB%B6">Django中间件</a><ul>
+<li><a href="#1django%E9%BB%98%E8%AE%A4%E8%87%AA%E5%B8%A6%E4%B8%AD%E9%97%B4%E4%BB%B6">1、Django默认自带中间件</a><ul>
+<li><a href="#1%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E6%89%A7%E8%A1%8C%E5%92%8C%E5%93%8D%E5%BA%94%E9%A1%BA%E5%BA%8F">1)中间件的执行和响应顺序</a><ul>
+<li><a href="#1%E5%9C%A8%E8%B0%83%E7%94%A8%E8%A7%86%E5%9B%BE%E4%B9%8B%E5%89%8D">1）在调用视图之前</a></li>
+<li><a href="#2%E5%9C%A8%E8%B0%83%E7%94%A8%E8%A7%86%E5%9B%BE%E4%B9%8B%E5%90%8E">2）在调用视图之后</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#django-cache%E7%BC%93%E5%AD%98%E7%B3%BB%E7%BB%9F">Django Cache缓存系统</a><ul>
+<li><a href="#1%E7%BC%93%E5%AD%98%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%9C%E7%94%A8">1、缓存技术的作用</a></li>
+<li><a href="#2django%E7%BC%93%E5%AD%98%E7%B3%BB%E7%BB%9F">2、Django缓存系统</a></li>
+</ul>
+</li>
+<li><a href="#django%E5%AE%9E%E6%88%98">Django实战</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<span id="more"></span>
+
+<h1 id="Django框架铺垫知识"><a href="#Django框架铺垫知识" class="headerlink" title="Django框架铺垫知识"></a>Django框架铺垫知识</h1><p>官方文档：<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/3.0/">https://docs.djangoproject.com/zh-hans/3.0/</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/">Django 文档 | Django 文档 | Django (djangoproject.com)</a></p>
+<h2 id="Django-MTV和MVC的区别"><a href="#Django-MTV和MVC的区别" class="headerlink" title="Django MTV和MVC的区别"></a>Django MTV和MVC的区别</h2><h3 id="1、MVC设计模式"><a href="#1、MVC设计模式" class="headerlink" title="1、MVC设计模式"></a>1、MVC设计模式</h3><p>MVC(Model-View-Controller)</p>
+<ul>
+<li>Model &#x3D;&gt; 数据存储层，是对数据库的定义和数据的增删改查</li>
+<li>View &#x3D;&gt; 视图层，是系统前端显示部分，负责显示什么和如何进行显示</li>
+<li>Controller &#x3D;&gt; 控制层，负责根据从View层输入的指令来检索Model层的数据，并在该层编写代码产生结果并输出</li>
+</ul>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/uTools_1670418714693.png"></p>
+<p>MVC设计模式的请求与响应过程：</p>
+<ul>
+<li>用户通过浏览器向服务器发起 request 请求，Controller 层接受请求后，同时向 Model 层和 View 发送指令</li>
+<li>Modle 层根据指令与数据库交互并选择相应业务数据，然后将数据发送给 Controller 层</li>
+<li>View 层接收到 Controller 的指令后，加载用户请求的页面，并将此页面发送给 Controller 层</li>
+<li>Controller 层接收到 Model 层和 View 层的数据后，将它们组织成响应格式发送给浏览器，浏览器通过解析后把页面展示出来</li>
+</ul>
+<p>&#x3D;&gt; MVC三层之间紧密相连，相互独立 &#x3D;&gt; 降低代码之间耦合性，增加模块的可用重用性</p>
+<h3 id="2、MTV设计模式"><a href="#2、MTV设计模式" class="headerlink" title="2、MTV设计模式"></a>2、MTV设计模式</h3><p>MTV(Model-Template-View)</p>
+<ul>
+<li>Model &#x3D;&gt; 数据存储层，处理所有数据相关的业务，和数据库进行交互，并进行数据的增删改查</li>
+<li>Template &#x3D;&gt; 模板层（表现层），具体来处理页面的显示</li>
+<li>View &#x3D;&gt; 业务逻辑层，处理具体的业务逻辑，连通Model层和Template层</li>
+</ul>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221207211911.png"></p>
+<p>&#x3D;&gt; MTV 设计模式中，用 View 层取代了 Controller 层的位置，用 Template 层取代了原来 View 层的位置</p>
+<p>MTV设计模式的请求与响应过程：</p>
+<ul>
+<li>用户通过浏览器对服务器发起 request 请求，服务器接收请求后，通过 View 的业务逻辑层进行分析，同时向 Model 层和 Template 层发送指令</li>
+<li>Modle 层与数据库进行交互，将数据返回给 View 层</li>
+<li>Template 层接收到指令后，调用相应的模板，并返回给 View 层；</li>
+<li>View 层接收到模板与数据后，首先对模板进行渲染（即将相应的数据赋值给模板），然后组织成响应格式返回给浏览器，浏览器进行解析后并最终呈现给用户</li>
+</ul>
+<p><strong>总结</strong>：MTV 是 MVC 的一种细化，将原来 MVC 中的 V 层拿出来进行分离，视图的显示与如何显示交给 Template 层，而 View 层更专注于实现业务逻辑</p>
+<blockquote>
+<p>实际上，Django 框架存在 Controller 层的，只不过它由框架本身来实现，我们不用关心它 &#x3D;&gt; Django 更关注于M、T 和 V</p>
+</blockquote>
+<h2 id="Django-ORM模块"><a href="#Django-ORM模块" class="headerlink" title="Django ORM模块"></a>Django ORM模块</h2><h3 id="1、什么是ORM"><a href="#1、什么是ORM" class="headerlink" title="1、什么是ORM"></a>1、什么是ORM</h3><p>ORM(Object Realtional Mapping)，对象关系映射，它是一种基于关系型数据的程序技术。</p>
+<p>ORM允许开发者使用类和对象对数据库进行操作 &#x3D;&gt; 大大提高了对数据库的控制，避免直接使用SQL语句对数据库进行操作</p>
+<p>ORM底层主要是通过<strong>映射机制</strong>实现</p>
+<blockquote>
+<p>Web 开发中对数据库的操作是必不可少的，然而每种数据库的操作方式以及用法不尽相同。由于 Django 中 ORM  的存在，<strong>提供了一套操作不同类型数据库的统一方法</strong>，ORM 适配了多种常用的关系型数据库，例如  PostgreSQL、MySQL、Oracle、Sqlite3 等</p>
+<p>ORM与数据库的映射关系如下：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221207212905.png"></p>
+</blockquote>
+<p>Django将表模型定义为 Model，它需要继承自<code>django.db.models</code>中的Model类(只要是和数据库表相关的操作，都需要继承这个类)，同时ORM对于数据库的增删改查，也提供了一些简单的API，比如F查询，Q查询（<a target="_blank" rel="noopener" href="https://blog.csdn.net/zy010101/article/details/120782866%EF%BC%89">https://blog.csdn.net/zy010101/article/details/120782866）</a></p>
+<p>针对于数据中得字段类型，Django ORM都有对应<code>Field</code>来映射，下表为经常用的的字段类型</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+<th>字段属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AutoField</td>
+<td>默认自增主键（Primary_key&#x3D;Ture），Django 默认建立id字段为主键</td>
+<td></td>
+</tr>
+<tr>
+<td>CharField</td>
+<td>字符类型</td>
+<td>Max_length&#x3D;32，<strong>字符长度需要明确</strong></td>
+</tr>
+<tr>
+<td>IntegerField</td>
+<td>整型int</td>
+<td></td>
+</tr>
+<tr>
+<td>DateFiled</td>
+<td>yyyy-MM-dd时间类型</td>
+<td>auto_now&#x3D;True，数据被更新就会更新时间 auto_now_add&#x3D;True，数据第一次添加时产生</td>
+</tr>
+<tr>
+<td>DateTimeFiled</td>
+<td>yyyy-MM-dd HH:mm:ss时间类型</td>
+<td>auto_now&#x3D;True，数据被更新就会更新时间；auto_now_add&#x3D;True，数据第一次添加时产生</td>
+</tr>
+<tr>
+<td>DecimalFiled</td>
+<td>混合精度的小数类型</td>
+<td>max_digits&#x3D;3，限定数字的最大位数(包含小数位)；decimal_places&#x3D;2，限制小数的最大位数</td>
+</tr>
+<tr>
+<td>BooleanFiled</td>
+<td>布尔字段，对应数据库 tinyint 类型数据长度只有1位</td>
+<td>值为True或False</td>
+</tr>
+<tr>
+<td>TextField</td>
+<td>用于大文本</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="2、Django中定义数据表"><a href="#2、Django中定义数据表" class="headerlink" title="2、Django中定义数据表"></a>2、Django中定义数据表</h3><h4 id="1）模型类"><a href="#1）模型类" class="headerlink" title="1）模型类"></a>1）模型类</h4><p>模型类本质上属于一个 Python 类，只不过在 Django 中称之为做模型类 </p>
+<p>它是由 <code>django.db.models.Model</code>  派生出的子类，在 Django 中模型类是数据交互的接口，一个<strong>模型类</strong>代表数据库中的一张<strong>数据表</strong>，模型类中每一个<strong>类属性</strong>都代表数据表中的一个<strong>字段</strong></p>
+<h4 id="2-定义数据表"><a href="#2-定义数据表" class="headerlink" title="2) 定义数据表"></a>2) 定义数据表</h4><p>定义一张用户信息表<code>UserInfo</code>，字段<code>name</code>、<code>password</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfo</span>（models.Model）:</span><br><span class="line">      name = models.CharFiled(max_length=<span class="number">100</span>)</span><br><span class="line">      password = models.CharFiled(max_length=<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<ul>
+<li>第 1 行，使用 from django.db import models 导入 models 模块；、</li>
+<li>第 2 行，使用 class 关键字对 UserInfo 表进行类定义，并继承了models 模块中的 Model 类；（Model类常用于与数据库交互的数据模型）</li>
+<li>第3、4 行，数据表中的字段 name 和 password 是 UserInfo 类的属性，name 和 password 字段类型都是 CharFiled，字段长度均是100</li>
+</ul>
+<h3 id="3、ORM管理器对象"><a href="#3、ORM管理器对象" class="headerlink" title="3、ORM管理器对象"></a>3、ORM管理器对象</h3><p>操作数据库表方式：</p>
+<ul>
+<li><p>方式一：直接使用类名（数据表名）来插入数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UserInfo.objects.create(name=<span class="string">&#x27;codejuzi&#x27;</span>,password=<span class="string">&#x27;aaaaaa&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>objects</code><strong>：每个继承自 <code>models.Model</code> 的模型类，都会有一个 objects 对象被同时继承下来，这个对象就叫做“</strong>管理器对象</strong>”，数据库的增删改查可以用 objects 管理器对象来实现</p>
+</li>
+<li><p>方式二：创建示例对象，调用<code>save()</code>方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user_obj=UserInfo(name=<span class="string">&#x27;codejuzi&#x27;</span>,password=<span class="string">&#x27;aaaaaa&#x27;</span>)</span><br><span class="line">user_obj.name=<span class="string">&quot;dogjuzi&quot;</span></span><br><span class="line">user_obj.save()</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中 name 属性值会被赋值为“dogjuzi”，最后调用 <code>save()</code>方法保存</p>
+</li>
+</ul>
+<p>ORM的CRUD(create、read、upate、delete)操作常用语句：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UserInfo.objects.<span class="built_in">all</span>()<span class="comment">#查询表中的所有记录</span></span><br><span class="line">UserInfo.objects.<span class="built_in">filter</span>(name_contains=<span class="string">&#x27;j&#x27;</span>)<span class="comment">#查询表中name含有“j”的所有记录,被使用较多</span></span><br><span class="line">UserInfo.objects.get(name=<span class="string">&quot;dogjuzi&quot;</span>)<span class="comment">#有且只有一个查询结果，如果超出一个或者没有,则抛出异常</span></span><br><span class="line">UserInfo.objects.get(name=<span class="string">&quot;dogjuzi&quot;</span>).delete()<span class="comment">#删除名字为dogjuzi的记录</span></span><br><span class="line">UserInfo.objects.get(name=<span class="string">&quot;dogjuzi&quot;</span>).update(name=<span class="string">&#x27;juzidog&#x27;</span>)<span class="comment">#更新数据表的name为juzidog</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4、ORM优势与不足"><a href="#4、ORM优势与不足" class="headerlink" title="4、ORM优势与不足"></a>4、ORM优势与不足</h3><p>优势：</p>
+<ul>
+<li>使用该模块只需要<strong>面向对象编程</strong>，不需要面向数据库编写代码，对数据库的操作转换为对类属性和方法的操作，不用我们编写各种数据库的 SQL 语句</li>
+<li>实现数据模型与数据库的<strong>解耦</strong>，屏蔽了不同数据库操作上的差异化，不在关注不同数据库内部的操作细节，通过简单更改配置就可以实现数据库的更换而无需更改代码</li>
+</ul>
+<p>不足：</p>
+<ul>
+<li>相比直接用 SQL 语句操作数据库会有<strong>性能损失</strong>，因为在映射的过程中 ORM 需要与 SQL 之间进行转换，根据对象的操作转换成 SQL 语句，根据查询结果转换成对象，所以在映射的过程存在性能损失</li>
+</ul>
+<h2 id="Django-auth应用模板"><a href="#Django-auth应用模板" class="headerlink" title="Django auth应用模板"></a>Django auth应用模板</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/ref/contrib/auth/">django.contrib.auth | Django 文档 | Django (djangoproject.com)</a></p>
+<h3 id="1、Django的auth模板"><a href="#1、Django的auth模板" class="headerlink" title="1、Django的auth模板"></a>1、Django的auth模板</h3><blockquote>
+<p>实现用户的注册、登陆、退出或者注销，到用户的浏览、订阅等功能</p>
+</blockquote>
+<p>新建项目后，Django 就把 auth 模块的所有功能提供给了开发者使用，开发者可以调用相应的接口，实现不同的功能需求</p>
+<p>auth  模块定义了一张名叫 <code>auth_user</code> 的数据表，该表是 auth 模块的内建用户表，开发者调用 auth  模块的相应接口生成此表，<code>auth_user </code>表的字段以及字段类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">+--------------+--------------+------+-----+---------+----------------+</span><br><span class="line">| Field        | Type         | Null | Key | Default | Extra          |</span><br><span class="line">+--------------+--------------+------+-----+---------+----------------+</span><br><span class="line">| <span class="built_in">id</span>           | int(11)      | NO   | PRI | NULL    | auto_increment |</span><br><span class="line">| password     | varchar(128) | NO   |     | NULL    |                |</span><br><span class="line">| last_login   | datetime(6)  | YES  |     | NULL    |                |</span><br><span class="line">| is_superuser | tinyint(1)   | NO   |     | NULL    |                |</span><br><span class="line">| username     | varchar(150) | NO   | UNI | NULL    |                |</span><br><span class="line">| first_name   | varchar(30)  | NO   |     | NULL    |                |</span><br><span class="line">| last_name    | varchar(150) | NO   |     | NULL    |                |</span><br><span class="line">| email        | varchar(254) | NO   |     | NULL    |                |</span><br><span class="line">| is_staff     | tinyint(1)   | NO   |     | NULL    |                |</span><br><span class="line">| is_active    | tinyint(1)   | NO   |     | NULL    |                |</span><br><span class="line">| date_joined  | datetime(6)  | NO   |     | NULL    |                |</span><br><span class="line">+--------------+--------------+------+-----+---------+----------------+</span><br><span class="line">11 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.02 sec)<span class="comment">#auth_user表</span></span><br></pre></td></tr></table></figure>
+
+<p>现在新建一张<code>auth_user</code>用户表，并添加一个新用户user</p>
+<ul>
+<li>引入auth模块的User方法</li>
+<li>创建新用户user</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line"></span><br><span class="line">user=User.objects.create_user(username=<span class="string">&#x27;codejuzi&#x27;</span>,password=<span class="string">&#x27;123456&#x27;</span>,email=<span class="string">&#x27;1741530592@qq.com&#x27;</span>)</span><br><span class="line">save()											<span class="comment">#保存数据 </span></span><br><span class="line">user.set_password(password=<span class="string">&#x27;12345abc&#x27;</span>)			<span class="comment">#修改密码</span></span><br></pre></td></tr></table></figure>
+
+<p>涉及用户概念时会产生用户权限问题，此时需要对用户进行<strong>鉴权</strong>操作 &#x3D;&gt; auth模板提供了标准的权限管理系统，结合Admin后台可以快速建立网站管理系统</p>
+<ul>
+<li>引入鉴权功能</li>
+<li>使用关键字传参的方式传递用户凭证，进行用户鉴权</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> authenticate</span><br><span class="line">user = authenticate(username=<span class="string">&#x27;codejuzi&#x27;</span>,password=<span class="string">&#x27;123456&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、auth应用模块的其他作用"><a href="#2、auth应用模块的其他作用" class="headerlink" title="2、auth应用模块的其他作用"></a>2、auth应用模块的其他作用</h3><p>文档：<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/ref/contrib/auth/">django.contrib.auth | Django 文档 | Django (djangoproject.com)</a></p>
+<p>auth模块还实现一些其他的功能</p>
+<ul>
+<li>用户的登录（login）、退出（logout）功能，封装在 <code>django.contrib.auth</code> 里</li>
+<li>用户权限系统封装在 <code>django.contrib.auth.models.Permission</code> 中 ，可以对用户的权限进行增加、修改、删除</li>
+<li>用户组可以通过 <code>from django.contrib.auth.models.Group</code> 导入后来创建组或者删除组 （类似于Linux下的用户组管理）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">user.user_permission.add(permission)<span class="comment">#给某个用户权限的添加权限</span></span><br><span class="line">group = Group.objects.create(name=group_name)<span class="comment">#添加新的用户组</span></span><br><span class="line">group.save() <span class="comment">#保存新建好的用户组</span></span><br><span class="line">group.delete()<span class="comment">#删除用户组</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Django-Admin后台管理系统"><a href="#Django-Admin后台管理系统" class="headerlink" title="Django Admin后台管理系统"></a>Django Admin后台管理系统</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/ref/django-admin/">django-admin 和 manage.py | Django 文档 | Django (djangoproject.com)</a></p>
+<p>使用<strong>可视化界面</strong>对后台数据进行操作，减少Shell或者SQL语句的操作不便，提高容错率</p>
+<p>后台管理系统主要是对数据表的存储做专门的管理，减少对多个数据表管理的复杂度和减少重复性操作</p>
+<p><strong>创建超级用户</strong></p>
+<p>在项目目录下开启terminal终端，输入下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+
+<p>输入你想要使用的用户名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Username: admin</span><br></pre></td></tr></table></figure>
+
+<p>输入你要想要的邮件地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Email address: admin@example.com</span><br></pre></td></tr></table></figure>
+
+<p>输入密码。你会被要求输入两次密码，第二次的目的是为了确认第一次输入的确实是你想要的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Password: **********</span><br><span class="line">Password (again): *********</span><br><span class="line">Superuser created successfully.</span><br></pre></td></tr></table></figure>
+
+<p><strong>启动开发服务器</strong></p>
+<p>Django的管理界面默认就是启用的</p>
+<p>如果开发服务器未启用，用以下命令启动它：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器访问<code>你的本地域名的&quot;/admin/&quot;</code>目录：比如<code>localhost:8000/admin/</code></p>
+<p><img src="https://docs.djangoproject.com/zh-hans/4.1/_images/admin01.png" alt="Django 管理员登录界面"></p>
+<p><strong>进入管理站点页面</strong></p>
+<p><img src="https://docs.djangoproject.com/zh-hans/4.1/_images/admin02.png" alt="Django admin index page"></p>
+<p>Django 原生的 Admin 管理界面，虽然没有做太多的修饰，但是开发者可以利用 Model Admin 实现个性化定制，比如字段值的过滤功能、表字段展示的排序、搜索功能等</p>
+<p>更多功能参照文档：<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/ref/contrib/admin/">Django 管理站点 | Django 文档 | Django (djangoproject.com)</a></p>
+<h2 id="Django视图函数"><a href="#Django视图函数" class="headerlink" title="Django视图函数"></a>Django视图函数</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/topics/http/views/">编写视图 | Django 文档 | Django (djangoproject.com)</a></p>
+<p>视图是 MTV 设计模式中的 V 层 &#x3D;&gt; <strong>实现业务逻辑的关键层</strong>，可以用来连接 M 层与 T 层，起着纽带般的作用</p>
+<h3 id="1、第一个视图函数"><a href="#1、第一个视图函数" class="headerlink" title="1、第一个视图函数"></a>1、第一个视图函数</h3><p>在 Django 中，视图函数是一个 Python 函数或者类，开发者主要通过编写视图函数来实现业务逻辑。视图函数首先接受来自浏览器或者客户端的请求，并最终返回响应，视图函数返回的响应可以是 HTML 文件，也可以是 HTTP 协议中的 303 重定向</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Hello_my_django</span>(<span class="params">request</span>):</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;&lt;html&gt;&lt;body&gt;Hello my Django&lt;/body&gt;&lt;/html&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>HttpResponse视图响应类型</p>
+<p>从 <code>django.http</code> 模块中导入 <code>HttpResponse</code></p>
+</li>
+<li><p>视图函数参数<code>request</code></p>
+<p>我们定义了一个名为“Hello_my_django”的函数，Django 规定，视图函数至少有一个参数，第一个参数必须是  request，request 是 HttpRequest 请求类型的对象，它携带了浏览器的请求信息，所以视图函数的第一个参数必须为  <code>request</code>。</p>
+</li>
+<li><p>return 视图响应</p>
+<p>视图函数要返回响应内容，这里的响应内容是我们用 HTML 标签编写的，把它作为 HttpResponse 的对象返回给浏览器</p>
+</li>
+</ol>
+<h3 id="2、视图函数执行过程"><a href="#2、视图函数执行过程" class="headerlink" title="2、视图函数执行过程"></a>2、视图函数执行过程</h3><p>Django 收到请求以后</p>
+<ul>
+<li>首先创建一个带有请求信息的 HttpRequset 对象</li>
+<li>将 HttpRequest 的对象 request  作为第一个参数传递给视图函数</li>
+<li>视图接收参数后继续向下执行</li>
+<li>然后选择加载对应的视图</li>
+<li>最后返回 HttpResponse 对象给浏览器。</li>
+</ul>
+<h2 id="Django模板系统"><a href="#Django模板系统" class="headerlink" title="Django模板系统"></a>Django模板系统</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/ref/templates/">模板 | Django 文档 | Django (djangoproject.com)</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Hello_my_django</span>(<span class="params">request</span>):</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;&lt;html&gt;&lt;body&gt;Hello my Django&lt;/body&gt;&lt;/html&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1、Django的模板系统"><a href="#1、Django的模板系统" class="headerlink" title="1、Django的模板系统"></a>1、Django的模板系统</h3><p>上述代码不具有可行性</p>
+<ul>
+<li>页面代码需要经常改动，如果将页面放到视图函数中，那么当对前端页面修改的时候，也会使得视图函数发生变化</li>
+<li>从 MTV 设计模式的角度出发，视图层是实现业务逻辑的，在视图层编写代码和编写 HTML 页面是两项可以相互独立的工作</li>
+</ul>
+<p>&#x3D;&gt; 考虑将视图函数与页面代码分离开，也就是进行解耦</p>
+<p>&#x3D;&gt; 模板系统</p>
+<h3 id="2、模板系统的应用"><a href="#2、模板系统的应用" class="headerlink" title="2、模板系统的应用"></a>2、模板系统的应用</h3><p>Template（模板），它使得HTML和View视图层实现了解耦</p>
+<p>T层的实现：</p>
+<ol>
+<li>创建好一个 Django 项目后，我们在项目的同级目录下创建一个名为 <code>templates </code>文件夹</li>
+<li>进行简单的配置后，这个文件夹将被 Django 自动识别</li>
+</ol>
+<p>改造上述代码：</p>
+<ol>
+<li><p>在 templates 文件中新建一个 HTML 文件，并且将此文件命名为 <code>hello.html</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        &#123;&#123;vaule&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改造视图函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_my_django</span>(<span class="params">request</span>):</span><br><span class="line">        <span class="keyword">return</span> render(request,<span class="string">&quot;hello.html&quot;</span>,&#123;<span class="string">&quot;vaule&quot;</span>:<span class="string">&quot;hello my Django&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>1)模板传参</strong></p>
+<p><code>hello.html </code>文件中的 <code>&#123;&#123;vaule&#125;&#125; </code>是一个模板的变量，视图函数必须把数据形成<strong>字典</strong>的形式才可以传递给模板</p>
+<p><strong>2）<code>render()</code>方法</strong></p>
+<p><code>render </code>是 View 层加载模板的一种方式，它封装在 <code>django.shortcuts</code> 模块中，<code>render()</code> 方法使用起来非常方便，它首先加载模板，然后将加载完成的模板响应给浏览器</p>
+</li>
+</ol>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/topics/http/urls/">URL调度器 | Django 文档 | Django (djangoproject.com)</a></p>
+<h3 id="1、URL简介"><a href="#1、URL简介" class="headerlink" title="1、URL简介"></a>1、URL简介</h3><p>URL(Uniform Resource Location)，统一资源定位符，它用来表示互联网上的某个资源地址</p>
+<p>互联网上的每个文件都有一个<strong>唯一</strong>的 URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它</p>
+<h3 id="2、URL语法格式详解"><a href="#2、URL语法格式详解" class="headerlink" title="2、URL语法格式详解"></a>2、URL语法格式详解</h3><p>URL语法格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protocol://hostname[:port]/path[?query][#fragment]</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.baidu.com/movie/movieshow?id=234&amp;number=1314#name</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-protocol（协议）"><a href="#1-protocol（协议）" class="headerlink" title="1)protocol（协议）"></a>1)protocol（协议）</h4><p>protocol 是指网络传输协议，以下是经常用到的几个协议：</p>
+<ul>
+<li>http，通过 HTTP 协议访问该资源，格式 http:&#x2F;&#x2F;；</li>
+<li>https，通过安全的 HTTPS 协议访问该资源， 格式 https:&#x2F;&#x2F;；</li>
+<li>file，资源是本地计算机上的文件，格式 file:&#x2F;&#x2F;&#x2F;；</li>
+<li>ftp，通过 FTP访问资源，格式 FTP:&#x2F;&#x2F;。</li>
+</ul>
+<h4 id="2-hostname（主机名）"><a href="#2-hostname（主机名）" class="headerlink" title="2) hostname（主机名）"></a>2) hostname（主机名）</h4><p>是指存放资源的服务器的域名、主机名或 IP 地址。有时，在主机名前也可以包含连接到服务器所需的用户名和密码（格式：username:password@hostname）。</p>
+<h4 id="3-port（端口号）"><a href="#3-port（端口号）" class="headerlink" title="3) port（端口号）"></a>3) port（端口号）</h4><p>port 是一个可选的整数，它的取值范围 是 0-65535。如果 port 被省略时就使用默认端口，各种传输协议都有默认的端口号，如 http 的默认端口为 80，https 的端口是 443。</p>
+<h4 id="4-path（路由地址）"><a href="#4-path（路由地址）" class="headerlink" title="4) path（路由地址）"></a>4) path（路由地址）</h4><p>由零个或多个<code>/</code>符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。路由地址决定了服务端如何处理这个请求。</p>
+<h4 id="5-query-查询"><a href="#5-query-查询" class="headerlink" title="5) query (查询)"></a>5) query (查询)</h4><p>从<code>?</code>开始到<code>#</code>为止，它们之间的部分就是参数，又称搜索部分或者查询字符串。这个部分允许有多个参数，参数与参数之间用<code>&amp;</code>作为分隔符。本例的参数部分为<code>id=234&amp;number=1314</code>。</p>
+<h4 id="6-fragment（信息片断）"><a href="#6-fragment（信息片断）" class="headerlink" title="6) fragment（信息片断）"></a>6) fragment（信息片断）</h4><p>它用于指定网络资源中的片断，例如一个网页中有多个名词解释，那么可使用 fragment 直接对它们定位。例子中的信息片段是<code>#</code>后的 name。<code>#</code>代表网页中的一个位置而 name 就是这个位置的标志符号，当浏览器读取到上述 URL 后，浏览器将直接展示该位置。</p>
+<h2 id="Django路由系统"><a href="#Django路由系统" class="headerlink" title="Django路由系统"></a>Django路由系统</h2><h3 id="1、Django路由系统应用"><a href="#1、Django路由系统应用" class="headerlink" title="1、Django路由系统应用"></a>1、Django路由系统应用</h3><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/ref/urls/">URLconfs 中使用的 django.urls 函数 | Django 文档 | Django (djangoproject.com)</a></p>
+<p>用户请求会到达相应的视图函数，视图函数通过路由系统找到相应的访问资源</p>
+<p>Django 中利用 <code>ROOT_URLCONF </code>构建了 URL 与视图函数的映射关系。在 <code>django.conf.urls</code>  中封装了路由模块，新建的 Django 项目中提供了 <code>urls.py</code>（创建项目后自动生成的配置文件） 路由配置文件，<code>urls.py</code>  文件中定义了一个 <code>urlpatterns </code>的列表，它是由 <code>path( )</code> 实例对象组成的列表，Django 中 url 的定义就是在这个列表完成的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"></span><br><span class="line">urlpatterns=[</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>,admin.site.urls),</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>后台Admin管理系统的路由就定义在列表的第一个位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path(regex,view,name=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>regex，匹配请求路径，用正则表达式表示</li>
+<li>view，指定 regex 匹配路径所对应的视图函数的名称</li>
+<li>name，是给 url 地址起个别名，在模板反向解析的时候使用</li>
+</ul>
+<h2 id="Django中间件"><a href="#Django中间件" class="headerlink" title="Django中间件"></a>Django中间件</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/ref/middleware/">中间件 | Django 文档 | Django (djangoproject.com)</a></p>
+<p>中间件是一个插件系统，嵌入在 Django 的 Request 和 Response 之间执行，可以对输入和输出内容作出修改，它是处理所有请求与响应的通用框架组件</p>
+<h3 id="1、Django默认自带中间件"><a href="#1、Django默认自带中间件" class="headerlink" title="1、Django默认自带中间件"></a>1、Django默认自带中间件</h3><p>中间件的本质 &#x3D;&gt; Python类，类内定义了函数，这些函数在视图函数执行前后调用，函数称为”钩子函数“</p>
+<p>Django提供中间件、开发者可以使用Django的中间件接口来自定义中间件</p>
+<p>创建Django项目后，在配置文件<code>settings.py</code>中默认生成中间件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">&#x27;django.middleware.security.SecurityMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.common.CommonMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-中间件的执行和响应顺序"><a href="#1-中间件的执行和响应顺序" class="headerlink" title="1)中间件的执行和响应顺序"></a>1)中间件的执行和响应顺序</h4><p>项目创建后，所有中间件都是<strong>默认激活</strong>的状态。可以根据具体的业务需求，通过代码注释的方式来关闭某个中间件。</p>
+<p>Django  同时规定了中间件的执行顺序与配置关系，以上述代码为例</p>
+<ul>
+<li>执行顺序：从上到下</li>
+<li>返回响应结果顺序：从下至上</li>
+</ul>
+<p>从浏览器发出一个请求 Request，最后得到一个 HttpResponse 响应 ，这个请求传递与响应返回的过程如下图所示：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221208175516.png"></p>
+<p>中间件作为一个可插拔的组件对外提供服务，每个中间件都负责完成一些特定的功能。</p>
+<p>中间件定义的钩子函数，是在视图函数执行的前后调用的，它们的执行过程如下所示：</p>
+<h5 id="1）在调用视图之前"><a href="#1）在调用视图之前" class="headerlink" title="1）在调用视图之前"></a>1）在调用视图之前</h5><p>如上图所示，在请求阶段，Django 按照自定义的顺序自上而下地应用中间件。这个过程执行两个钩子函数 <code>process_request() </code>和 <code>process_view()</code>，它们都是在视图函数执行前调用的</p>
+<h5 id="2）在调用视图之后"><a href="#2）在调用视图之后" class="headerlink" title="2）在调用视图之后"></a>2）在调用视图之后</h5><p>如上图所示，在响应阶段，中间件从下往上返回 HttpResponse，这个过程有三个挂钩函数可供选择：</p>
+<ul>
+<li><code>process_exception()</code> （只有当视图引发异常时调用）；</li>
+<li><code>process_template_response()</code> （仅适用于模板响应）；</li>
+<li><code>process_response()</code></li>
+</ul>
+<h2 id="Django-Cache缓存系统"><a href="#Django-Cache缓存系统" class="headerlink" title="Django Cache缓存系统"></a>Django Cache缓存系统</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/topics/cache/">Django 缓存框架 | Django 文档 | Django (djangoproject.com)</a></p>
+<h3 id="1、缓存技术的作用"><a href="#1、缓存技术的作用" class="headerlink" title="1、缓存技术的作用"></a>1、缓存技术的作用</h3><p>缓存是指保存一些计算开销较大的数据，可以是某个网页，也可以是网页的一部分，或者仅仅只是格式化的数据，合理运用缓存技术可以减少数据库访问次数，不用每次都到数据库中读取数据，从而优化了网页的访问速度</p>
+<p> 缓存系统真正的提高了 Web 站点执行效率，常被用来缓存用户经常访问的页面，比如网站的首页等，用户再次访问的时候直接返回已经缓存的内容，从而减小了 Web 服务器的压力</p>
+<h3 id="2、Django缓存系统"><a href="#2、Django缓存系统" class="headerlink" title="2、Django缓存系统"></a>2、Django缓存系统</h3><p>Django 提供了一个健壮的缓存系统，可以保存动态页面，这样就不必每次都把相同的请求进行重复计算。并且 Django 还提供了不同级别的缓存粒度，可以缓存特定视图的输出，或者只缓存某些特定的片段，比如网站自动跳出的咨询栏等，或者也可以缓存整个站点。</p>
+<p> 同时 Django 还支持多种缓存类型，可以根据实际情况来选择用哪种类型，例如 Memcached、数据库、文件系统等。</p>
+<p> <strong>Memcached</strong> 是 Django 支持的最快、最高效的分布式高效缓存系统，它是一种完全基于内存的缓存服务器。它被 Facebook 、维基百科等网站使用，从而减少数据库的访问并显著提高网站的性能</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><hr>
+<h2 id="Django实战"><a href="#Django实战" class="headerlink" title="Django实战"></a>Django实战</h2><p>菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/django/django-tutorial.html">https://www.runoob.com/django/django-tutorial.html</a></p>
+<p>官方文档基础实战教学：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/install/">快速安装指南 | Django 文档 | Django (djangoproject.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial01/">编写你的第一个 Django 应用，第 1 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial02/">编写你的第一个 Django 应用，第 2 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial03/">编写你的第一个 Django 应用，第 3 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial03/">编写你的第一个 Django 应用，第 3 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial05/">编写你的第一个 Django 应用，第 5 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial06/">编写你的第一个 Django 应用，第 6 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial07/">编写你的第一个 Django 应用，第 7 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+</li>
+</ul>
 
     
 
@@ -328,7 +732,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/11/24/hello-world/" title="Hello World" target="_blank">http://example.com/2022/11/24/hello-world/</a>
+          <a href="http://example.com/2022/12/09/Django框架铺垫知识/" title="Django框架铺垫知识" target="_blank">http://example.com/2022/12/09/Django框架铺垫知识/</a>
         </li>
         
         <li>
@@ -345,6 +749,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -395,7 +814,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/11/24/hello-world/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/12/09/Django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -410,15 +829,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/11/24/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Redis学习笔记
-        
-      </div>
-    </a>
   
+    <a href="/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Servlet技术简述</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

@@ -221,7 +221,7 @@
             
 
   
-    <article id="post-算法学习之路-贪心篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Django框架铺垫知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -229,7 +229,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2022/12/03/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B4%AA%E5%BF%83%E7%AF%87/" target="_blank">算法学习之路--贪心篇</a>
+	  <a class="article-title" href="/2022/12/09/Django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86/" target="_blank">Django框架铺垫知识</a>
   
     </h1>
   
@@ -237,8 +237,8 @@
 
   
   
-<a href="/2022/12/03/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B4%AA%E5%BF%83%E7%AF%87/" class="archive-article-date">
-        <time datetime="2022-12-03T04:24:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-03</time>
+<a href="/2022/12/09/Django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86/" class="archive-article-date">
+        <time datetime="2022-12-09T12:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-09</time>
 </a>
 
   
@@ -250,19 +250,83 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="算法学习之路-–-贪心篇"><a href="#算法学习之路-–-贪心篇" class="headerlink" title="算法学习之路 – 贪心篇"></a>算法学习之路 – 贪心篇</h1><h2 id="一、贪心的本质"><a href="#一、贪心的本质" class="headerlink" title="一、贪心的本质"></a>一、贪心的本质</h2><p><strong>本质</strong>  &#x3D;&gt; 选择每一阶段的局部最优，从而达到全局最优</p>
-<h2 id="二、贪心使用的时机"><a href="#二、贪心使用的时机" class="headerlink" title="二、贪心使用的时机"></a>二、贪心使用的时机</h2><p>贪心算法没有固定套路，唯一的<strong>难点</strong> &#x3D;&gt; 如何通过局部最优，推出整体最优</p>
-<p>判别：刷题或者面试时，手动<strong>模拟</strong>，感觉可以局部最优推出整体最优，而且想不出反例，可以尝试贪心</p>
-<h2 id="三、贪心一般解题步骤"><a href="#三、贪心一般解题步骤" class="headerlink" title="三、贪心一般解题步骤"></a>三、贪心一般解题步骤</h2><ul>
-<li>将问题分解成若干个子问题</li>
-<li>找出适合的贪心策略</li>
-<li>求解每一个子问题的最优解</li>
-<li>将局部最优解堆叠成全局最优解</li>
+    <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+<ul>
+<li><a href="#django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86">Django框架铺垫知识</a><ul>
+<li><a href="#django-mtv%E5%92%8Cmvc%E7%9A%84%E5%8C%BA%E5%88%AB">Django MTV和MVC的区别</a><ul>
+<li><a href="#1mvc%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">1、MVC设计模式</a></li>
+<li><a href="#2mtv%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">2、MTV设计模式</a></li>
 </ul>
-<p>&#x3D;&gt; 常识性推导 + 举反例</p>
-<h2 id="四、典型例题分析"><a href="#四、典型例题分析" class="headerlink" title="四、典型例题分析"></a>四、典型例题分析</h2>
+</li>
+<li><a href="#django-orm%E6%A8%A1%E5%9D%97">Django ORM模块</a><ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AForm">1、什么是ORM</a></li>
+<li><a href="#2django%E4%B8%AD%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E8%A1%A8">2、Django中定义数据表</a><ul>
+<li><a href="#1%E6%A8%A1%E5%9E%8B%E7%B1%BB">1）模型类</a></li>
+<li><a href="#2-%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E8%A1%A8">2) 定义数据表</a></li>
+</ul>
+</li>
+<li><a href="#3orm%E7%AE%A1%E7%90%86%E5%99%A8%E5%AF%B9%E8%B1%A1">3、ORM管理器对象</a></li>
+<li><a href="#4orm%E4%BC%98%E5%8A%BF%E4%B8%8E%E4%B8%8D%E8%B6%B3">4、ORM优势与不足</a></li>
+</ul>
+</li>
+<li><a href="#django-auth%E5%BA%94%E7%94%A8%E6%A8%A1%E6%9D%BF">Django auth应用模板</a><ul>
+<li><a href="#1django%E7%9A%84auth%E6%A8%A1%E6%9D%BF">1、Django的auth模板</a></li>
+<li><a href="#2auth%E5%BA%94%E7%94%A8%E6%A8%A1%E5%9D%97%E7%9A%84%E5%85%B6%E4%BB%96%E4%BD%9C%E7%94%A8">2、auth应用模块的其他作用</a></li>
+</ul>
+</li>
+<li><a href="#django-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">Django Admin后台管理系统</a></li>
+<li><a href="#django%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0">Django视图函数</a><ul>
+<li><a href="#1%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0">1、第一个视图函数</a></li>
+<li><a href="#2%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B">2、视图函数执行过程</a></li>
+</ul>
+</li>
+<li><a href="#django%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F">Django模板系统</a><ul>
+<li><a href="#1django%E7%9A%84%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F">1、Django的模板系统</a></li>
+<li><a href="#2%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%94%E7%94%A8">2、模板系统的应用</a></li>
+</ul>
+</li>
+<li><a href="#url">URL</a><ul>
+<li><a href="#1url%E7%AE%80%E4%BB%8B">1、URL简介</a></li>
+<li><a href="#2url%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3">2、URL语法格式详解</a><ul>
+<li><a href="#1protocol%E5%8D%8F%E8%AE%AE">1)protocol（协议）</a></li>
+<li><a href="#2-hostname%E4%B8%BB%E6%9C%BA%E5%90%8D">2) hostname（主机名）</a></li>
+<li><a href="#3-port%E7%AB%AF%E5%8F%A3%E5%8F%B7">3) port（端口号）</a></li>
+<li><a href="#4-path%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80">4) path（路由地址）</a></li>
+<li><a href="#5-query-%E6%9F%A5%E8%AF%A2">5) query (查询)</a></li>
+<li><a href="#6-fragment%E4%BF%A1%E6%81%AF%E7%89%87%E6%96%AD">6) fragment（信息片断）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#django%E8%B7%AF%E7%94%B1%E7%B3%BB%E7%BB%9F">Django路由系统</a><ul>
+<li><a href="#1django%E8%B7%AF%E7%94%B1%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8">1、Django路由系统应用</a></li>
+</ul>
+</li>
+<li><a href="#django%E4%B8%AD%E9%97%B4%E4%BB%B6">Django中间件</a><ul>
+<li><a href="#1django%E9%BB%98%E8%AE%A4%E8%87%AA%E5%B8%A6%E4%B8%AD%E9%97%B4%E4%BB%B6">1、Django默认自带中间件</a><ul>
+<li><a href="#1%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E6%89%A7%E8%A1%8C%E5%92%8C%E5%93%8D%E5%BA%94%E9%A1%BA%E5%BA%8F">1)中间件的执行和响应顺序</a><ul>
+<li><a href="#1%E5%9C%A8%E8%B0%83%E7%94%A8%E8%A7%86%E5%9B%BE%E4%B9%8B%E5%89%8D">1）在调用视图之前</a></li>
+<li><a href="#2%E5%9C%A8%E8%B0%83%E7%94%A8%E8%A7%86%E5%9B%BE%E4%B9%8B%E5%90%8E">2）在调用视图之后</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#django-cache%E7%BC%93%E5%AD%98%E7%B3%BB%E7%BB%9F">Django Cache缓存系统</a><ul>
+<li><a href="#1%E7%BC%93%E5%AD%98%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%9C%E7%94%A8">1、缓存技术的作用</a></li>
+<li><a href="#2django%E7%BC%93%E5%AD%98%E7%B3%BB%E7%BB%9F">2、Django缓存系统</a></li>
+</ul>
+</li>
+<li><a href="#django%E5%AE%9E%E6%88%98">Django实战</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
     
-    <a class="article-more-a" href="/2022/12/03/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B4%AA%E5%BF%83%E7%AF%87/#more">more >></a>
+    <a class="article-more-a" href="/2022/12/09/Django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86/#more">more >></a>
     
     
 
@@ -274,91 +338,26 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2022/12/03/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B4%AA%E5%BF%83%E7%AF%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="n-MySql数据库技术简述" class="article article-type-n  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/11/27/MySql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/" target="_blank">MySql数据库技术简述</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/11/27/MySql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/" class="archive-article-date">
-        <time datetime="2022-11-27T02:58:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="MySQL数据库技术简述"><a href="#MySQL数据库技术简述" class="headerlink" title="MySQL数据库技术简述"></a>MySQL数据库技术简述</h1><h2 id="第一部分-MySQL基础篇"><a href="#第一部分-MySQL基础篇" class="headerlink" title="第一部分 MySQL基础篇"></a>第一部分 MySQL基础篇</h2><h3 id="第01章-数据库概述"><a href="#第01章-数据库概述" class="headerlink" title="第01章 数据库概述"></a>第01章 数据库概述</h3><h4 id="1-为什么要使用数据库"><a href="#1-为什么要使用数据库" class="headerlink" title="1. 为什么要使用数据库"></a>1. 为什么要使用数据库</h4><ul>
-<li>持久化(persistence)：<strong>把数据保存到可掉电式存储设备中以供之后使用</strong>。大多数情况下，特别是企业级应用，<strong>数据持久化意味着将内存中的数据保存到硬盘上加以“固化”</strong>，而持久化的实现过程大多通过各种关系数据库来完成。</li>
-<li>持久化的主要作用是<strong>将内存中的数据存储在关系型数据库中</strong>，当然也可以存储在磁盘文件、XML数据文件中。</li>
-</ul>
-    
-    <a class="article-more-a" href="/2022/11/27/MySql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/11/27/MySql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/">展开全文 >></a>
+      <a class="article-more-a" href="/2022/12/09/Django%E6%A1%86%E6%9E%B6%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86/">展开全文 >></a>
     </p>
     
 
@@ -538,6 +537,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">frontend</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -619,6 +633,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">NoSql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -888,6 +917,30 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frontend</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

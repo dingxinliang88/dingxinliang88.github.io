@@ -6,20 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingxinliang88.github.io">
-  <title>Tag: Servlet | 橘子</title>
+  <title>算法学习之路 -- 动态规划篇之基础篇 | 橘子</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一个计算机科班生的博客日常">
-<meta property="og:type" content="website">
-<meta property="og:title" content="橘子">
-<meta property="og:url" content="http://dingxinliang88.github.io/tags/Servlet/index.html">
+  <meta name="description" content="算法学习之路–动态规划篇之基础篇  Table of Contents  generated with DocToc  算法学习之路–动态规划篇之基础篇 一、动态规划理论基础 什么是动态规划 动态规划解题步骤 动态规划应该如何debug   二、典型例题解析 509、斐波那契数 题目 思路 实现 补充   70、爬楼梯 题目 思路 实现   746、使用最小花费爬楼梯 题目 思路 实现 扩展">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法学习之路 -- 动态规划篇之基础篇">
+<meta property="og:url" content="http://dingxinliang88.github.io/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/index.html">
 <meta property="og:site_name" content="橘子">
-<meta property="og:description" content="一个计算机科班生的博客日常">
+<meta property="og:description" content="算法学习之路–动态规划篇之基础篇  Table of Contents  generated with DocToc  算法学习之路–动态规划篇之基础篇 一、动态规划理论基础 什么是动态规划 动态规划解题步骤 动态规划应该如何debug   二、典型例题解析 509、斐波那契数 题目 思路 实现 补充   70、爬楼梯 题目 思路 实现   746、使用最小花费爬楼梯 题目 思路 实现 扩展">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221208210343.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209152808.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209154253.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209152808.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209154635.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/04/robot1.jpg">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/04/robot2.jpg">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221210135849.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/04/robot1.jpg">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212180859.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212183342.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212185918.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212190034.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212191758.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212200337.png">
+<meta property="article:published_time" content="2022-12-16T01:37:33.000Z">
+<meta property="article:modified_time" content="2022-12-16T01:39:02.713Z">
 <meta property="article:author" content="CodeJuzi">
-<meta property="article:tag" content="笔记 &amp;&amp; 博客 &amp;&amp; 讨论">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="dp">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221208210343.png">
   
     <link rel="alternative" href="/atom.xml" title="橘子" type="application/atom+xml">
   
@@ -224,69 +246,678 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-算法学习之路-动态规划篇之基础篇" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/" class="archive-article-date">
-        <time datetime="2022-11-27T02:51:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-27</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/" target="_blank">Servlet技术简述</a>
   
+    <h1 class="article-title" itemprop="name">
+      算法学习之路 -- 动态规划篇之基础篇
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
+        <time datetime="2022-12-16T01:37:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-16</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">6.6k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">28分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="算法学习之路–动态规划篇之基础篇"><a href="#算法学习之路–动态规划篇之基础篇" class="headerlink" title="算法学习之路–动态规划篇之基础篇"></a>算法学习之路–动态规划篇之基础篇</h1><!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a target="_blank" rel="noopener" href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+<ul>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF--%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87">算法学习之路–动态规划篇之基础篇</a><ul>
+<li><a href="#%E4%B8%80%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80">一、动态规划理论基础</a><ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">什么是动态规划</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4">动态规划解题步骤</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95debug">动态规划应该如何debug</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%85%B8%E5%9E%8B%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90">二、典型例题解析</a><ul>
+<li><a href="#509%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0">509、斐波那契数</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a></li>
+<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
+</ul>
+</li>
+<li><a href="#70%E7%88%AC%E6%A5%BC%E6%A2%AF">70、爬楼梯</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-1">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-1">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-1">实现</a></li>
+</ul>
+</li>
+<li><a href="#746%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF">746、使用最小花费爬楼梯</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-2">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-2">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-2">实现</a></li>
+<li><a href="#%E6%89%A9%E5%B1%95">扩展</a></li>
+</ul>
+</li>
+<li><a href="#62%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84">62、不同路径</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-3">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-3">思路</a><ul>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2">深度优先搜索</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">动态规划</a></li>
+<li><a href="#%E6%95%B0%E8%AE%BA">数论</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-3">实现</a><ul>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-1">深度优先搜索</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-1">动态规划</a></li>
+<li><a href="#%E6%95%B0%E8%AE%BA-1">数论</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#63%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84ii">63、不同路径<strong>II</strong></a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-4">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-4">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-4">实现</a></li>
+</ul>
+</li>
+<li><a href="#343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86">343、整数拆分</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-5">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-5">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-5">实现</a></li>
+</ul>
+</li>
+<li><a href="#96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91">96 不同的二叉搜索树</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-6">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-6">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-6">实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<span id="more"></span>
+
+<h2 id="一、动态规划理论基础"><a href="#一、动态规划理论基础" class="headerlink" title="一、动态规划理论基础"></a>一、动态规划理论基础</h2><h3 id="什么是动态规划"><a href="#什么是动态规划" class="headerlink" title="什么是动态规划"></a>什么是动态规划</h3><p>动态规划（Dynamic Programming)，简称DP</p>
+<p>如果某一问题有很多重叠子问题，使用动态规划是最有效的 &#x3D;&gt; 所以动态规划中每一个状态是由<strong>上一个状态推导</strong>出来的（这一点区分于贪心，贪心没有状态推导，而是从<strong>局部直接选最优</strong>）</p>
+<h3 id="动态规划解题步骤"><a href="#动态规划解题步骤" class="headerlink" title="动态规划解题步骤"></a>动态规划解题步骤</h3><p>动归题目，状态转移公式（递推公式）是很重要，但动归不仅仅只有递推公式</p>
+<p><strong>动归掌握五部曲</strong></p>
+<ul>
+<li>确定dp数组（dp table）以及下标的含义</li>
+<li>确定递推公式</li>
+<li>dp数组如何初始化</li>
+<li>确定遍历顺序</li>
+<li>举例推导dp数组</li>
+</ul>
+<blockquote>
+<p>为什么要先确定递推公式，然后再考虑初始化？</p>
+<p>因为一些情况是递推公式决定了dp数组要如何初始化</p>
+</blockquote>
+<h3 id="动态规划应该如何debug"><a href="#动态规划应该如何debug" class="headerlink" title="动态规划应该如何debug"></a>动态规划应该如何debug</h3><p>写动归题目，代码出问题很正常！</p>
+<ul>
+<li><strong>找问题最好方式就是把dp数组打印出来，看看究竟是不是按照自己的思路推导的</strong></li>
+<li><strong>做动归题目，写代码之前一定要把状态转移在dp数组上的具体情况模拟一遍，心中有数，确定最后推出的是想要的结果</strong></li>
+</ul>
+<p>&#x3D;&gt; 然后再写代码，如果代码没通过就打印dp数组，看看和自己预先推导的哪里不一样</p>
+<ul>
+<li>如果打印出来和自己预先模拟推导的是一样的，那么就是自己的递推公式、初始化或者遍历顺序有问题</li>
+<li>如果打印出来和自己预先模拟推导的不一样，那就是代码实现细节有问题</li>
+</ul>
+<h2 id="二、典型例题解析"><a href="#二、典型例题解析" class="headerlink" title="二、典型例题解析"></a>二、典型例题解析</h2><h3 id="509、斐波那契数"><a href="#509、斐波那契数" class="headerlink" title="509、斐波那契数"></a>509、斐波那契数</h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fibonacci-number/">https://leetcode.cn/problems/fibonacci-number/</a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">斐波那契数，通常⽤ F(n) 表⽰，形成的序列称为 斐波那契数列 。该数列由 0 和 1 开始，后⾯的每⼀项数字都是前⾯两项数字的和。也就是：F(0) = 0，F(1) = 1,F(n) = F(n - 1) + F(n - 2)，其中 n &gt; 1，给你n ，请计算 F(n) 。</span><br><span class="line"></span><br><span class="line">⽰例 1： </span><br><span class="line">输⼊：2</span><br><span class="line">输出：1 </span><br><span class="line">解释：F(2) = F(1) + F(0) = 1 + 0 = 1</span><br><span class="line"></span><br><span class="line">⽰例 2：</span><br><span class="line">输⼊：3</span><br><span class="line">输出：2</span><br><span class="line">解释：F(3) = F(2) + F(1) = 1 + 1 = 2</span><br><span class="line"></span><br><span class="line">⽰例 3：</span><br><span class="line">输⼊：4 </span><br><span class="line">输出：3 </span><br><span class="line">解释：F(4) = F(3) + F(2) = 2 + 1 = 3</span><br><span class="line"></span><br><span class="line">提⽰：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 0 &lt;= n &lt;= 30</span><br></pre></td></tr></table></figure>
+
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p><strong>动态规划</strong></p>
+<p>动归五部曲：<br>    这里我们需要一个一维数组来保存递推的解雇</p>
+<ol>
+<li><p>确定dp数组以及下标的含义</p>
+<ul>
+<li><code>dp[i]</code>定义：第i个数的斐波那契数值是<code>dp[i]</code></li>
+</ul>
+</li>
+<li><p>确定递推关系</p>
+<ul>
+<li>状态转移方程（来自于题目）：<code>dp[i] = dp[i - 1] + dp[i - 2]</code></li>
+</ul>
+</li>
+<li><p>dp数组初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 题目也将如何初始化直接给出了</span></span><br><span class="line">dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>确定遍历顺序</p>
+<p>从递推关系<code>dp[i] = dp[i - 1] + dp[i - 2]</code>可以看出，<code>dp[i]</code>是依赖<code>dp[i - 1]</code>和<code>dp[i - 2</code>]，那么遍历的顺序一定是从前往后遍历的</p>
+</li>
+<li><p>举例推导dp数组</p>
+<p>根据递推公式<code>dp[i] = dp[i - 1] + dp[i - 2]</code>，当N&#x3D;10的时候，dp数组应该是：<code>0 1 1 2 3 5 8 13 21 34 55</code></p>
+<p>如果代码写出来发现结果不对，就把dp数组打印出来看看和我们推导的数列是否一致</p>
+</li>
+</ol>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>Java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(n)</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(n)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>;i &lt;= n;++i) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&#x3D;&gt; 我们只需要维护两个数值就可以了，不需要记录整个序列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(n)</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(1)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>;i &lt;= n;++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> dp[<span class="number">0</span>] + dp[<span class="number">1</span>];</span><br><span class="line">            dp[<span class="number">0</span>] = dp[<span class="number">1</span>];</span><br><span class="line">            dp[<span class="number">1</span>] = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p><strong>递归解法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(2^n)</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(n)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">2</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="70、爬楼梯"><a href="#70、爬楼梯" class="headerlink" title="70、爬楼梯"></a>70、爬楼梯</h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/">https://leetcode.cn/problems/climbing-stairs/</a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">假设你正在爬楼梯。需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的⽅法可以爬到楼顶呢？</span><br><span class="line">注意：给定 n 是⼀个正整数。</span><br><span class="line"></span><br><span class="line">⽰例 1： </span><br><span class="line">输⼊： 2</span><br><span class="line">输出： 2</span><br><span class="line">解释： 有两种⽅法可以爬到楼顶。</span><br><span class="line"><span class="code">			1 阶 + 1 阶</span></span><br><span class="line"><span class="code">			2 阶</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">⽰例 2： </span><br><span class="line">输⼊： 3</span><br><span class="line">输出： 3</span><br><span class="line">解释： 有三种⽅法可以爬到楼顶。</span><br><span class="line"><span class="code">			1 阶 + 1 阶 + 1 阶</span></span><br><span class="line"><span class="code">			1 阶 + 2 阶</span></span><br><span class="line"><span class="code">			2 阶 + 1 阶</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><blockquote>
+<p>模拟一遍过程</p>
+<p>爬到第一层楼梯有一种方法，爬到第二层楼梯有两种方法<br>那么第一层楼梯再跨两步就到第三层，第二层楼梯再跨一步就到第三层 &#x3D;&gt; 第三层楼梯的状态可以由到第二层楼梯和到第一层楼梯状态推导出来 &#x3D;&gt; 动态规划</p>
+</blockquote>
+<p><strong>动态规划五部曲</strong></p>
+<p>定义一个一维数组来记录不同楼层的状态</p>
+<ul>
+<li><p>确定dp数组以及下标的含义</p>
+<ul>
+<li><code>dp[i]</code>：爬到第i层楼梯，有<code>dp[i]</code>种方法</li>
+</ul>
+</li>
+<li><p>确定递推公式</p>
+<p>从dp[i]的定义可以看出，dp[i]可以由两个方向推出</p>
+<ul>
+<li>首先是dp[i - 1]，上i-1层楼梯，有dp[i-1]种方法，那么再跳一个台阶就是dp[i]</li>
+<li>还有就是dp[i - 2]，上i-2层楼梯，有dp[i-2]种方法，那么再跳一个台阶就是dp[i]</li>
+</ul>
+<p>&#x3D;&gt; <code>dp[i] = dp[i - 1] + dp[i - 2]</code></p>
+</li>
+<li><p>dp数组初始化</p>
+<blockquote>
+<p>回顾⼀下dp[i]的定义：<strong>爬到第i层楼梯，有dp[i]中⽅法</strong></p>
+<p>那么i为0，dp[i]应该是多少呢，这个可以有很多解释，但都基本是直接奔着答案去解释的。</p>
+<p>例如强⾏安慰⾃⼰爬到第0层，也有⼀种⽅法，什么都不做也就是⼀种⽅法即：dp[0] &#x3D; 1，相当于直接站在楼顶。 但总有点牵强的成分。</p>
+<p>那还这么理解呢：我就认为跑到第0层，⽅法就是0啊，⼀步只能⾛⼀个台阶或者两个台阶，然⽽楼层是0，直接站楼顶上了，就是不⽤⽅法，dp[0]就应该是0。</p>
+<p>其实这么争论下去没有意义，⼤部分解释说<strong>dp[0]<strong>应该为</strong>1</strong>的理由其实是因为<strong>dp[0]&#x3D;1</strong>的话在递推的过程中<strong>i</strong>从<strong>2</strong>开始遍历本题就能过，然后就往结果上靠去解释<strong>dp[0] &#x3D; 1</strong>。 </p>
+<p>从dp数组定义的⾓度上来说，dp[0] &#x3D; 0 也能说得通。</p>
+<p>需要注意的是：题⽬中说了n是⼀个正整数，题⽬根本就没说n有为0的情况 &#x3D;&gt; **本题不应该讨论dp[0]的初始化</p>
+</blockquote>
+<ul>
+<li><code>dp[1] = 1,dp[2] = 2</code></li>
+</ul>
+</li>
+<li><p>确定遍历顺序<br>从递推公式<code>dp[i] = dp[i - 1] + dp[i - 2]</code>可以看出，遍历顺序一定是从前往后遍历的</p>
+</li>
+<li><p>举例推导dp数组</p>
+<p>当n&#x3D;5时，dp table（dp数组）应该是这样的<br>![](<a target="_blank" rel="noopener" href="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%88%AA%E5%B1%8F2022-12-05">https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/截屏2022-12-05</a> 20.36.50.png)</p>
+<p>如果代码出问题了，就把dp table打印出来，看看究竟是不是和自己推导的一样</p>
+<blockquote>
+<p>仔细观察，这就是斐波那契数列，唯一的区别就是没有讨论dp[0]应该是什么，因为dp[0]在本题没有意义</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><p>Java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(n)</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(n)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">climbStairs</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>;i &lt;= n;++i) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然代码可以优化一下空间复杂度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(n)</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(1)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">climbStairs</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>;i &lt;= n;++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> dp[<span class="number">1</span>] + dp[<span class="number">2</span>];</span><br><span class="line">            dp[<span class="number">1</span>] = dp[<span class="number">2</span>];</span><br><span class="line">            dp[<span class="number">2</span>] = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="746、使用最小花费爬楼梯"><a href="#746、使用最小花费爬楼梯" class="headerlink" title="746、使用最小花费爬楼梯"></a>746、使用最小花费爬楼梯</h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>题⽬链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/">https://leetcode-cn.com/problems/min-cost-climbing-stairs/</a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">数组的每个下标作为⼀个阶梯，第 i 个阶梯对应着⼀个⾮负数的体⼒花费值cost[i]（下标从0 开始）。每当你爬上⼀个阶梯你都要花费对应的体⼒值，⼀旦⽀付了相应的体⼒值，你就可以选择向上爬⼀个阶梯或者爬两个阶梯。请你找出达到楼层顶部的最低花费。在开始时，你可以选择从下标为 0 或 1 的元素作为初始阶梯。</span><br><span class="line"></span><br><span class="line">⽰例 1：</span><br><span class="line">输⼊：cost = [10, 15, 20]</span><br><span class="line">输出：15</span><br><span class="line">解释：最低花费是从 cost[1] 开始，然后⾛两步即可到阶梯顶，⼀共花费 15 。</span><br><span class="line"></span><br><span class="line">⽰例 2：</span><br><span class="line">输⼊：cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]</span><br><span class="line">输出：6</span><br><span class="line">解释：最低花费⽅式是从 cost[0] 开始，逐个经过那些 1 ，跳过 cost[3] ，⼀共花费 6 。</span><br><span class="line"></span><br><span class="line">提⽰：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> cost 的长度范围是 [2, 1000]。</span><br><span class="line"><span class="bullet">-</span> cost[i] 将会是⼀个整型数据，范围为 [0, 999] </span><br></pre></td></tr></table></figure>
+
+<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p><strong>注意题目描述：每当你爬上⼀个阶梯你都要花费对应的体⼒值，⼀旦⽀付了相应的体⼒值，你就可以选择向上爬⼀个阶梯或者爬两个阶梯</strong></p>
+<ol>
+<li><p>确认dp数组以及下标的含义、</p>
+<p>使用一个一维数组dp[i]来记录状态：</p>
+<p><code>dp[i]</code> &#x3D;&gt; 到达第i个台阶所花费的最少体力为dp[i]（注意这里认为是第一步一定是要花费）</p>
+</li>
+<li><p>确定递推公式</p>
+<p>可以有两个途径得到<code>dp[i]</code>，一个是<code>dp[i - 1]</code>，一个是<code>dp[i - 2]</code></p>
+<p>选择最小的，所以<code>dp[i] = Math.min(dp[i - 1],dp[i - 2]) + cost[i]</code></p>
+<blockquote>
+<p>注意这⾥为什么是加<code>cost[i]</code>，⽽不是<code>cost[i-1]</code>,<code>cost[i-2]</code>之类的，因为题⽬中说了：每当你爬上⼀个阶梯你都要花费对应的体⼒值</p>
+</blockquote>
+</li>
+<li><p>dp数组初始化</p>
+<p>根据dp数组的定义，dp数组初始化其实是⽐较难的，因为不可能初始化为第i台阶所花费的最少体⼒ </p>
+<p>回归递归公式，<strong>dp[i]由dp[i-1]，dp[i-2]推出</strong>，既然初始化所有的dp[i]是不可能的， 那么**只初始化dp[0]和dp[1]**就够了，其他的最终都是dp[0]、dp[1]推出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[cost.length]</span><br><span class="line">dp[<span class="number">0</span>] = cost[<span class="number">0</span>];</span><br><span class="line">dp[<span class="number">1</span>] = cost[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>确定遍历顺序</p>
+<p>模拟台阶，⽽且dp[i]又dp[i-1]dp[i-2]推出，所以是<strong>从前到后遍历cost数组</strong>就可以了。</p>
+</li>
+<li><p>举例推导dp数组</p>
+<p>拿示例2：cost &#x3D; [1, 100, 1, 1, 1, 100, 1, 1, 100, 1] ，来模拟⼀下dp数组的状态变化</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221208210343.png"></p>
+</li>
+</ol>
+<h4 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h4><p>Java代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(n) </span></span><br><span class="line"><span class="comment">// 空间复杂度：O(n)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minCostClimbingStairs</span><span class="params">(<span class="type">int</span>[] cost)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[cost.length];</span><br><span class="line">        dp[<span class="number">0</span>] = cost[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = cost[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>;i &lt; cost.length;++i) &#123;</span><br><span class="line">            dp[i] = Math.min(dp[i - <span class="number">1</span>],dp[i - <span class="number">2</span>]) + cost[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 注意最后一步理解为不用花费</span></span><br><span class="line">        <span class="keyword">return</span> Math.min(dp[cost.length - <span class="number">1</span>],dp[cost.length - <span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><p>定义<code>dp[i]</code>为:第⼀步是不花费体⼒，最后⼀步是花费体⼒的</p>
+<p>Java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minCostClimbingStairs</span><span class="params">(<span class="type">int</span>[] cost)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[cost.length + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>;i &lt;= cost.length;++i) &#123;</span><br><span class="line">            dp[i] = Math.min(dp[i - <span class="number">1</span>] + cost[i - <span class="number">1</span>],dp[i - <span class="number">2</span>] + cost[i - <span class="number">2</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[cost.length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="62、不同路径"><a href="#62、不同路径" class="headerlink" title="62、不同路径"></a>62、不同路径</h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>题⽬链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths/">https://leetcode-cn.com/problems/unique-paths/</a> </p>
+<p>⼀个机器⼈位于⼀个 m x n ⽹格的左上角 （起始点在下图中标记为 “Start” ）。 机器⼈每次只能向下或者向右移动⼀步。机器⼈试图达到⽹格的右下角（在下图中标记为 “Finish” ）。 问总共有多少条不同的路径？</p>
+<p>示例一：</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" alt="img"></p>
+<p>输入：m &#x3D; 3, n &#x3D; 7<br>输出：28</p>
+<p>示例二：<br>输⼊：m &#x3D; 2, n &#x3D; 3<br>输出：3 </p>
+<p>提⽰： </p>
+<ul>
+<li>1 &lt;&#x3D; m, n &lt;&#x3D; 100 </li>
+<li>题⽬数据保证答案⼩于等于 2 * 10^9</li>
+</ul>
+<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><h5 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h5><p>题目最直观的想法就是⽤图论⾥的<strong>深搜</strong>，来枚举出来有多少种路径</p>
+<p>注意题⽬中说机器⼈每次只能向下或者向右移动⼀步，那么其实机器人<strong>走过的路径可以抽象为⼀颗⼆叉树，⽽叶⼦节点就是终点</strong></p>
+<p>举例：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209152808.png"></p>
+<p>此时问题就可以转化为<strong>求⼆叉树叶⼦节点的个数</strong></p>
+<h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><p>机器人从（0,0）位置出发，到（m - 1，n - 1）</p>
+<p>动态规划五部曲：</p>
+<ol>
+<li><p>确定dp数组（dp table）以及下标的含义</p>
+<p><code>dp[i][j]</code>：表⽰从<code>(0,0)</code>出发，到<code>(i,j)</code> 有<code>dp[i][j]</code>条不同的路径</p>
+</li>
+<li><p>确定递推公式</p>
+<p>要求<code>dp[i][j]</code>，只能有两个⽅向来推导出来，即<code>dp[i - 1][j] </code>和<code> dp[i][j - 1]</code>。<br>回顾⼀下 <code>dp[i - 1][j] </code>表示什么，是从(0, 0)的位置到(i - 1, j)有⼏条路径，<code>dp[i][j - 1]</code>同 理。<br>那么很⾃然，**<code>dp[i][j] = dp[i - 1][j] + dp[i][j - 1]</code>**，因为<code>dp[i][j]</code>只有这两个⽅向过来</p>
+</li>
+<li><p>dp数组初始化</p>
+<p><code>dp[i][0]</code>⼀定都是1，因为从(0, 0)的位置到(i, 0)的路径只有⼀条，那么 <code>dp[0][j]</code>也同理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化代码</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) dp[<span class="number">0</span>][j] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>确定遍历顺序<br>观察递推公式：<code>dp[i][j] = dp[i - 1][j] + dp[i][j - 1]</code>，<code>dp[i][j]</code>都是从其上方和左方推导而来，那么从左到右一层一层遍历即可</p>
+</li>
+<li><p>举例推导dp数组</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209154253.png"></p>
+</li>
+</ol>
+<h5 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h5><p>在这个图中，可以看出⼀共m，n的话，⽆论怎么⾛，⾛到终点都需要 m + n - 2 步<br><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209152808.png"></p>
+<p>在这m + n - 2 步中，⼀定有 m - 1 步是要向下⾛的，不⽤管什么时候向下⾛</p>
+<p>走法数：<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221209154635.png"></p>
+<p>求组合的时候，要<strong>防⽌两个int相乘溢出</strong>！ 所以不能把算式的分⼦都算出来，分母都算出来再做除法</p>
+<h4 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h4><h5 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h5><p>Java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">uniquePaths</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">1</span>, <span class="number">1</span>, m, n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j, <span class="type">int</span> m, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; m || j &gt; n) <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">// 越界</span></span><br><span class="line">        <span class="keyword">if</span> (i == m &amp;&amp; j == n) <span class="keyword">return</span> <span class="number">1</span>;  <span class="comment">// 找到了一种方法，相当于找到了叶子节点</span></span><br><span class="line">        <span class="keyword">return</span> dfs(i + <span class="number">1</span>, j, m, n) + dfs(i, j + <span class="number">1</span>, m, n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ===&gt; 超时</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 分析⼀下时间复杂度，这个深搜的算法，其实就是要遍历整个⼆叉树。这颗树的深度其实就是m+n-1（深度按从1开始计算）。那⼆叉树的节点个数就是 2^(m + n - 1) - 1。可以理解深搜的算法就是遍历了整个满⼆叉树（其实没有遍历整个满⼆叉树，只是近似⽽已）</span></span><br><span class="line"><span class="comment"> =&gt; 上⾯深搜代码的时间复杂度为O(2^(m + n - 1) - 1)，可以看出，这是指数级别的时间复杂度，是⾮常⼤的。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h5><p>Java代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(m * n)</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(m * n)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">uniquePaths</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[][] dp = <span class="keyword">new</span> <span class="title class_">int</span>[m][n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; m;++i) dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j &lt; n;++j) dp[<span class="number">0</span>][j] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;i &lt; m;++i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>;j &lt; n;++j) &#123;</span><br><span class="line">                dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="数论-1"><a href="#数论-1" class="headerlink" title="数论"></a>数论</h5><p>Java代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(m )</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(1)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">uniquePaths</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">long</span> <span class="variable">numerator</span> <span class="operator">=</span> <span class="number">1</span>;<span class="comment">// 分子</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">denominator</span> <span class="operator">=</span> m - <span class="number">1</span>; <span class="comment">// 分母</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> m - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> m + n - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(count-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            numerator *= (t--);</span><br><span class="line">            <span class="keyword">while</span>(denominator != <span class="number">0</span> &amp;&amp; numerator % denominator == <span class="number">0</span>) &#123;</span><br><span class="line">                numerator /= denominator;</span><br><span class="line">                denominator--;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">int</span>)numerator;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="63、不同路径II"><a href="#63、不同路径II" class="headerlink" title="63、不同路径II"></a>63、不同路径<strong>II</strong></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths-ii/">https://leetcode-cn.com/problems/unique-paths-ii/</a></p>
+<p>⼀个机器⼈位于⼀个 m x n ⽹格的左上⾓ （起始点在下图中标记为“Start” ）。 机器⼈每次只能向下或者向右移动⼀步。机器⼈试图达到⽹格的右下⾓（在下图中标记为 “Finish”）。 现在考虑⽹格中有障碍物。那么从左上⾓到右下⾓将会有多少条不同的路径？</p>
+<p>示例1：</p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/04/robot1.jpg" alt="img"></p>
+<p>输⼊：obstacleGrid &#x3D; [[0,0,0],[0,1,0],[0,0,0]]<br>输出：2<br>解释： 3x3 ⽹格的正中间有⼀个障碍物。<br>        从左上⾓到右下⾓⼀共有 2 条不同的路径</p>
+<pre><code>    1. 向右 -&gt; 向右 -&gt; 向下 -&gt; 向下
+    1.  2. 向下 -&gt; 向下 -&gt; 向右 -&gt; 向右
+</code></pre>
+<p>示例2：</p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/04/robot2.jpg" alt="img"></p>
+<p>输⼊：obstacleGrid &#x3D; [[0,1],[0,0]]<br>输出：1</p>
+<p>提示: </p>
+<ul>
+<li>m &#x3D;&#x3D; obstacleGrid.length </li>
+<li>n &#x3D;&#x3D; obstacleGrid[i].length </li>
+<li>1 &lt;&#x3D; m, n &lt;&#x3D; 100 </li>
+<li>obstacleGrid[i][j] 为 0 或 1</li>
+</ul>
+<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><p><strong>62、不同路径</strong>我们已经详细分析了没有障碍的情况，有障碍的话，其实就是标记对应的dp table（dp数组）保持初始值(0)就可以了</p>
+<p>动归五部曲</p>
+<ol>
+<li><p>确定dp数组（dp table）以及下标的含义<br><code>dp[i][j] </code>：表⽰从<code>(0,0)</code>出发，到<code>(i, j)</code> 有<code>dp[i][j]</code>条不同的路径</p>
+</li>
+<li><p>确定递推公式<br>   递推公式和<strong>62、不同路径</strong>⼀样，<code>dp[i][j] = dp[i - 1][j] + dp[i][j - 1]</code>。 但这⾥需要注意⼀点，因为有了障碍，<code>(i, j)</code>如果就是障碍的话应该就保持初始状态（初始状态为0）</p>
+</li>
+</ol>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (obstacleGrid[i][j] == <span class="number">0</span>) &#123; <span class="comment">// 当(i, j)没有障碍的时候，再推导dp[i][j]</span></span><br><span class="line"> dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>dp数组初始化<br>在<strong>62、不同路径</strong>不同路径中我们给出如下的初始化：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化代码</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) dp[<span class="number">0</span>][j] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>因为从(0, 0)的位置到(i, 0)的路径只有⼀条，所以<code>dp[i][0]</code>⼀定为1，<code>dp[0][j]</code>也同理。 但如果(i, 0) 这条边有了障碍之后，障碍之后（包括障碍）都是⾛不到的位置了，所以障碍之后的<code>dp[i][0]</code>应该还是初始值0<br><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221210135849.png"><br>下标(0, j)的初始化情况同理:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化代码</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m &amp;&amp; obstacleGrid[i][<span class="number">0</span>] == <span class="number">0</span>; i++) dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n &amp;&amp; obstacleGrid[<span class="number">0</span>][j] == <span class="number">0</span>; j++) dp[<span class="number">0</span>][j] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>注意代码⾥for循环的终⽌条件，⼀旦遇到<code>obstacleGrid[i][0] == 1</code>的情况就停⽌<code>dp[i][0]</code>的 赋值1的操作，<code>dp[0][j]</code>同理</p>
+</li>
+<li><p>确定遍历顺序<br>从递归公式<code>dp[i][j] = dp[i - 1][j] + dp[i][j - 1] </code>中可以看出，⼀定是从左到右⼀层⼀层遍历， 这样保证推导<code>dp[i][j]</code>的时候，<code>dp[i - 1][j]</code> 和 <code>dp[i][j - 1]</code>⼀定是有数值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">         <span class="keyword">if</span> (obstacleGrid[i][j] == <span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">         dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>];</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>举例推导dp数组<br>拿示例1来举例：<br><img src="https://assets.leetcode.com/uploads/2020/11/04/robot1.jpg" alt="img"></p>
+<p>对应的dp table 如图：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212180859.png"></p>
+</li>
+</ol>
+<h4 id="实现-4"><a href="#实现-4" class="headerlink" title="实现"></a>实现</h4><p>Java代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度O(n * m) n m 分别为obstacleGrid 长度和宽度</span></span><br><span class="line"><span class="comment">// 空间复杂度O(n * m)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">uniquePathsWithObstacles</span><span class="params">(<span class="type">int</span>[][] obstacleGrid)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> obstacleGrid.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> obstacleGrid[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span>[][] dp = <span class="keyword">new</span> <span class="title class_">int</span>[m][n];</span><br><span class="line">        <span class="comment">// 初始化</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j &lt; n &amp;&amp; obstacleGrid[<span class="number">0</span>][j] == <span class="number">0</span>;++j) dp[<span class="number">0</span>][j] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; m &amp;&amp; obstacleGrid[i][<span class="number">0</span>] == <span class="number">0</span>;++i) dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;i &lt; m;++i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>;j &lt; n;++j) &#123;</span><br><span class="line">                <span class="keyword">if</span>(obstacleGrid[i][j] == <span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">                dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="343、整数拆分"><a href="#343、整数拆分" class="headerlink" title="343、整数拆分"></a>343、整数拆分</h3><h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/integer-break/">https://leetcode.cn/problems/integer-break/</a></p>
+<p>给定⼀个正整数 n，将其拆分为⾄少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最⼤乘积。 </p>
+<p>示例1:<br>输⼊: 2<br>输出: 1<br>解释: 2 &#x3D; 1 + 1, 1 × 1 &#x3D; 1。</p>
+<p>示例 2:<br>输⼊: 10<br>输出: 36<br>解释: 10 &#x3D; 3 + 3 + 4, 3 × 3 × 4 &#x3D; 36。 </p>
+<p>提示:</p>
+<ul>
+<li>2 &lt;&#x3D; n &lt;&#x3D; 58</li>
+</ul>
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><p>动规五部曲：</p>
+<ol>
+<li><p>确定dp数组(dp table)以及下标的含义<br><code>dp[i]</code>：分析数字i，可以得到最大乘积为<code>dp[i]</code></p>
+</li>
+<li><p>确定递推公式<br>考虑<code>dp[i]</code>的最大乘积如何得到？<br>其实可以从1 遍历到 j，然后存在两种渠道得到<code>dp[i]</code></p>
+<ul>
+<li><code>j * (i - j)</code></li>
+<li><code>j * dp[i - j]</code> &#x3D;&gt; 相当于是拆分<code>i - j</code></li>
+</ul>
+<blockquote>
+<p>j 从1 开始遍历，拆分 j 的情况在遍历 j 的过程中已经计算过了 &#x3D;&gt; j 无需拆分</p>
+</blockquote>
+</li>
+</ol>
+<p>​		&#x3D;&gt; <code>dp[i] = Math.max(dp[i],Math.max((i - j) * j,dp[i - j] * j))</code></p>
+<ol start="3">
+<li><p>dp的初始化</p>
+<blockquote>
+<p>有的题解⾥会给出<code>dp[0] = 1，dp[1] = 1</code>的初始化，但解释⽐较牵强，主要还是因为这么初始 化可以把题目过了。 严格从<strong>dp[i]的定义</strong>来说，<strong>dp[0] dp[1] 就不应该初始化</strong>，也就是没有意义的数值。 拆分0和拆分1的最⼤乘积是多少？ 这是⽆解的。</p>
+</blockquote>
+</li>
+</ol>
+<p>​	&#x3D;&gt; 初始化：dp[2] &#x3D; 1</p>
+<ol start="4">
+<li><p>确定遍历顺序<br>根据递推公式： <code>dp[i] = Math.max(dp[i],Math.max((i - j) * j,dp[i - j] * j))</code><br><code>dp[i] </code>是依靠 <code>dp[i - j]</code>的状态，所以遍历 i ⼀定是从前向后遍历，先有<code>dp[i - j]</code>再有<code>dp[i]</code>。 枚举 j 的时候，是从1开始的。i 是从 3 开始，这样<code>dp[i - j]</code>就是<code>dp[2]</code>正好可以通过我们初始化 的数值求出来</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>; i &lt;= n ; i++) &#123;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">     	dp[i] = Math.max(dp[i], max((i - j) * j, dp[i - j] * j));</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>举例推导dp数组<br>当<code>n = 10</code>时，dp数组：<br><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212183342.png"></p>
+</li>
+</ol>
+<h4 id="实现-5"><a href="#实现-5" class="headerlink" title="实现"></a>实现</h4><p>Java代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度：O(n^2)</span></span><br><span class="line"><span class="comment">// 空间复杂度：O(n)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">integerBreak</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>;i &lt;= n;++i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>;j &lt; i - <span class="number">1</span>;++j) &#123;</span><br><span class="line">                dp[i] = Math.max(dp[i],Math.max((i - j) * j,dp[i - j] * j));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="96-不同的二叉搜索树"><a href="#96-不同的二叉搜索树" class="headerlink" title="96 不同的二叉搜索树"></a>96 不同的二叉搜索树</h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-binary-search-trees/">https://leetcode.cn/problems/unique-binary-search-trees/</a></p>
+<p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 二叉搜索树 有多少种？返回满足题意的二叉搜索树的种数</p>
+<p>示例1 ：</p>
+<p><img src="https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg" alt="img"></p>
+<p>输入：n &#x3D; 3<br>输出：5</p>
+<p>示例2：<br>输入：n &#x3D; 1<br>输出：1</p>
+<p>提示：</p>
+<ul>
+<li>1 &lt;&#x3D; n &lt;&#x3D; 19</li>
+</ul>
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><p>了解了⼆叉搜索树之后，先举⼏个例⼦，画画图，看看有没有什么规律</p>
+<ul>
+<li><p>n为1的时候有⼀棵树，n为2有两棵树<br><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212185918.png"></p>
+</li>
+<li><p>n为3的时候<br><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212190034.png"></p>
+<ul>
+<li><p>当1为头结点的时候，其右子树有两个节点，这两个节点的布局和 n 为2的时候两棵树的布局是⼀样的</p>
+<blockquote>
+<p>要求不同树的数量，并不用把搜索树都列出来，所以不用关心其具体数值的差异</p>
+</blockquote>
+</li>
+<li><p>当3为头结点的时候，其左子树有两个节点，这两个节点的布局和n为2的时候两棵树的布局是⼀样的</p>
+</li>
+<li><p>当2位头结点的时候，其左右⼦树都只有⼀个节点，这两个节点布局和n为1的时候只有⼀棵树的 布局是⼀样的</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x3D;&gt;</p>
+<ul>
+<li><p><code>dp[3]</code> &#x3D;&gt; 元素1为头节点搜索树的数量  + 元素2为头节点搜索树的数量 + 元素3为头节点搜索树的数量</p>
+<ul>
+<li>元素1为头节点搜索树的数量 &#x3D;&gt; 右子树有2个元素的搜索树数量 * 左子树有0个元素的搜索树数量 &#x3D;&gt; dp[2] * dp[0]</li>
+<li>元素2为头节点搜索树的数量 &#x3D;&gt; 右子树有1个元素的搜索树数量 * 左子树有1个元素的搜索树数量 &#x3D;&gt; dp[1] * dp[1]</li>
+<li>元素3为头节点搜索树的数量 &#x3D;&gt; 右子树有0个元素的搜索树数量 * 左子树有2个元素的搜索树数量 &#x3D;&gt; dp[0] * dp[2]</li>
+</ul>
+<p>&#x3D;&gt; dp[3] &#x3D; dp[2] * dp[0] + dp[1] * dp[1] + dp[0] * dp[2]<br><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212191758.png"></p>
+</li>
+</ul>
+<p>动规五部曲</p>
+<ol>
+<li><p>确定dp数组(dp table)以及下标的含义<br><code>dp[i]</code>： 1 到 i 为节点组成的⼆叉搜索树的个数为<code>dp[i]</code>。</p>
+</li>
+<li><p>确定递推公式<br><code>dp[i] += dp[以j为头结点左⼦树节点数量] * dp[以j为头结点右⼦树节点数量] </code><br> j 相当于是头结点的元素，从1遍历到 i 为止。<br>&#x3D;&gt; 递推公式：<code>dp[i] += dp[j - 1] * dp[i - j]</code>; ，j-1 为 j 为头结点左⼦树节点数量，i - j 为以 j 为 头结点右⼦树节点数量</p>
+</li>
+<li><p>dp数组初始化<br>初始化只需要初始化dp[0]即可，递推的基础都是dp[0]</p>
+<ul>
+<li>从定义上来讲，空节点也是⼀颗⼆叉树，也是⼀颗⼆叉搜索树</li>
+<li>从递推公式上来讲，dp[以j为头结点左⼦树节点数量] * dp[以j为头结点右⼦树节点数量] 中 以j为头结点左⼦树节点数量为0，也需要dp[以j为头结点左⼦树节点数量] &#x3D; 1， 否则乘法的结果就都变成0了</li>
+</ul>
+<p>&#x3D;&gt; <code>dp[0] = 1</code></p>
+</li>
+<li><p>确定遍历顺序<br>首先一定是遍历节点数，从递推公式<code>dp[i] += dp[j - 1] * dp[i - j]</code>可以看出，节点数为 i 的状态是依赖 i 之前节点数的状态 &#x3D;&gt; 遍历 i 里面每一个书作为头节点的状态，用 j 来遍历</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">     <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">     	dp[i] += dp[j - <span class="number">1</span>] * dp[i - j];</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>举例推导dp数组<br>n &#x3D; 5时的dp数组状态：<br><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/20221212200337.png"></p>
+</li>
+</ol>
+<h4 id="实现-6"><a href="#实现-6" class="headerlink" title="实现"></a>实现</h4><p>Java代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间复杂度O(n^2)</span></span><br><span class="line"><span class="comment">// 空间复杂度O(n)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numTrees</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;i &lt;= n;++i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>;j &lt;= i;++j) &#123;</span><br><span class="line">                dp[i] += dp[j - <span class="number">1</span>] * dp[i - j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          CodeJuzi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://dingxinliang88.github.io/2022/12/16/算法学习之路-动态规划篇之基础篇/" title="算法学习之路 -- 动态规划篇之基础篇" target="_blank">http://dingxinliang88.github.io/2022/12/16/算法学习之路-动态规划篇之基础篇/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://dingxinliang88.github.io/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/12/12/Source%E6%B1%87%E6%80%BB%E9%9A%8F%E7%AC%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Source汇总随笔</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -327,9 +958,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

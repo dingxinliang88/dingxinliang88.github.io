@@ -231,6 +231,173 @@
             
 
   
+    <article id="post-算法学习之路-动态规划篇之基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" target="_blank">算法学习之路 -- 动态规划篇之基础篇</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
+        <time datetime="2022-12-16T01:37:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="算法学习之路–动态规划篇之基础篇"><a href="#算法学习之路–动态规划篇之基础篇" class="headerlink" title="算法学习之路–动态规划篇之基础篇"></a>算法学习之路–动态规划篇之基础篇</h1><!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a target="_blank" rel="noopener" href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+<ul>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF--%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87">算法学习之路–动态规划篇之基础篇</a><ul>
+<li><a href="#%E4%B8%80%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80">一、动态规划理论基础</a><ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">什么是动态规划</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4">动态规划解题步骤</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95debug">动态规划应该如何debug</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%85%B8%E5%9E%8B%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90">二、典型例题解析</a><ul>
+<li><a href="#509%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0">509、斐波那契数</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a></li>
+<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
+</ul>
+</li>
+<li><a href="#70%E7%88%AC%E6%A5%BC%E6%A2%AF">70、爬楼梯</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-1">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-1">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-1">实现</a></li>
+</ul>
+</li>
+<li><a href="#746%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF">746、使用最小花费爬楼梯</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-2">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-2">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-2">实现</a></li>
+<li><a href="#%E6%89%A9%E5%B1%95">扩展</a></li>
+</ul>
+</li>
+<li><a href="#62%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84">62、不同路径</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-3">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-3">思路</a><ul>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2">深度优先搜索</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">动态规划</a></li>
+<li><a href="#%E6%95%B0%E8%AE%BA">数论</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-3">实现</a><ul>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-1">深度优先搜索</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-1">动态规划</a></li>
+<li><a href="#%E6%95%B0%E8%AE%BA-1">数论</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#63%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84ii">63、不同路径<strong>II</strong></a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-4">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-4">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-4">实现</a></li>
+</ul>
+</li>
+<li><a href="#343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86">343、整数拆分</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-5">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-5">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-5">实现</a></li>
+</ul>
+</li>
+<li><a href="#96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91">96 不同的二叉搜索树</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-6">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-6">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-6">实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+    
+    <a class="article-more-a" href="/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Source汇总随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -573,6 +740,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">greedy</a>
         		</li>
       		
 		</ul>
@@ -1175,19 +1346,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Source</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">essays</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1204,6 +1375,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
               </li>
             
             <div class="clearfix"></div>

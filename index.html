@@ -231,6 +231,256 @@
             
 
   
+    <article id="post-算法学习之路-动态规划篇之专项练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/12/21/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" target="_blank">算法学习之路 -- 动态规划篇之专项练习</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/12/21/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" class="archive-article-date">
+        <time datetime="2022-12-21T06:48:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a target="_blank" rel="noopener" href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+<ul>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF--%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0">算法学习之路–动态规划篇之专项练习</a><ul>
+<li><a href="#%E4%B8%80leetcode%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE%E8%A7%A3%E6%9E%90">一、LeetCode经典题目解析</a><ul>
+<li><a href="#198%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D">198、打家劫舍</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a></li>
+</ul>
+</li>
+<li><a href="#213%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8Dii">213、打家劫舍II</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-1">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-1">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-1">实现</a></li>
+</ul>
+</li>
+<li><a href="#337%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8Diii">337、打家劫舍III</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-2">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-2">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-2">实现</a></li>
+</ul>
+</li>
+<li><a href="#121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA">121、买卖股票的最佳时机</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-3">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-3">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-3">实现</a></li>
+</ul>
+</li>
+<li><a href="#122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAii">122 买卖股票的最佳时机II</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-4">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-4">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-4">实现</a></li>
+</ul>
+</li>
+<li><a href="#123%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAiii">123、买卖股票的最佳时机III</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-5">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-5">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-5">实现</a></li>
+</ul>
+</li>
+<li><a href="#188%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAiv">188、买卖股票的最佳时机IV</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-6">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-6">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-6">实现</a></li>
+</ul>
+</li>
+<li><a href="#309%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F">309、最佳买卖股票时机含冷冻期</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-7">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-7">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-7">实现</a></li>
+</ul>
+</li>
+<li><a href="#714%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E6%89%8B%E7%BB%AD%E8%B4%B9">714、最佳买卖股票时机含手续费</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-8">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-8">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-8">实现</a></li>
+</ul>
+</li>
+<li><a href="#300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97">300、最长递增子序列</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-9">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-9">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-9">实现</a></li>
+</ul>
+</li>
+<li><a href="#674%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E9%80%92%E5%A2%9E%E5%BA%8F%E5%88%97">674、最长连续递增序列</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-10">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-10">思路</a><ul>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">动态规划</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83">贪心</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-10">实现</a><ul>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-1">动态规划</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83-1">贪心</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#718%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E6%95%B0%E7%BB%84">718、最长重复子数组</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-11">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-11">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-11">实现</a></li>
+</ul>
+</li>
+<li><a href="#1143%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">1143、最长公共子序列</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-12">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-12">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-12">实现</a></li>
+</ul>
+</li>
+<li><a href="#1035%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E7%BA%BF">1035、不相交的线</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-13">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-13">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-13">实现</a></li>
+</ul>
+</li>
+<li><a href="#53%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C">53、最大子序和</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-14">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-14">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-14">实现</a></li>
+</ul>
+</li>
+<li><a href="#392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97">392、判断子序列</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-15">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-15">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-15">实现</a></li>
+</ul>
+</li>
+<li><a href="#115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97">115、不同的子序列</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-16">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-16">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-16">实现</a></li>
+</ul>
+</li>
+<li><a href="#583%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C">583、两个字符串的删除操作</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-17">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-17">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-17">实现</a></li>
+</ul>
+</li>
+<li><a href="#72%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">72、编辑距离</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-18">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-18">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-18">实现</a></li>
+</ul>
+</li>
+<li><a href="#647%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2">647、回文子串</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-19">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-19">思路</a><ul>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-2">动态规划</a></li>
+<li><a href="#%E5%8F%8C%E6%8C%87%E9%92%88">双指针</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-19">实现</a><ul>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-3">动态规划</a></li>
+<li><a href="#%E5%8F%8C%E6%8C%87%E9%92%88-1">双指针</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97">516、最长回文子序列</a><ul>
+<li><a href="#%E9%A2%98%E7%9B%AE-20">题目</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF-20">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0-20">实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%80%BB%E7%BB%93%E7%AF%87">二、动态规划总结篇</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+    
+    <a class="article-more-a" href="/2022/12/21/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/21/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法学习之路-动态规划篇之背包问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1435,93 +1685,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
   
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/11/24/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/11/24/hello-world/" class="archive-article-date">
-        <time datetime="2022-11-24T11:47:29.455Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/11/24/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1672,19 +1839,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1696,15 +1863,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Source</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">essays</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">

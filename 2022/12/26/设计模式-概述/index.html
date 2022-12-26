@@ -6,20 +6,43 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingxinliang88.github.io">
-  <title>Tag: Algorithm | 橘子的博客日常</title>
+  <title>设计模式--概述 | 橘子的博客日常</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一个计算机科班生的博客日常">
-<meta property="og:type" content="website">
-<meta property="og:title" content="橘子的博客日常">
-<meta property="og:url" content="http://dingxinliang88.github.io/tags/Algorithm/index.html">
+  <meta name="description" content="Table of Contents  generated with DocToc  一、设计模式总体把握 1.1 软件设计模式概念 1.2 学习设计模式的必要性 1.3 设计模式分类   二、UML图 2.1 类图概述 2.2 类图的作用 2.3 类图表示法 2.3.1 类的表示方法 2.3.2 类和类之间关系的表示方式 1、一般关联关系 2、聚合关系 3、组合关系 4、依赖关系 5、继承关系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式--概述">
+<meta property="og:url" content="http://dingxinliang88.github.io/2022/12/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="橘子的博客日常">
-<meta property="og:description" content="一个计算机科班生的博客日常">
+<meta property="og:description" content="Table of Contents  generated with DocToc  一、设计模式总体把握 1.1 软件设计模式概念 1.2 学习设计模式的必要性 1.3 设计模式分类   二、UML图 2.1 类图概述 2.2 类图的作用 2.3 类图表示法 2.3.1 类的表示方法 2.3.2 类和类之间关系的表示方式 1、一般关联关系 2、聚合关系 3、组合关系 4、依赖关系 5、继承关系">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Employee.jpg">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/demo.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/customer_address.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/customer_product.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/node.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173422328.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173455149.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173518926.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173539838.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173554296.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/open-close.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E6%98%AF%E9%95%BF%E6%96%B9%E5%BD%A2.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E6%98%AF%E9%95%BF%E6%96%B9%E5%BD%A2%E6%94%B9%E8%BF%9B.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99%E6%94%B9%E8%BF%9B.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%991.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99.png">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%991.png">
+<meta property="article:published_time" content="2022-12-26T13:12:07.000Z">
+<meta property="article:modified_time" content="2022-12-26T13:13:19.200Z">
 <meta property="article:author" content="CodeJuzi">
-<meta property="article:tag" content="笔记 &amp;&amp; 博客 &amp;&amp; 讨论">
+<meta property="article:tag" content="DesignPattern">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Employee.jpg">
   
     <link rel="alternative" href="/atom.xml" title="橘子的博客日常" type="application/atom+xml">
   
@@ -224,226 +247,526 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-设计模式-概述" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/12/21/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-        <time datetime="2022-12-21T06:48:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/12/21/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" target="_blank">算法学习之路 -- 动态规划篇之专项练习</a>
   
+    <h1 class="article-title" itemprop="name">
+      设计模式--概述
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/12/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A6%82%E8%BF%B0/" class="archive-article-date">
+        <time datetime="2022-12-26T13:12:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-26</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">5.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">20分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a target="_blank" rel="noopener" href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+<ul>
+<li><a href="#%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E4%BD%93%E6%8A%8A%E6%8F%A1">一、设计模式总体把握</a><ul>
+<li><a href="#11-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E5%BF%B5">1.1 软件设计模式概念</a></li>
+<li><a href="#12-%E5%AD%A6%E4%B9%A0%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%BF%85%E8%A6%81%E6%80%A7">1.2 学习设计模式的必要性</a></li>
+<li><a href="#13-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB">1.3 设计模式分类</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8Cuml%E5%9B%BE">二、UML图</a><ul>
+<li><a href="#21-%E7%B1%BB%E5%9B%BE%E6%A6%82%E8%BF%B0">2.1 类图概述</a></li>
+<li><a href="#22-%E7%B1%BB%E5%9B%BE%E7%9A%84%E4%BD%9C%E7%94%A8">2.2 类图的作用</a></li>
+<li><a href="#23-%E7%B1%BB%E5%9B%BE%E8%A1%A8%E7%A4%BA%E6%B3%95">2.3 类图表示法</a><ul>
+<li><a href="#231-%E7%B1%BB%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95">2.3.1 类的表示方法</a></li>
+<li><a href="#232-%E7%B1%BB%E5%92%8C%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F">2.3.2 类和类之间关系的表示方式</a><ul>
+<li><a href="#1%E4%B8%80%E8%88%AC%E5%85%B3%E8%81%94%E5%85%B3%E7%B3%BB">1、一般关联关系</a></li>
+<li><a href="#2%E8%81%9A%E5%90%88%E5%85%B3%E7%B3%BB">2、聚合关系</a></li>
+<li><a href="#3%E7%BB%84%E5%90%88%E5%85%B3%E7%B3%BB">3、组合关系</a></li>
+<li><a href="#4%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB">4、依赖关系</a></li>
+<li><a href="#5%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB">5、继承关系</a></li>
+<li><a href="#6%E5%AE%9E%E7%8E%B0%E5%85%B3%E7%B3%BB">6、实现关系</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99">三、软件设计原则</a><ul>
+<li><a href="#31-%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99">3.1 开闭原则</a></li>
+<li><a href="#32-%E9%87%8C%E6%B0%8F%E4%BB%A3%E6%8D%A2%E5%8E%9F%E5%88%99">3.2 里氏代换原则</a></li>
+<li><a href="#33-%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99">3.3 依赖倒转原则</a></li>
+<li><a href="#34-%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99">3.4 接口隔离原则</a></li>
+<li><a href="#35-%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99">3.5 迪米特法则</a></li>
+<li><a href="#36-%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99">3.6 合成复用原则</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<span id="more"></span>
+
+<blockquote>
+<p>教程资源：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Np4y1z7BU">https://www.bilibili.com/video/BV1Np4y1z7BU</a></p>
+</blockquote>
+<h1 id="一、设计模式总体把握"><a href="#一、设计模式总体把握" class="headerlink" title="一、设计模式总体把握"></a>一、设计模式总体把握</h1><h2 id="1-1-软件设计模式概念"><a href="#1-1-软件设计模式概念" class="headerlink" title="1.1 软件设计模式概念"></a>1.1 软件设计模式概念</h2><p>1）软件设计模式（Software Design Pattern），又称设计模式，是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的<strong>总结</strong></p>
+<p>2）它描述了在软件设计过程中的一些不断重复发生的<strong>问题</strong>，以及该问题的<strong>解决方案</strong></p>
+<h2 id="1-2-学习设计模式的必要性"><a href="#1-2-学习设计模式的必要性" class="headerlink" title="1.2 学习设计模式的必要性"></a>1.2 学习设计模式的必要性</h2><p>1）设计模式的本质：</p>
+<ul>
+<li><strong>面向对象</strong>设计原则的实际运用</li>
+<li>对类的<strong>封装</strong>性、<strong>继承</strong>性和<strong>多态</strong>性以及类的<strong>关联关系</strong>和<strong>组合关系</strong>的充分理解</li>
+</ul>
+<p>2）正确使用设计模式的优点</p>
+<ul>
+<li>提高开发人员的思维能力、编程能力和设计能力</li>
+<li>使程序设计更加标准化、代码编制更加工程化，使软件开发效率大大提高，从而缩短软件的开发周期</li>
+<li>使设计的代码可重用性高、可读性强、可靠性高、灵活性好、可维护性强</li>
+</ul>
+<h2 id="1-3-设计模式分类"><a href="#1-3-设计模式分类" class="headerlink" title="1.3 设计模式分类"></a>1.3 设计模式分类</h2><p>1）<strong>创建型模式</strong></p>
+<ul>
+<li>用于描述“怎样创建对象”</li>
+<li>主要特点：将对象的创建与使用分离</li>
+<li>种类：单例、原型、工厂方法、抽象工厂、建造者</li>
+</ul>
+<p>2）<strong>结构型模式</strong></p>
+<ul>
+<li>用于描述如何将类或者对象按某种布局组成更大的结构</li>
+<li>种类：代理、适配器、桥接、装饰、外观、享元、组合</li>
+</ul>
+<p>3）<strong>行为型模式</strong></p>
+<ul>
+<li>用于描述类或者对象之间怎么相互写作共同完成单个对象无法单独完成的任务，以及怎样分配职责</li>
+<li>类别：模板方法、策略、命令、职责链、状态、观察者、中介者、迭代器、访问者、备忘录、解释器</li>
+</ul>
+<h1 id="二、UML图"><a href="#二、UML图" class="headerlink" title="二、UML图"></a>二、UML图</h1><p>统一建模语言（Unified Modeling Language，UML）是用来设计软件的可视化建模语言。它的特点是简单、统一、图形化、能表达软件设计中的动态与静态信息</p>
+<p>UML 从目标系统的不同角度出发，定义了用例图、<strong>类图</strong>、对象图、状态图、活动图、时序图、协作图、构件图、部署图等 9 种图</p>
+<h2 id="2-1-类图概述"><a href="#2-1-类图概述" class="headerlink" title="2.1 类图概述"></a>2.1 类图概述</h2><p>类图(Class diagram)是显示了<strong>模型的静态结构</strong>，特别是模型中存在的类、类的内部结构以及它们与其他类的关系等。类图不显示暂时性的信息。<strong>类图是面向对象建模的主要组成部分</strong>。</p>
+<h2 id="2-2-类图的作用"><a href="#2-2-类图的作用" class="headerlink" title="2.2 类图的作用"></a>2.2 类图的作用</h2><p>1）在软件工程中，类图是一种静态的结构图，描述了系统的类的集合，类的属性和类之间的关系，可以简化了人们对系统的理解</p>
+<p>2）类图是系统分析和设计阶段的重要产物，是系统编码和测试的重要模型</p>
+<p>&#x3D;&gt; <strong>以可视化的方式展示分析设计结果</strong></p>
+<h2 id="2-3-类图表示法"><a href="#2-3-类图表示法" class="headerlink" title="2.3 类图表示法"></a>2.3 类图表示法</h2><h3 id="2-3-1-类的表示方法"><a href="#2-3-1-类的表示方法" class="headerlink" title="2.3.1 类的表示方法"></a>2.3.1 类的表示方法</h3><p>在UML类图中，类使用包含类名、属性(field) 和方法(method) 且带有分割线的<strong>矩形</strong>来表示</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Employee.jpg" alt="Employee"></p>
+<p>比如上图表示一个<code>Employee</code>类，它包含<code>name</code>,<code>age</code>和<code>address</code>这3个属性，以及<code>work()</code>方法</p>
+<p>1）<strong>属性&#x2F;方法</strong>名称前加的<strong>加号</strong>和<strong>减号</strong>表示了这个属性&#x2F;方法的<strong>可见性</strong>，UML类图中表示可见性的符号有三种：</p>
+<ul>
+<li><code>+</code>  &#x3D;&gt; <code>public</code></li>
+<li><code>-</code> &#x3D;&gt; <code>private</code></li>
+<li><code>#</code> &#x3D;&gt; <code>protected</code></li>
+</ul>
+<p>2）属性的完整表示方法：<strong>可见性 名称: 类型[&#x3D; 缺省值]</strong></p>
+<p>3）方法的完整表示方法：<strong>可见性 名称(参数列表)[: 返回类型]</strong></p>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>中括号中的内容表示是可选的</li>
+<li>也有将类型放在变量名前面，返回值类型放在方法名前面</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>举个栗子：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/demo.png" alt="demo"></p>
+<p>上图Demo类定义了三个方法：</p>
+<ul>
+<li><code>method()</code>方法：修饰符为<code>public</code>，没有参数，没有返回值</li>
+<li><code>method1()</code>方法：修饰符为<code>private</code>，没有参数，返回值类型为<code>String</code></li>
+<li><code>method2()</code>方法：修饰符为<code>protected</code>，接收两个参数，第一个参数类型为<code>int</code>，第二个参数类型为<code>String</code>，返回值类型是<code>int</code></li>
+</ul>
+</blockquote>
+<h3 id="2-3-2-类和类之间关系的表示方式"><a href="#2-3-2-类和类之间关系的表示方式" class="headerlink" title="2.3.2 类和类之间关系的表示方式"></a>2.3.2 类和类之间关系的表示方式</h3><p><strong>关联关系</strong>是对象之间的一种引用关系，用于表示一类对象与另一类对象之间的联系，<em>比如老师和学生、师傅和徒弟、丈夫和妻子等。</em></p>
+<p>关联关系是类和类之间最常用的一种关系，分为：</p>
+<ul>
+<li>一般关联关系<ul>
+<li>单向关联</li>
+<li>双线关联</li>
+<li>自关联</li>
+</ul>
+</li>
+<li>聚合关系</li>
+<li>组合关系</li>
+<li>依赖关系</li>
+<li>继承关系</li>
+<li>实现关系</li>
+</ul>
+<h4 id="1、一般关联关系"><a href="#1、一般关联关系" class="headerlink" title="1、一般关联关系"></a>1、一般关联关系</h4><p>1）<strong>单向关联</strong></p>
+<p>在UML类图中单向关联用一个<strong>带箭头的实线</strong>表示。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/customer_address.png" alt="customer_address"></p>
+<p>上图表示每个顾客都有一个地址，这通过让<code>Customer</code>类持有一个类型为<code>Address</code>的成员变量类实现。</p>
+<p>2）<strong>双向关联</strong></p>
+<p>在UML类图中，双向关联用一个<strong>不带箭头的直线</strong>表示。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/customer_product.png" alt="customer_product"></p>
+<blockquote>
+<p>从上图中很容易看出，所谓的双向关联就是<strong>双方各自持有对方类型的成员变量</strong></p>
+</blockquote>
+<p>上图中在<code>Customer</code>类中维护一个<code>List\&lt;Product&gt;</code>，表示一个顾客可以购买多个商品；在<code>Product</code>类中维护一个<code>Customer</code>类型的成员变量表示这个产品被哪个顾客所购买。</p>
+<p>3）<strong>自关联</strong></p>
+<p>自关联在UML类图中用一个<strong>带有箭头且指向自身的线</strong>表示。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/node.png" alt="node"></p>
+<p>上图的意思就是<code>Node</code>类包含类型为<code>Node</code>的成员变量，也就是“自己包含自己”。</p>
+<h4 id="2、聚合关系"><a href="#2、聚合关系" class="headerlink" title="2、聚合关系"></a>2、聚合关系</h4><p>聚合关系是关联关系的一种，是<strong>强关联关系</strong>，是整体和部分之间的关系</p>
+<p>聚合关系也是通过成员对象来实现的，其中成员对象是整体对象的一部分，但是成员对象可以脱离整体对象而独立存在。<em>例如，学校与老师的关系，学校包含老师，但如果学校停办了，老师依然存在。</em></p>
+<p>在 UML 类图中，聚合关系可以用<strong>带空心菱形的实线</strong>来表示，<strong>菱形指向整体</strong>。</p>
+<p>下图所示是大学和教师的关系图：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173422328.png" alt="image-20191229173422328"></p>
+<h4 id="3、组合关系"><a href="#3、组合关系" class="headerlink" title="3、组合关系"></a>3、组合关系</h4><p>组合关系表示类之间的整体和部分的关系，但它是一种<strong>更强烈的聚合关系</strong></p>
+<p>在组合关系中，整体对象可以控制部分对象的生命周期，一旦整体对象不存在，部分对象也将不存在，部分对象不能脱离整体对象而存在。<em>例如，头和嘴的关系，没有了头，嘴也就不存在了。</em></p>
+<p>在 UML 类图中，组合关系用<strong>带实心菱形的实线</strong>来表示，<strong>菱形指向整体</strong>。</p>
+<p>下图所示是头和嘴的关系图：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173455149.png" alt="image-20191229173455149"></p>
+<h4 id="4、依赖关系"><a href="#4、依赖关系" class="headerlink" title="4、依赖关系"></a>4、依赖关系</h4><p>依赖关系是一种使用关系，它是对象之间<strong>耦合度最弱</strong>的一种关联方式，是<strong>临时性的关联</strong>。</p>
+<p>在代码中，某个类的方法通过局部变量、方法的参数或者对静态方法的调用来访问另一个类（被依赖类）中的某些方法来完成一些职责。</p>
+<p>在 UML 类图中，依赖关系使用<strong>带箭头的虚线</strong>来表示，<strong>箭头从使用类指向被依赖的类</strong>。</p>
+<p>下图所示是司机和汽车的关系图，司机驾驶汽车：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173518926.png" alt="image-20191229173518926"></p>
+<h4 id="5、继承关系"><a href="#5、继承关系" class="headerlink" title="5、继承关系"></a>5、继承关系</h4><p>继承关系是对象之间<strong>耦合度最大</strong>的一种关系，表示一般与特殊的关系，<em>比如父类与子类之间的关系，是一种继承关系。</em></p>
+<p>在 UML 类图中，泛化关系用<strong>带空心三角箭头的实线</strong>来表示，箭头从子类指向父类。在代码实现时，使用面向对象的继承机制来实现泛化关系。</p>
+<p>例如，<code>Student </code>类和 <code>Teacher </code>类都是 <code>Person </code>类的子类，其类图如下图所示：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173539838.png" alt="image-20191229173539838"></p>
+<h4 id="6、实现关系"><a href="#6、实现关系" class="headerlink" title="6、实现关系"></a>6、实现关系</h4><p>实现关系是接口与实现类之间的关系。在这种关系中，类实现了接口，类中的操作实现了接口中所声明的所有的抽象操作。</p>
+<p>在 UML 类图中，实现关系使用<strong>带空心三角箭头的虚线</strong>来表示，<strong>箭头从实现类指向接口</strong>。</p>
+<p>例如，汽车和船实现了交通工具，其类图下图所示：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20191229173554296.png" alt="image-20191229173554296"></p>
+<h1 id="三、软件设计原则"><a href="#三、软件设计原则" class="headerlink" title="三、软件设计原则"></a>三、软件设计原则</h1><p>在软件开发中，为了提高软件系统的<strong>可维护性</strong>和<strong>可复用性</strong>，增加软件的可扩展性和灵活性，开发人员要尽量根据6条原则来开发程序，从而提高软件开发效率、节约软件开发成本和维护成本。</p>
+<h2 id="3-1-开闭原则"><a href="#3-1-开闭原则" class="headerlink" title="3.1 开闭原则"></a>3.1 开闭原则</h2><p><strong>开闭原则：对扩展开放，对修改关闭</strong></p>
+<p>在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。简言之，是为了使程序的扩展性好，易于维护和升级。</p>
+<p>想要达到这样的效果，我们需要使用<strong>接口</strong>和<strong>抽象类</strong>。因为抽象灵活性好，适应性广，只要抽象的合理，可以基本保持软件架构的稳定。而软件中易变的细节可以从抽象派生来的实现类来进行扩展，当软件需要发生变化时，只需要根据需求重新派生一个实现类来扩展就可以了。</p>
+<p>【例子】：<code>搜狗输入法</code>的皮肤设计</p>
+<p>【分析】<code>搜狗输入法</code> 的皮肤是输入法背景图片、窗口颜色和声音等元素的组合。用户可以根据自己的喜爱更换自己的输入法的皮肤，也可以从网上下载新的皮肤。这些皮肤有共同的特点，可以为其定义一个抽象类（<code>AbstractSkin</code>），而每个具体的皮肤（<code>DefaultSpecificSkin</code>和<code>HeimaSpecificSkin</code>）是其子类。用户窗体可以根据需要选择或者增加新的主题，而不需要修改原代码，所以它是满足开闭原则的。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/open-close.png" alt="open-close"></p>
+<h2 id="3-2-里氏代换原则"><a href="#3-2-里氏代换原则" class="headerlink" title="3.2 里氏代换原则"></a>3.2 里氏代换原则</h2><p><strong>里氏代换原则：任何基类可以出现的地方，子类一定可以出现。</strong></p>
+<p>通俗理解：子类可以扩展父类的功能，但不能改变父类原有的功能。换句话说，子类继承父类时，除添加新的方法完成新增功能外，尽量不要重写父类的方法。</p>
+<p>如果通过重写父类的方法来完成新的功能，这样写起来虽然简单，但是整个继承体系的可复用性会比较差，特别是运用多态比较频繁时，程序运行出错的概率会非常大。</p>
+<p>【例子】正方形不是长方形</p>
+<p>在数学领域里，正方形毫无疑问是长方形，它是一个长宽相等的长方形。所以，我们开发的一个与几何图形相关的软件系统，就可以顺理成章的让正方形继承自长方形。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E6%98%AF%E9%95%BF%E6%96%B9%E5%BD%A2.png" alt="正方形不是长方形"></p>
+<p>【代码】</p>
+<p><strong>长方形类（Rectangle）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> length;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> width;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getLength</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setLength</span><span class="params">(<span class="type">double</span> length)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.length = length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getWidth</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> width;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setWidth</span><span class="params">(<span class="type">double</span> width)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.width = width;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>正方形（Square）：</strong></p>
+<p>由于正方形的长和宽相同，所以在方法setLength和setWidth中，对长度和宽度都需要赋相同值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Square</span> <span class="keyword">extends</span> <span class="title class_">Rectangle</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setWidth</span><span class="params">(<span class="type">double</span> width)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.setLength(width);</span><br><span class="line">        <span class="built_in">super</span>.setWidth(width);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setLength</span><span class="params">(<span class="type">double</span> length)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.setLength(length);</span><br><span class="line">        <span class="built_in">super</span>.setWidth(length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类RectangleDemo是我们的软件系统中的一个组件，它有一个resize方法依赖基类Rectangle，resize方法是RectandleDemo类中的一个方法，用来实现宽度逐渐增长的效果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RectangleDemo</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">resize</span><span class="params">(Rectangle rectangle)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (rectangle.getWidth() &lt;= rectangle.getLength()) &#123;</span><br><span class="line">            rectangle.setWidth(rectangle.getWidth() + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打印长方形的长和宽</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printLengthAndWidth</span><span class="params">(Rectangle rectangle)</span> &#123;</span><br><span class="line">        System.out.println(rectangle.getLength());</span><br><span class="line">        System.out.println(rectangle.getWidth());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Rectangle</span> <span class="variable">rectangle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>();</span><br><span class="line">        rectangle.setLength(<span class="number">20</span>);</span><br><span class="line">        rectangle.setWidth(<span class="number">10</span>);</span><br><span class="line">        resize(rectangle);</span><br><span class="line">        printLengthAndWidth(rectangle);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;============&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Rectangle</span> <span class="variable">rectangle1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Square</span>();</span><br><span class="line">        rectangle1.setLength(<span class="number">10</span>);</span><br><span class="line">        resize(rectangle1);</span><br><span class="line">        printLengthAndWidth(rectangle1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行代码发现：</p>
+<ul>
+<li>假如我们把一个普通长方形作为参数传入<code>resize()</code>方法，就会看到长方形宽度逐渐增长的效果，当宽度大于长度,代码就会停止，这种行为的结果符合我们的预期；</li>
+<li>假如我们再把一个正方形作为参数传入resize方法后，就会看到正方形的宽度和长度都在不断增长，代码会一直运行下去，直至系统产生溢出错误。</li>
+</ul>
+<p>&#x3D;&gt; 在<code>resize()</code>方法中，<code>Rectangle</code>类型的参数是不能被<code>Square</code>类型的参数所代替，如果进行了替换就得不到预期结果。因此，<code>Square</code>类和<code>Rectangle</code>类之间的继承关系违反了里氏代换原则，它们之间的继承关系不成立，正方形不是长方形。</p>
+<p>【改进】重新设计它们的关系：抽象出来一个四边形接口(<code>Quadrilateral</code>)，让<code>Rectangle</code>类和<code>Square</code>类实现<code>Quadrilateral</code>接口</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E6%98%AF%E9%95%BF%E6%96%B9%E5%BD%A2%E6%94%B9%E8%BF%9B.png" alt="正方形不是长方形改进"></p>
+<h2 id="3-3-依赖倒转原则"><a href="#3-3-依赖倒转原则" class="headerlink" title="3.3 依赖倒转原则"></a>3.3 依赖倒转原则</h2><p><strong>依赖倒转原则：高层模块不应该依赖低层模块，两者都应该依赖其抽象；抽象不应该依赖细节，细节应该以来抽象</strong></p>
+<p>简单的说就是要求对抽象进行编程，不要对实现进行编程，这样就降低了客户与实现模块间的耦合。</p>
+<p>【例子】组装电脑<br>现要组装一台电脑，需要配件cpu，硬盘，内存条。只有这些配置都有了，计算机才能正常的运行。选择cpu有很多选择，如Intel，AMD等，硬盘可以选择希捷，西数等，内存条可以选择金士顿，海盗船等。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99.png" alt="依赖倒转原则"></p>
+<p>【代码】</p>
+<p><strong>希捷硬盘类（XiJieHardDisk）:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">XiJieHardDisk</span> <span class="keyword">implements</span> <span class="title class_">HardDisk</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">save</span><span class="params">(String data)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用希捷硬盘存储数据&quot;</span> + data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">get</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用希捷希捷硬盘取数据&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;数据&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Intel处理器（IntelCpu）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IntelCpu</span> <span class="keyword">implements</span> <span class="title class_">Cpu</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用Intel处理器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>金士顿内存条（KingstonMemory）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KingstonMemory</span> <span class="keyword">implements</span> <span class="title class_">Memory</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">save</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用金士顿作为内存条&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>电脑（Computer）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Computer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> XiJieHardDisk hardDisk;</span><br><span class="line">    <span class="keyword">private</span> IntelCpu cpu;</span><br><span class="line">    <span class="keyword">private</span> KingstonMemory memory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> IntelCpu <span class="title function_">getCpu</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCpu</span><span class="params">(IntelCpu cpu)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cpu = cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> KingstonMemory <span class="title function_">getMemory</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMemory</span><span class="params">(KingstonMemory memory)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.memory = memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> XiJieHardDisk <span class="title function_">getHardDisk</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setHardDisk</span><span class="params">(XiJieHardDisk hardDisk)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.hardDisk = hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;计算机工作&quot;</span>);</span><br><span class="line">        cpu.run();</span><br><span class="line">        memory.save();</span><br><span class="line">        <span class="type">String</span> <span class="variable">data</span> <span class="operator">=</span> hardDisk.get();</span><br><span class="line">        System.out.println(<span class="string">&quot;从硬盘中获取的数据为：&quot;</span> + data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试类（TestComputer）：</strong></p>
+<p>测试类用来组装电脑。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestComputer</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Computer</span> <span class="variable">computer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Computer</span>();</span><br><span class="line">        computer.setHardDisk(<span class="keyword">new</span> <span class="title class_">XiJieHardDisk</span>());</span><br><span class="line">        computer.setCpu(<span class="keyword">new</span> <span class="title class_">IntelCpu</span>());</span><br><span class="line">        computer.setMemory(<span class="keyword">new</span> <span class="title class_">KingstonMemory</span>());</span><br><span class="line"></span><br><span class="line">        computer.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【问题】上述代码已经组装了一台电脑，但是似乎组装的电脑的cpu只能是Intel的，内存条只能是金士顿的，硬盘只能是希捷的，这对用户肯定是不友好的，用户有了机箱肯定是想按照自己的喜好，选择自己喜欢的配件。</p>
+<p>【改进】修改<code>Computer</code>类，让<code>Computer</code>类依赖抽象（各个配件的接口），而不是依赖于各个组件具体的实现类。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99%E6%94%B9%E8%BF%9B.png" alt="依赖倒转原则改进"></p>
+<p><strong>电脑（Computer）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Computer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> HardDisk hardDisk;</span><br><span class="line">    <span class="keyword">private</span> Cpu cpu;</span><br><span class="line">    <span class="keyword">private</span> Memory memory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> HardDisk <span class="title function_">getHardDisk</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setHardDisk</span><span class="params">(HardDisk hardDisk)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.hardDisk = hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Cpu <span class="title function_">getCpu</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCpu</span><span class="params">(Cpu cpu)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cpu = cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Memory <span class="title function_">getMemory</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMemory</span><span class="params">(Memory memory)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.memory = memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;计算机工作&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>面向对象的开发很好的解决了这个问题，一般情况下抽象的变化概率很小，让用户程序依赖于抽象，实现的细节也依赖于抽象。即使实现细节不断变动，只要抽象不变，客户程序就不需要变化。这大大<strong>降低</strong>了客户程序与实现细节的<strong>耦合度</strong>。</p>
+<h2 id="3-4-接口隔离原则"><a href="#3-4-接口隔离原则" class="headerlink" title="3.4 接口隔离原则"></a>3.4 接口隔离原则</h2><p><strong>接口隔离原则：客户端不应该被迫依赖它不使用的方法；一个类对另一个类的依赖应该建立在最小的接口上</strong></p>
+<p>【例子】安全门案例</p>
+<p>我们需要创建一个黑马品牌的安全门，该安全门具有防火、防水、防盗的功能。可以将防火，防水，防盗功能提取成一个接口，形成一套规范。类图如下：</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99.png" alt="接口隔离原则"></p>
+<p>上面的设计我们发现了它存在的问题，黑马品牌的安全门具有防盗，防水，防火的功能。现在如果我们还需要再创建一个传智品牌的安全门，而该安全门只具有防盗、防水功能呢？很显然如果实现SafetyDoor接口就违背了接口隔离原则。</p>
+<p>【修改】最小抽象类</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%991.png" alt="接口隔离原则1"></p>
+<p>【代码】</p>
+<p><strong>AntiTheft（接口）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AntiTheft</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">antiTheft</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Fireproof（接口）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Fireproof</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">fireproof</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Waterproof（接口）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Waterproof</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">waterproof</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>HeiMaSafetyDoor（类）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HeiMaSafetyDoor</span> <span class="keyword">implements</span> <span class="title class_">AntiTheft</span>,Fireproof,Waterproof &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">antiTheft</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防盗&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fireproof</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防火&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">waterproof</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防水&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>ItcastSafetyDoor（类）：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ItcastSafetyDoor</span> <span class="keyword">implements</span> <span class="title class_">AntiTheft</span>,Fireproof &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">antiTheft</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防盗&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fireproof</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防火&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-5-迪米特法则"><a href="#3-5-迪米特法则" class="headerlink" title="3.5 迪米特法则"></a>3.5 迪米特法则</h2><p><strong>最小知识原则</strong></p>
+<p><em>只和你的直接朋友交谈，不跟“陌生人”说话（Talk only to your immediate friends and not to strangers）。</em></p>
+<p>其含义是：如果两个软件实体无须直接通信，那么就不应当发生直接的相互调用，可以<strong>通过第三方转发该调用</strong>。其目的是降低类之间的耦合度，提高模块的相对独立性。</p>
+<p>迪米特法则中的“朋友”是指：当前对象本身、当前对象的成员对象、当前对象所创建的对象、当前对象的方法参数等，这些对象同当前对象存在关联、聚合或组合关系，可以直接访问这些对象的方法。</p>
+<p>【例子】明星和经纪人的关系实例</p>
+<p>明星由于全身心投入艺术，所以许多日常事务由经纪人负责处理，如和粉丝的见面会，和媒体公司的业务洽淡等。这里的经纪人是明星的朋友，而粉丝和媒体公司是陌生人，所以适合使用迪米特法则。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99.png" alt="迪米特法则"></p>
+<p>【代码】</p>
+<p><strong>明星类（Star）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Star</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Star</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>粉丝类（Fans）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fans</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Fans</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>媒体公司类（Company）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Company</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Company</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>经纪人类（Agent）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Agent</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Star star;</span><br><span class="line">    <span class="keyword">private</span> Fans fans;</span><br><span class="line">    <span class="keyword">private</span> Company company;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setStar</span><span class="params">(Star star)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.star = star;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setFans</span><span class="params">(Fans fans)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.fans = fans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCompany</span><span class="params">(Company company)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.company = company;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">meeting</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(fans.getName() + <span class="string">&quot;与明星&quot;</span> + star.getName() + <span class="string">&quot;见面了。&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">business</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(company.getName() + <span class="string">&quot;与明星&quot;</span> + star.getName() + <span class="string">&quot;洽淡业务。&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-6-合成复用原则"><a href="#3-6-合成复用原则" class="headerlink" title="3.6 合成复用原则"></a>3.6 合成复用原则</h2><p><strong>合成复用原则：尽量先使用组合或者聚合等关联关系来实现，其次才考虑继承关系来实现</strong></p>
+<p>通常类的复用分为继承复用和合成复用两种。</p>
+<p>1）继承复用虽然有<strong>简单</strong>和<strong>易实现</strong>的优点，但它也存在以下缺点：</p>
+<ol>
+<li>继承复用<strong>破坏了类的封装性</strong>。因为继承会将父类的实现细节暴露给子类，父类对子类是透明的，所以这种复用又称为“白箱”复用。</li>
+<li><strong>子类与父类的耦合度高</strong>。父类的实现的任何改变都会导致子类的实现发生变化，这不利于类的扩展与维护。</li>
+<li>它<strong>限制了复用的灵活性</strong>。从父类继承而来的实现是静态的，在编译时已经定义，所以在运行时不可能发生变化。</li>
+</ol>
+<p>2）采用组合或聚合复用时，可以将已有对象纳入新对象中，使之成为新对象的一部分，新对象可以调用已有对象的功能，它有以下优点：</p>
+<ol>
+<li>它<strong>维持了类的封装性</strong>。因为成分对象的内部细节是新对象看不见的，所以这种复用又称为“黑箱”复用。</li>
+<li><strong>对象间的耦合度低</strong>。可以在类的成员位置声明抽象。</li>
+<li><strong>复用的灵活性高</strong>。这种复用可以在运行时动态进行，新对象可以动态地引用与成分对象类型相同的对象。</li>
+</ol>
+<p>【例子】汽车分类管理程序</p>
+<p>汽车按“动力源”划分可分为汽油汽车、电动汽车等；按“颜色”划分可分为白色汽车、黑色汽车和红色汽车等。如果同时考虑这两种分类，其组合就很多。类图如下：</p>
+<p> <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99.png" alt="合成复用原则"></p>
+<p>【改进】</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%991.png" alt="合成复用原则1"></p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          CodeJuzi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://dingxinliang88.github.io/2022/12/26/设计模式-概述/" title="设计模式--概述" target="_blank">http://dingxinliang88.github.io/2022/12/26/设计模式-概述/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DesignPattern</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://dingxinliang88.github.io/2022/12/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A6%82%E8%BF%B0/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/12/17/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
-        <time datetime="2022-12-17T12:41:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-17</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2022/12/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          设计模式--创建者模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/12/21/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法学习之路 -- 动态规划篇之专项练习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/12/17/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" target="_blank">算法学习之路--动态规划篇之背包问题</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" class="archive-article-date">
-        <time datetime="2022-12-16T01:37:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/12/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" target="_blank">算法学习之路 -- 动态规划篇之基础篇</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/12/03/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B4%AA%E5%BF%83%E7%AF%87/" class="archive-article-date">
-        <time datetime="2022-12-03T04:24:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/12/03/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B4%AA%E5%BF%83%E7%AF%87/" target="_blank">算法学习之路--贪心篇</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">greedy</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 
           </div>
@@ -484,9 +807,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

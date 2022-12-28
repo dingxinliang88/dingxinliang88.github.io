@@ -231,6 +231,164 @@
             
 
   
+    <article id="post-设计模式-结构型模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/12/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式-结构型模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/12/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2022-12-28T12:49:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a target="_blank" rel="noopener" href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+<ul>
+<li><a href="#%E4%BA%8C%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F">二、结构型模式</a><ul>
+<li><a href="#1%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F">1、代理模式</a><ul>
+<li><a href="#11-%E6%A6%82%E8%BF%B0">1.1 概述</a></li>
+<li><a href="#12-%E7%BB%93%E6%9E%84">1.2 结构</a></li>
+<li><a href="#13-%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86">1.3 静态代理</a></li>
+<li><a href="#14-jdk%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86">1.4 JDK动态代理</a></li>
+<li><a href="#15-cglib%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86">1.5 CGLIB动态代理</a></li>
+<li><a href="#16-%E4%B8%89%E7%A7%8D%E4%BB%A3%E7%90%86%E7%9A%84%E5%AF%B9%E6%AF%94">1.6 三种代理的对比</a></li>
+<li><a href="#17-%E4%BC%98%E7%BC%BA%E7%82%B9">1.7 优缺点</a></li>
+<li><a href="#18-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">1.8 使用场景</a></li>
+</ul>
+</li>
+<li><a href="#2%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F">2、适配器模式</a><ul>
+<li><a href="#21-%E6%A6%82%E8%BF%B0">2.1 概述</a></li>
+<li><a href="#22-%E7%BB%93%E6%9E%84">2.2 结构</a></li>
+<li><a href="#23-%E7%B1%BB%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F">2.3 类适配器模式</a></li>
+<li><a href="#24-%E5%AF%B9%E8%B1%A1%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F">2.4 对象适配器模式</a></li>
+<li><a href="#25-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">2.5 应用场景</a></li>
+<li><a href="#26-jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">2.6 JDK源码解析</a></li>
+</ul>
+</li>
+<li><a href="#3%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F">3、装饰者模式</a><ul>
+<li><a href="#31-%E6%A6%82%E8%BF%B0">3.1 概述</a></li>
+<li><a href="#32-%E7%BB%93%E6%9E%84">3.2 结构</a></li>
+<li><a href="#33-%E6%A1%88%E4%BE%8B">3.3 案例</a></li>
+<li><a href="#34-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">3.4 使用场景</a></li>
+<li><a href="#35-jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">3.5 JDK源码解析</a></li>
+<li><a href="#36-%E4%BB%A3%E7%90%86%E5%92%8C%E8%A3%85%E9%A5%B0%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB">3.6 代理和装饰者的区别</a></li>
+</ul>
+</li>
+<li><a href="#4%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F">4、桥接模式</a><ul>
+<li><a href="#41-%E6%A6%82%E8%BF%B0">4.1 概述</a></li>
+<li><a href="#42-%E7%BB%93%E6%9E%84">4.2 结构</a></li>
+<li><a href="#43-%E6%A1%88%E4%BE%8B">4.3 案例</a></li>
+<li><a href="#44-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">4.4 使用场景</a></li>
+</ul>
+</li>
+<li><a href="#5%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F">5、外观模式</a><ul>
+<li><a href="#51-%E6%A6%82%E8%BF%B0">5.1 概述</a></li>
+<li><a href="#52-%E7%BB%93%E6%9E%84">5.2 结构</a></li>
+<li><a href="#53-%E6%A1%88%E4%BE%8B">5.3 案例</a></li>
+<li><a href="#54-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">5.4 使用场景</a></li>
+<li><a href="#55-jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">5.5 JDK源码解析</a></li>
+</ul>
+</li>
+<li><a href="#6%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F">6、组合模式</a><ul>
+<li><a href="#61-%E6%A6%82%E8%BF%B0">6.1 概述</a></li>
+<li><a href="#62-%E7%BB%93%E6%9E%84">6.2 结构</a></li>
+<li><a href="#63-%E6%A1%88%E4%BE%8B">6.3 案例</a></li>
+<li><a href="#64-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%86%E7%B1%BB">6.4 组合模式的分类</a></li>
+<li><a href="#65-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BC%98%E7%82%B9">6.5 组合模式的优点</a></li>
+<li><a href="#66-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">6.6 使用场景</a></li>
+</ul>
+</li>
+<li><a href="#7%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F">7、享元模式</a><ul>
+<li><a href="#71-%E6%A6%82%E8%BF%B0">7.1 概述</a></li>
+<li><a href="#72-%E7%BB%93%E6%9E%84">7.2 结构</a></li>
+<li><a href="#73-%E6%A1%88%E4%BE%8B">7.3 案例</a></li>
+<li><a href="#75-%E4%BC%98%E7%BC%BA%E7%82%B9">7.5 优缺点</a></li>
+<li><a href="#76-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">7.6 使用场景</a></li>
+<li><a href="#77-jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">7.7 JDK源码解析</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+    
+    <a class="article-more-a" href="/2022/12/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DesignPattern</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-设计模式-创建者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -729,11 +887,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -943,11 +1101,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1238,11 +1396,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1623,11 +1781,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1642,110 +1800,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/12/03/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B4%AA%E5%BF%83%E7%AF%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="n-Servlet技术简述" class="article article-type-n  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/" target="_blank">Servlet技术简述</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/" class="archive-article-date">
-        <time datetime="2022-11-27T02:51:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><blockquote>
-<p>参考文章 &#x3D;&gt; <a target="_blank" rel="noopener" href="https://www.cnblogs.com/whgk/category/947929.html">Java Web - 随笔分类 - 有梦想的老王 - 博客园 (cnblogs.com)</a></p>
-<p>Servlet技术笔记</p>
-</blockquote>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><ul>
-<li>参考文章 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/whgk/p/6399262.html">Java Web(一) Servlet详解！！ - 有梦想的老王 - 博客园 (cnblogs.com)</a></li>
-</ul>
-<h3 id="一、servlet"><a href="#一、servlet" class="headerlink" title="一、servlet"></a>一、servlet</h3><h4 id="1⃣️-概述"><a href="#1⃣️-概述" class="headerlink" title="1⃣️ 概述"></a>1⃣️ 概述</h4><ul>
-<li>Servlet时运行在web服务器端的应用程序，使用Java编写</li>
-<li>Servlet对象主要封装了对HTTP请求的处理，它的运行需要<strong>Servlet容器</strong>（比如Tomcat）的支持</li>
-<li><strong>Servlet</strong>由<strong>Servlet容器</strong>进行管理，Servlet容器将Servlet动态加载到服务器上，与HTTP协议相关的Servlet使用HTTP请求和HTTP请求和HTTP响应与客户端进行交互</li>
-<li>Servlet的请求首先会被HTTP服务器（比如Apache）接收，HTTP服务器只负责静态HTML界面的解析，而Servlet的请求则转交给Servlet容器，Servlet容器会根据请求路径以及Servlet之间的映射关系，调用相应的Servlet，Servlet将处理的结果返回给Servlet容器，并通过HTTP服务器将响应传输给客户端</li>
-</ul>
-    
-    <a class="article-more-a" href="/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/">展开全文 >></a>
     </p>
     
 
@@ -1945,18 +1999,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Source</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">essays</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
@@ -1965,15 +2007,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Source</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+                <a href="javascript:void(0)" class="js-tag color2">essays</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1982,6 +2024,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">frontend</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
               </li>
              
               <li class="article-tag-list-item">

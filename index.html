@@ -231,6 +231,206 @@
             
 
   
+    <article id="post-设计模式-行为型模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/01/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式-行为型模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/01/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-01-03T03:17:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a target="_blank" rel="noopener" href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+<ul>
+<li><a href="#%E4%B8%89%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">三、行为型模式</a><ul>
+<li><a href="#31-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F">3.1 模板方法模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9">4、优缺点</a></li>
+<li><a href="#5%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF">5、适用场景</a></li>
+<li><a href="#6jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">6、JDK源码解析</a></li>
+</ul>
+</li>
+<li><a href="#32-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F">3.2 策略模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-1">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-1">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-1">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-1">4、优缺点</a></li>
+<li><a href="#5%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">5、使用场景</a></li>
+<li><a href="#6jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90-1">6、JDK源码解析</a></li>
+</ul>
+</li>
+<li><a href="#33-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F">3.3 命令模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-2">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-2">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-2">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-2">4、优缺点</a></li>
+<li><a href="#5%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-1">5、使用场景</a></li>
+<li><a href="#6jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90-2">6、JDK源码解析</a></li>
+</ul>
+</li>
+<li><a href="#34-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F">3.4 责任链模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-3">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-3">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-3">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-3">4、优缺点</a></li>
+<li><a href="#5%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">5、源码解析</a></li>
+</ul>
+</li>
+<li><a href="#35-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F">3.5 状态模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-4">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-4">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-4">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-4">4、优缺点</a></li>
+<li><a href="#5%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-2">5、使用场景</a></li>
+</ul>
+</li>
+<li><a href="#36-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F">3.6 观察者模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-5">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-5">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-5">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-5">4、优缺点</a></li>
+<li><a href="#5%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-3">5、使用场景</a></li>
+<li><a href="#6jdk%E4%B8%AD%E6%8F%90%E4%BE%9B%E7%9A%84%E5%AE%9E%E7%8E%B0">6、JDK中提供的实现</a></li>
+</ul>
+</li>
+<li><a href="#37-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F">3.7 中介者模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-6">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-6">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-6">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-6">4、优缺点</a></li>
+<li><a href="#5%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-4">5、使用场景</a></li>
+</ul>
+</li>
+<li><a href="#38-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F">3.8 迭代器模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-7">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-7">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-7">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-7">4、优缺点</a></li>
+<li><a href="#5%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-5">5、使用场景</a></li>
+<li><a href="#6-jdk%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">6 JDK源码解析</a></li>
+</ul>
+</li>
+<li><a href="#39-%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F">3.9 访问者模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-8">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-8">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-8">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-8">4、优缺点</a></li>
+<li><a href="#5--%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">5  使用场景</a></li>
+<li><a href="#6%E6%89%A9%E5%B1%95">6、扩展</a><ul>
+<li><a href="#%E5%88%86%E6%B4%BE">分派</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%88%86%E6%B4%BE">动态分派</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E5%88%86%E6%B4%BE">静态分派</a></li>
+<li><a href="#%E5%8F%8C%E5%88%86%E6%B4%BE">双分派</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#310-%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F">3.10 备忘录模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-9">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-9">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-9">3、案例</a><ul>
+<li><a href="#1%E7%99%BD%E7%AE%B1%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F">1）“白箱”备忘录模式</a></li>
+<li><a href="#2%E9%BB%91%E7%AE%B1%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F">2）“黑箱”备忘录模式</a></li>
+</ul>
+</li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-9">4、优缺点</a></li>
+<li><a href="#5-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">5 使用场景</a></li>
+</ul>
+</li>
+<li><a href="#311-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F">3.11 解释器模式</a><ul>
+<li><a href="#1%E6%A6%82%E8%BF%B0-10">1、概述</a></li>
+<li><a href="#2%E7%BB%93%E6%9E%84-10">2、结构</a></li>
+<li><a href="#3%E6%A1%88%E4%BE%8B-10">3、案例</a></li>
+<li><a href="#4%E4%BC%98%E7%BC%BA%E7%82%B9-10">4、优缺点</a></li>
+<li><a href="#5-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-1">5 使用场景</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+    
+    <a class="article-more-a" href="/2023/01/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DesignPattern</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringBoot工作流程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1663,119 +1863,6 @@
 
 
   
-    <article id="post-Source汇总随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/12/12/Source%E6%B1%87%E6%80%BB%E9%9A%8F%E7%AC%94/" target="_blank">Source汇总随笔</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/12/12/Source%E6%B1%87%E6%80%BB%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-        <time datetime="2022-12-12T13:56:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-12</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="作为一名有点憨又爱捣鼓东西的憨憨需要知道的东西"><a href="#作为一名有点憨又爱捣鼓东西的憨憨需要知道的东西" class="headerlink" title="作为一名有点憨又爱捣鼓东西的憨憨需要知道的东西"></a>作为一名有点憨又爱捣鼓东西的憨憨需要知道的东西</h1><blockquote>
-<p>持续更新中……</p>
-<p><strong>author: CodeJuzi(一个Code憨憨)</strong></p>
-</blockquote>
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<p><strong>Table of Contents</strong>  <em>generated with <a target="_blank" rel="noopener" href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
-<ul>
-<li><a href="#%E4%BD%9C%E4%B8%BA%E4%B8%80%E5%90%8D%E6%9C%89%E7%82%B9%E6%86%A8%E5%8F%88%E7%88%B1%E6%8D%A3%E9%BC%93%E4%B8%9C%E8%A5%BF%E7%9A%84%E6%86%A8%E6%86%A8%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%9C%E8%A5%BF">作为一名有点憨又爱捣鼓东西的憨憨需要知道的东西</a><ul>
-<li><a href="#%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99">实用网站</a></li>
-<li><a href="#code%E5%BF%85%E5%A4%87%E7%BD%91%E7%AB%99">Code必备网站</a></li>
-<li><a href="#%E4%B8%80%E4%BA%9B%E5%AE%9E%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7">一些实用小工具</a></li>
-<li><a href="#%E7%94%B5%E5%AD%90%E8%B5%84%E6%BA%90%E4%B9%A6%E4%B8%8B%E8%BD%BD">电子资源书下载</a></li>
-<li><a href="#%E5%A5%BD%E7%9C%8B%E7%9A%84%E9%80%97%E6%AF%94%E7%9A%84%E5%9B%BE%E7%89%87%E5%A3%81%E7%BA%B8%E8%A1%A8%E6%83%85%E5%8C%85">好看的、逗比的图片、壁纸、表情包</a></li>
-<li><a href="#%E8%BD%AF%E4%BB%B6">好用的软件推荐</a></li>
-<li><a href="#%E6%89%BE%E5%B7%A5%E4%BD%9C">找工作</a></li>
-<li><a href="#%E5%AD%A6%E4%B9%A0%E5%8E%86%E5%8F%B2%E5%BE%88%E9%87%8D%E8%A6%81">学习历史很重要</a></li>
-<li><a href="#%E4%BC%91%E9%97%B2">休闲</a></li>
-</ul>
-</li>
-</ul>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-    
-    <a class="article-more-a" href="/2022/12/12/Source%E6%B1%87%E6%80%BB%E9%9A%8F%E7%AC%94/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Source</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">essays</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/12/12/Source%E6%B1%87%E6%80%BB%E9%9A%8F%E7%AC%94/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1790,7 +1877,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 <a href="http://dingxinliang88.github.io/" target="_blank">CodeJuzi</a>
+    		&copy; 2022-2023 <a href="http://dingxinliang88.github.io/" target="_blank">CodeJuzi</a>
     	</div>
       	<div class="footer-right">
 			
@@ -1990,11 +2077,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
+                <a href="javascript:void(0)" class="js-tag color4">DesignPattern</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DesignPattern</a>
+                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
               </li>
             
             <div class="clearfix"></div>

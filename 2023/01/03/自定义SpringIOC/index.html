@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingxinliang88.github.io">
-  <title>自定义SpringIOC | 橘子的博客日常</title>
+  <title>自定义SpringIOC | CodeJuzi的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="自定义SpringIOC">
 <meta property="og:url" content="http://dingxinliang88.github.io/2023/01/03/%E8%87%AA%E5%AE%9A%E4%B9%89SpringIOC/index.html">
-<meta property="og:site_name" content="橘子的博客日常">
+<meta property="og:site_name" content="CodeJuzi的博客">
 <meta property="og:description" content="Table of Contents  generated with DocToc  自定义SpringIOC 一、SpringIOC核心功能结构 1、bean概述   二、Spring IOC相关接口分析 1、BeanFactory解析 2、BeanDefinition解析 3、BeanDefinitionReader解析 4、BeanDefinitionRegistry解析 5、创建容器">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="e:/MyFile/TyporaImgs/image-20200429111324770.png">
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="e:/MyFile/TyporaImgs/image-20200429111324770.png">
   
-    <link rel="alternative" href="/atom.xml" title="橘子的博客日常" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="CodeJuzi的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -58,6 +58,9 @@
 
 
   
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
 
 </head>
 
@@ -78,7 +81,7 @@
 			<h1 class="header-author"><a href="/">CodeJuzi</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">一个憨憨的Code历程</p>
+		<p class="header-subtitle">be foolish, be hungry</p>
 		
 
 		<nav class="header-menu">
@@ -86,9 +89,9 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 			
-				<li><a href="https://www.github.com/dingxinliang88" target="_blank">技术笔记</a></li>
+				<li><a href="https://www.dingxinliang88.github.io" target="_blank">技术笔记</a></li>
 			
-				<li><a href="/tags/essays/" target="_blank">随笔</a></li>
+				<li><a href="/tags/essay/" target="_blank">随笔</a></li>
 			
 			</ul>
 		</nav>
@@ -116,7 +119,7 @@
 					
 				
 					
-						<a class="gitee" href="https://gitee.com/ding-xinliang" 
+						<a class="gitee" href="https://www.gitee.com/ding-xinliang" 
 												title="码云" target="_blank"><i class="icon-gitee"></i></a>
 					
 				
@@ -167,7 +170,7 @@
 			  <h1 class="header-author js-header-author">CodeJuzi</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个憨憨的Code历程<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>be foolish, be hungry<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -189,7 +192,7 @@
 					
 						
 						<a class="gitee" target="_blank" 
-							href="https://gitee.com/ding-xinliang" title="码云"><i class="icon-gitee"></i></a>
+							href="https://www.gitee.com/ding-xinliang" title="码云"><i class="icon-gitee"></i></a>
 						
 					
 						
@@ -216,9 +219,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://www.github.com/dingxinliang88">技术笔记</a></li>
+					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://www.dingxinliang88.github.io">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/essays/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/essay/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -369,8 +372,33 @@
 <li>AutowireCapableBeanFactory 接口定义Bean的自动装配规则。</li>
 </ul>
 <p>这三个接口共同定义了Bean的集合、Bean之间的关系及Bean行为。最基本的IoC容器接口是BeanFactory，来看一下它的源码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanFactory</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">String</span> <span class="variable">FACTORY_BEAN_PREFIX</span> <span class="operator">=</span> <span class="string">&quot;&amp;&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//根据bean的名称获取IOC容器中的的bean对象</span></span><br><span class="line">	Object <span class="title function_">getBean</span><span class="params">(String name)</span> <span class="keyword">throws</span> BeansException;</span><br><span class="line">	<span class="comment">//根据bean的名称获取IOC容器中的的bean对象，并指定获取到的bean对象的类型，这样我们使用时就不需要进行类型强转了</span></span><br><span class="line">	&lt;T&gt; T <span class="title function_">getBean</span><span class="params">(String name, Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException;</span><br><span class="line">	Object <span class="title function_">getBean</span><span class="params">(String name, Object... args)</span> <span class="keyword">throws</span> BeansException;</span><br><span class="line">	&lt;T&gt; T <span class="title function_">getBean</span><span class="params">(Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException;</span><br><span class="line">	&lt;T&gt; T <span class="title function_">getBean</span><span class="params">(Class&lt;T&gt; requiredType, Object... args)</span> <span class="keyword">throws</span> BeansException;</span><br><span class="line">	</span><br><span class="line">	&lt;T&gt; ObjectProvider&lt;T&gt; <span class="title function_">getBeanProvider</span><span class="params">(Class&lt;T&gt; requiredType)</span>;</span><br><span class="line">	&lt;T&gt; ObjectProvider&lt;T&gt; <span class="title function_">getBeanProvider</span><span class="params">(ResolvableType requiredType)</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断容器中是否包含指定名称的bean对象</span></span><br><span class="line">	<span class="type">boolean</span> <span class="title function_">containsBean</span><span class="params">(String name)</span>;</span><br><span class="line">	<span class="comment">//根据bean的名称判断是否是单例</span></span><br><span class="line">	<span class="type">boolean</span> <span class="title function_">isSingleton</span><span class="params">(String name)</span> <span class="keyword">throws</span> NoSuchBeanDefinitionException;</span><br><span class="line">	<span class="type">boolean</span> <span class="title function_">isPrototype</span><span class="params">(String name)</span> <span class="keyword">throws</span> NoSuchBeanDefinitionException;</span><br><span class="line">	<span class="type">boolean</span> <span class="title function_">isTypeMatch</span><span class="params">(String name, ResolvableType typeToMatch)</span> <span class="keyword">throws</span> NoSuchBeanDefinitionException;</span><br><span class="line">	<span class="type">boolean</span> <span class="title function_">isTypeMatch</span><span class="params">(String name, Class&lt;?&gt; typeToMatch)</span> <span class="keyword">throws</span> NoSuchBeanDefinitionException;</span><br><span class="line">	<span class="meta">@Nullable</span></span><br><span class="line">	Class&lt;?&gt; getType(String name) <span class="keyword">throws</span> NoSuchBeanDefinitionException;</span><br><span class="line">	String[] getAliases(String name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public interface BeanFactory &#123;
 
+    String FACTORY_BEAN_PREFIX = &quot;&amp;&quot;;
+
+    //根据bean的名称获取IOC容器中的的bean对象
+    Object getBean(String name) throws BeansException;
+    //根据bean的名称获取IOC容器中的的bean对象，并指定获取到的bean对象的类型，这样我们使用时就不需要进行类型强转了
+    &lt;T&gt; T getBean(String name, Class&lt;T&gt; requiredType) throws BeansException;
+    Object getBean(String name, Object... args) throws BeansException;
+    &lt;T&gt; T getBean(Class&lt;T&gt; requiredType) throws BeansException;
+    &lt;T&gt; T getBean(Class&lt;T&gt; requiredType, Object... args) throws BeansException;
+    
+    &lt;T&gt; ObjectProvider&lt;T&gt; getBeanProvider(Class&lt;T&gt; requiredType);
+    &lt;T&gt; ObjectProvider&lt;T&gt; getBeanProvider(ResolvableType requiredType);
+
+    //判断容器中是否包含指定名称的bean对象
+    boolean containsBean(String name);
+    //根据bean的名称判断是否是单例
+    boolean isSingleton(String name) throws NoSuchBeanDefinitionException;
+    boolean isPrototype(String name) throws NoSuchBeanDefinitionException;
+    boolean isTypeMatch(String name, ResolvableType typeToMatch) throws NoSuchBeanDefinitionException;
+    boolean isTypeMatch(String name, Class&lt;?&gt; typeToMatch) throws NoSuchBeanDefinitionException;
+    @Nullable
+    Class&lt;?&gt; getType(String name) throws NoSuchBeanDefinitionException;
+    String[] getAliases(String name);
+&#125;
+</code></pre>
 <p>在BeanFactory里只对IoC容器的基本行为做了定义，根本不关心你的Bean是如何定义及怎样加载的。正如我们只关心能从工厂里得到什么产品，不关心工厂是怎么生产这些产品的。</p>
 <p>BeanFactory有一个很重要的子接口，就是ApplicationContext接口，该接口主要来规范容器中的bean对象是非延时加载，即在创建容器对象的时候就对象bean进行初始化，并存储到一个容器中。</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20200430220155371.png" alt="image-20200430220155371"></p>
@@ -381,50 +409,217 @@
 <li>AnnotationConfigApplicationContext ：加载注解类配置，并创建IOC容器。</li>
 </ul>
 <h3 id="2、BeanDefinition解析"><a href="#2、BeanDefinition解析" class="headerlink" title="2、BeanDefinition解析"></a>2、BeanDefinition解析</h3><p>Spring IoC容器管理我们定义的各种Bean对象及其相互关系，而Bean对象在Spring实现中是以BeanDefinition来描述的，如下面配置文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userDao&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.dao.impl.UserDaoImpl&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--bean标签还有很多属性：</span></span><br><span class="line"><span class="comment">	scope、init-method、destory-method等。--&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;bean id=&quot;userDao&quot; class=&quot;com.itheima.dao.impl.UserDaoImpl&quot;&gt;&lt;/bean&gt;
 
+&lt;!--bean标签还有很多属性：
+    scope、init-method、destory-method等。--&gt;
+</code></pre>
 <p>其继承体系如下图所示</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20200429204239868.png" alt="image-20200429204239868"></p>
 <h3 id="3、BeanDefinitionReader解析"><a href="#3、BeanDefinitionReader解析" class="headerlink" title="3、BeanDefinitionReader解析"></a>3、BeanDefinitionReader解析</h3><p>Bean的解析过程非常复杂，功能被分得很细，因为这里需要被扩展的地方很多，必须保证足够的灵活性，以应对可能的变化。Bean的解析主要就是对Spring配置文件的解析。这个解析过程主要通过BeanDefinitionReader来完成，看看Spring中BeanDefinitionReader的类结构图，如下图所示。</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/image-20200429204700956.png" alt="image-20200429204700956"></p>
 <p>看看BeanDefinitionReader接口定义的功能来理解它具体的作用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanDefinitionReader</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获取BeanDefinitionRegistry注册器对象</span></span><br><span class="line">	BeanDefinitionRegistry <span class="title function_">getRegistry</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Nullable</span></span><br><span class="line">	ResourceLoader <span class="title function_">getResourceLoader</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Nullable</span></span><br><span class="line">	ClassLoader <span class="title function_">getBeanClassLoader</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	BeanNameGenerator <span class="title function_">getBeanNameGenerator</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		下面的loadBeanDefinitions都是加载bean定义，从指定的资源中</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="type">int</span> <span class="title function_">loadBeanDefinitions</span><span class="params">(Resource resource)</span> <span class="keyword">throws</span> BeanDefinitionStoreException;</span><br><span class="line">	<span class="type">int</span> <span class="title function_">loadBeanDefinitions</span><span class="params">(Resource... resources)</span> <span class="keyword">throws</span> BeanDefinitionStoreException;</span><br><span class="line">	<span class="type">int</span> <span class="title function_">loadBeanDefinitions</span><span class="params">(String location)</span> <span class="keyword">throws</span> BeanDefinitionStoreException;</span><br><span class="line">	<span class="type">int</span> <span class="title function_">loadBeanDefinitions</span><span class="params">(String... locations)</span> <span class="keyword">throws</span> BeanDefinitionStoreException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public interface BeanDefinitionReader &#123;
 
+    //获取BeanDefinitionRegistry注册器对象
+    BeanDefinitionRegistry getRegistry();
+
+    @Nullable
+    ResourceLoader getResourceLoader();
+
+    @Nullable
+    ClassLoader getBeanClassLoader();
+
+    BeanNameGenerator getBeanNameGenerator();
+
+    /*
+        下面的loadBeanDefinitions都是加载bean定义，从指定的资源中
+    */
+    int loadBeanDefinitions(Resource resource) throws BeanDefinitionStoreException;
+    int loadBeanDefinitions(Resource... resources) throws BeanDefinitionStoreException;
+    int loadBeanDefinitions(String location) throws BeanDefinitionStoreException;
+    int loadBeanDefinitions(String... locations) throws BeanDefinitionStoreException;
+&#125;
+</code></pre>
 <h3 id="4、BeanDefinitionRegistry解析"><a href="#4、BeanDefinitionRegistry解析" class="headerlink" title="4、BeanDefinitionRegistry解析"></a>4、BeanDefinitionRegistry解析</h3><p>BeanDefinitionReader用来解析bean定义，并封装BeanDefinition对象，而我们定义的配置文件中定义了很多bean标签，所以就有一个问题，解析的BeanDefinition对象存储到哪儿？答案就是BeanDefinition的注册中心，而该注册中心顶层接口就是BeanDefinitionRegistry。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanDefinitionRegistry</span> <span class="keyword">extends</span> <span class="title class_">AliasRegistry</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//往注册表中注册bean</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">registerBeanDefinition</span><span class="params">(String beanName, BeanDefinition beanDefinition)</span></span><br><span class="line">			<span class="keyword">throws</span> BeanDefinitionStoreException;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//从注册表中删除指定名称的bean</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">removeBeanDefinition</span><span class="params">(String beanName)</span> <span class="keyword">throws</span> NoSuchBeanDefinitionException;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获取注册表中指定名称的bean</span></span><br><span class="line">	BeanDefinition <span class="title function_">getBeanDefinition</span><span class="params">(String beanName)</span> <span class="keyword">throws</span> NoSuchBeanDefinitionException;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//判断注册表中是否已经注册了指定名称的bean</span></span><br><span class="line">	<span class="type">boolean</span> <span class="title function_">containsBeanDefinition</span><span class="params">(String beanName)</span>;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//获取注册表中所有的bean的名称</span></span><br><span class="line">	String[] getBeanDefinitionNames();</span><br><span class="line">    </span><br><span class="line">	<span class="type">int</span> <span class="title function_">getBeanDefinitionCount</span><span class="params">()</span>;</span><br><span class="line">	<span class="type">boolean</span> <span class="title function_">isBeanNameInUse</span><span class="params">(String beanName)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public interface BeanDefinitionRegistry extends AliasRegistry &#123;
 
+    //往注册表中注册bean
+    void registerBeanDefinition(String beanName, BeanDefinition beanDefinition)
+            throws BeanDefinitionStoreException;
+
+    //从注册表中删除指定名称的bean
+    void removeBeanDefinition(String beanName) throws NoSuchBeanDefinitionException;
+
+    //获取注册表中指定名称的bean
+    BeanDefinition getBeanDefinition(String beanName) throws NoSuchBeanDefinitionException;
+    
+    //判断注册表中是否已经注册了指定名称的bean
+    boolean containsBeanDefinition(String beanName);
+    
+    //获取注册表中所有的bean的名称
+    String[] getBeanDefinitionNames();
+    
+    int getBeanDefinitionCount();
+    boolean isBeanNameInUse(String beanName);
+&#125;
+</code></pre>
 <p>继承结构图如下：</p>
 <p><img src="E:/MyFile/TyporaImgs/image-20200429211132185-16727463277121.png" alt="image-20200429211132185"></p>
 <p>从上面类图可以看到BeanDefinitionRegistry接口的子实现类主要有以下几个：</p>
 <ul>
 <li><p>DefaultListableBeanFactory</p>
 <p>在该类中定义了如下代码，就是用来注册bean</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, BeanDefinition&gt; beanDefinitionMap = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;(<span class="number">256</span>);</span><br></pre></td></tr></table></figure></li>
+<pre><code class="java">private final Map&lt;String, BeanDefinition&gt; beanDefinitionMap = new ConcurrentHashMap&lt;&gt;(256);
+</code></pre>
+</li>
 </ul>
 <ul>
 <li><p>SimpleBeanDefinitionRegistry</p>
 <p>在该类中定义了如下代码，就是用来注册</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x 1private <span class="keyword">final</span> Map&lt;String, BeanDefinition&gt; beanDefinitionMap = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;(<span class="number">64</span>);</span><br></pre></td></tr></table></figure></li>
+<pre><code class="java">x 1private final Map&lt;String, BeanDefinition&gt; beanDefinitionMap = new ConcurrentHashMap&lt;&gt;(64);
+</code></pre>
+</li>
 </ul>
 <h3 id="5、创建容器"><a href="#5、创建容器" class="headerlink" title="5、创建容器"></a>5、创建容器</h3><p><code>ClassPathXmlApplicationContext</code>对<code>Bean</code>配置资源的载入是从<code>refresh（）</code>方法开始的。<code>refresh（）</code>方法是一个模板方法，规定了 IoC 容器的启动流程，有些逻辑要交给其子类实现。它对 Bean 配置资源进行载入，<code>ClassPathXmlApplicationContext</code>通过调用其父类<code>AbstractApplicationContext</code>的r<code>efresh（）</code>方法启动整个IoC容器对Bean定义的载入过程。</p>
 <h2 id="三、自定义SpringIOC"><a href="#三、自定义SpringIOC" class="headerlink" title="三、自定义SpringIOC"></a>三、自定义SpringIOC</h2><p>现要对下面的配置文件进行解析，并自定义Spring框架的IOC对涉及到的对象进行管理。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.service.impl.UserServiceImpl&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;userDao&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;userDao&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userDao&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.itheima.dao.impl.UserDaoImpl&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans&gt;
+    &lt;bean id=&quot;userService&quot; class=&quot;com.itheima.service.impl.UserServiceImpl&quot;&gt;
+        &lt;property name=&quot;userDao&quot; ref=&quot;userDao&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;bean id=&quot;userDao&quot; class=&quot;com.itheima.dao.impl.UserDaoImpl&quot;&gt;&lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
 <h3 id="7-4-1-定义bean相关的pojo类"><a href="#7-4-1-定义bean相关的pojo类" class="headerlink" title="7.4.1 定义bean相关的pojo类"></a>7.4.1 定义bean相关的pojo类</h3><h4 id="7-4-1-1-PropertyValue类"><a href="#7-4-1-1-PropertyValue类" class="headerlink" title="7.4.1.1 PropertyValue类"></a>7.4.1.1 PropertyValue类</h4><p>用于封装bean的属性，体现到上面的配置文件就是封装bean标签的子标签property标签数据。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PropertyValue</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> String ref;</span><br><span class="line">  <span class="keyword">private</span> String value;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">PropertyValue</span><span class="params">()</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">PropertyValue</span><span class="params">(String name, String ref,String value)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="built_in">this</span>.ref = ref;</span><br><span class="line">    <span class="built_in">this</span>.value = value;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getRef</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> ref;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setRef</span><span class="params">(String ref)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.ref = ref;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">getValue</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setValue</span><span class="params">(String value)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.value = value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class PropertyValue &#123;
 
+  private String name;
+  private String ref;
+  private String value;
 
+  public PropertyValue() &#123;
+  &#125;
 
+  public PropertyValue(String name, String ref,String value) &#123;
+    this.name = name;
+    this.ref = ref;
+    this.value = value;
+  &#125;
+
+  public String getName() &#123;
+    return name;
+  &#125;
+
+  public void setName(String name) &#123;
+    this.name = name;
+  &#125;
+
+  public String getRef() &#123;
+    return ref;
+  &#125;
+
+  public void setRef(String ref) &#123;
+    this.ref = ref;
+  &#125;
+
+  public String getValue() &#123;
+    return value;
+  &#125;
+
+  public void setValue(String value) &#123;
+    this.value = value;
+  &#125;
+&#125;
+</code></pre>
 <h4 id="7-4-1-2-MutablePropertyValues类"><a href="#7-4-1-2-MutablePropertyValues类" class="headerlink" title="7.4.1.2 MutablePropertyValues类"></a>7.4.1.2 MutablePropertyValues类</h4><p>一个bean标签可以有多个property子标签，所以再定义一个MutablePropertyValues类，用来存储并管理多个PropertyValue对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MutablePropertyValues</span> <span class="keyword">implements</span> <span class="title class_">Iterable</span>&lt;PropertyValue&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> List&lt;PropertyValue&gt; propertyValueList;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MutablePropertyValues</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.propertyValueList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;PropertyValue&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MutablePropertyValues</span><span class="params">(List&lt;PropertyValue&gt; propertyValueList)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.propertyValueList = (propertyValueList != <span class="literal">null</span> ? propertyValueList : <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;PropertyValue&gt;());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> PropertyValue[] getPropertyValues() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.propertyValueList.toArray(<span class="keyword">new</span> <span class="title class_">PropertyValue</span>[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> PropertyValue <span class="title function_">getPropertyValue</span><span class="params">(String propertyName)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (PropertyValue pv : <span class="built_in">this</span>.propertyValueList) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pv.getName().equals(propertyName)) &#123;</span><br><span class="line">                <span class="keyword">return</span> pv;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Iterator&lt;PropertyValue&gt; <span class="title function_">iterator</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> propertyValueList.iterator();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.propertyValueList.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> MutablePropertyValues <span class="title function_">addPropertyValue</span><span class="params">(PropertyValue pv)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="built_in">this</span>.propertyValueList.size(); i++) &#123;</span><br><span class="line">            <span class="type">PropertyValue</span> <span class="variable">currentPv</span> <span class="operator">=</span> <span class="built_in">this</span>.propertyValueList.get(i);</span><br><span class="line">            <span class="keyword">if</span> (currentPv.getName().equals(pv.getName())) &#123;</span><br><span class="line">                <span class="built_in">this</span>.propertyValueList.set(i, <span class="keyword">new</span> <span class="title class_">PropertyValue</span>(pv.getName(),pv.getRef(), pv.getValue()));</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.propertyValueList.add(pv);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(String propertyName)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> getPropertyValue(propertyName) != <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class MutablePropertyValues implements Iterable&lt;PropertyValue&gt; &#123;
 
+    private final List&lt;PropertyValue&gt; propertyValueList;
 
+    public MutablePropertyValues() &#123;
+        this.propertyValueList = new ArrayList&lt;PropertyValue&gt;();
+    &#125;
 
+    public MutablePropertyValues(List&lt;PropertyValue&gt; propertyValueList) &#123;
+        this.propertyValueList = (propertyValueList != null ? propertyValueList : new ArrayList&lt;PropertyValue&gt;());
+    &#125;
+
+    public PropertyValue[] getPropertyValues() &#123;
+        return this.propertyValueList.toArray(new PropertyValue[0]);
+    &#125;
+
+    public PropertyValue getPropertyValue(String propertyName) &#123;
+        for (PropertyValue pv : this.propertyValueList) &#123;
+            if (pv.getName().equals(propertyName)) &#123;
+                return pv;
+            &#125;
+        &#125;
+        return null;
+    &#125;
+
+    @Override
+    public Iterator&lt;PropertyValue&gt; iterator() &#123;
+        return propertyValueList.iterator();
+    &#125;
+
+    public boolean isEmpty() &#123;
+        return this.propertyValueList.isEmpty();
+    &#125;
+
+    public MutablePropertyValues addPropertyValue(PropertyValue pv) &#123;
+        for (int i = 0; i &lt; this.propertyValueList.size(); i++) &#123;
+            PropertyValue currentPv = this.propertyValueList.get(i);
+            if (currentPv.getName().equals(pv.getName())) &#123;
+                this.propertyValueList.set(i, new PropertyValue(pv.getName(),pv.getRef(), pv.getValue()));
+                return this;
+            &#125;
+        &#125;
+        this.propertyValueList.add(pv);
+        return this;
+    &#125;
+
+    public boolean contains(String propertyName) &#123;
+        return getPropertyValue(propertyName) != null;
+    &#125;
+&#125;
+</code></pre>
 <h4 id="7-4-1-3-BeanDefinition类"><a href="#7-4-1-3-BeanDefinition类" class="headerlink" title="7.4.1.3 BeanDefinition类"></a>7.4.1.3 BeanDefinition类</h4><p>BeanDefinition类用来封装bean信息的，主要包含id（即bean对象的名称）、class（需要交由spring管理的类的全类名）及子标签property数据。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BeanDefinition</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="keyword">private</span> String className;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> MutablePropertyValues propertyValues;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BeanDefinition</span><span class="params">()</span> &#123;</span><br><span class="line">        propertyValues = <span class="keyword">new</span> <span class="title class_">MutablePropertyValues</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(String id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getClassName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> className;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setClassName</span><span class="params">(String className)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.className = className;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPropertyValues</span><span class="params">(MutablePropertyValues propertyValues)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.propertyValues = propertyValues;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> MutablePropertyValues <span class="title function_">getPropertyValues</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> propertyValues;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class BeanDefinition &#123;
+    private String id;
+    private String className;
 
+    private MutablePropertyValues propertyValues;
 
+    public BeanDefinition() &#123;
+        propertyValues = new MutablePropertyValues();
+    &#125;
 
+    public String getId() &#123;
+        return id;
+    &#125;
+
+    public void setId(String id) &#123;
+        this.id = id;
+    &#125;
+
+    public String getClassName() &#123;
+        return className;
+    &#125;
+
+    public void setClassName(String className) &#123;
+        this.className = className;
+    &#125;
+
+    public void setPropertyValues(MutablePropertyValues propertyValues) &#123;
+        this.propertyValues = propertyValues;
+    &#125;
+
+    public MutablePropertyValues getPropertyValues() &#123;
+        return propertyValues;
+    &#125;
+&#125;
+</code></pre>
 <h3 id="7-4-2-定义注册表相关类"><a href="#7-4-2-定义注册表相关类" class="headerlink" title="7.4.2 定义注册表相关类"></a>7.4.2 定义注册表相关类</h3><h4 id="7-4-2-1-BeanDefinitionRegistry接口"><a href="#7-4-2-1-BeanDefinitionRegistry接口" class="headerlink" title="7.4.2.1 BeanDefinitionRegistry接口"></a>7.4.2.1 BeanDefinitionRegistry接口</h4><p>BeanDefinitionRegistry接口定义了注册表的相关操作，定义如下功能：</p>
 <ul>
 <li>注册BeanDefinition对象到注册表中</li>
@@ -434,43 +629,141 @@
 <li>获取注册表中BeanDefinition对象的个数</li>
 <li>获取注册表中所有的BeanDefinition的名称</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanDefinitionRegistry</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//注册BeanDefinition对象到注册表中</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">registerBeanDefinition</span><span class="params">(String beanName, BeanDefinition beanDefinition)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//从注册表中删除指定名称的BeanDefinition对象</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">removeBeanDefinition</span><span class="params">(String beanName)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据名称从注册表中获取BeanDefinition对象</span></span><br><span class="line">    BeanDefinition <span class="title function_">getBeanDefinition</span><span class="params">(String beanName)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line"></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsBeanDefinition</span><span class="params">(String beanName)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="title function_">getBeanDefinitionCount</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    String[] getBeanDefinitionNames();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public interface BeanDefinitionRegistry &#123;
 
+    //注册BeanDefinition对象到注册表中
+    void registerBeanDefinition(String beanName, BeanDefinition beanDefinition);
 
+    //从注册表中删除指定名称的BeanDefinition对象
+    void removeBeanDefinition(String beanName) throws Exception;
 
+    //根据名称从注册表中获取BeanDefinition对象
+    BeanDefinition getBeanDefinition(String beanName) throws Exception;
+
+    boolean containsBeanDefinition(String beanName);
+
+    int getBeanDefinitionCount();
+
+    String[] getBeanDefinitionNames();
+&#125;
+</code></pre>
 <h4 id="7-4-2-2-SimpleBeanDefinitionRegistry类"><a href="#7-4-2-2-SimpleBeanDefinitionRegistry类" class="headerlink" title="7.4.2.2 SimpleBeanDefinitionRegistry类"></a>7.4.2.2 SimpleBeanDefinitionRegistry类</h4><p>该类实现了BeanDefinitionRegistry接口，定义了Map集合作为注册表容器。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SimpleBeanDefinitionRegistry</span> <span class="keyword">implements</span> <span class="title class_">BeanDefinitionRegistry</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, BeanDefinition&gt; beanDefinitionMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, BeanDefinition&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">registerBeanDefinition</span><span class="params">(String beanName, BeanDefinition beanDefinition)</span> &#123;</span><br><span class="line">        beanDefinitionMap.put(beanName,beanDefinition);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">removeBeanDefinition</span><span class="params">(String beanName)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        beanDefinitionMap.remove(beanName);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> BeanDefinition <span class="title function_">getBeanDefinition</span><span class="params">(String beanName)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="keyword">return</span> beanDefinitionMap.get(beanName);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">containsBeanDefinition</span><span class="params">(String beanName)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> beanDefinitionMap.containsKey(beanName);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getBeanDefinitionCount</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> beanDefinitionMap.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String[] getBeanDefinitionNames() &#123;</span><br><span class="line">        <span class="keyword">return</span> beanDefinitionMap.keySet().toArray(<span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class SimpleBeanDefinitionRegistry implements BeanDefinitionRegistry &#123;
 
+    private Map&lt;String, BeanDefinition&gt; beanDefinitionMap = new HashMap&lt;String, BeanDefinition&gt;();
 
+    @Override
+    public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition) &#123;
+        beanDefinitionMap.put(beanName,beanDefinition);
+    &#125;
 
+    @Override
+    public void removeBeanDefinition(String beanName) throws Exception &#123;
+        beanDefinitionMap.remove(beanName);
+    &#125;
+
+    @Override
+    public BeanDefinition getBeanDefinition(String beanName) throws Exception &#123;
+        return beanDefinitionMap.get(beanName);
+    &#125;
+
+    @Override
+    public boolean containsBeanDefinition(String beanName) &#123;
+        return beanDefinitionMap.containsKey(beanName);
+    &#125;
+
+    @Override
+    public int getBeanDefinitionCount() &#123;
+        return beanDefinitionMap.size();
+    &#125;
+
+    @Override
+    public String[] getBeanDefinitionNames() &#123;
+        return beanDefinitionMap.keySet().toArray(new String[1]);
+    &#125;
+&#125;
+</code></pre>
 <h3 id="7-4-3-定义解析器相关类"><a href="#7-4-3-定义解析器相关类" class="headerlink" title="7.4.3 定义解析器相关类"></a>7.4.3 定义解析器相关类</h3><h4 id="7-4-3-1-BeanDefinitionReader接口"><a href="#7-4-3-1-BeanDefinitionReader接口" class="headerlink" title="7.4.3.1 BeanDefinitionReader接口"></a>7.4.3.1 BeanDefinitionReader接口</h4><p>BeanDefinitionReader是用来解析配置文件并在注册表中注册bean的信息。定义了两个规范：</p>
 <ul>
 <li>获取注册表的功能，让外界可以通过该对象获取注册表对象。</li>
 <li>加载配置文件，并注册bean数据。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanDefinitionReader</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获取注册表对象</span></span><br><span class="line">    BeanDefinitionRegistry <span class="title function_">getRegistry</span><span class="params">()</span>;</span><br><span class="line">	<span class="comment">//加载配置文件并在注册表中进行注册</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">loadBeanDefinitions</span><span class="params">(String configLocation)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public interface BeanDefinitionReader &#123;
 
-
-
+    //获取注册表对象
+    BeanDefinitionRegistry getRegistry();
+    //加载配置文件并在注册表中进行注册
+    void loadBeanDefinitions(String configLocation) throws Exception;
+&#125;
+</code></pre>
 <h4 id="7-4-3-2-XmlBeanDefinitionReader类"><a href="#7-4-3-2-XmlBeanDefinitionReader类" class="headerlink" title="7.4.3.2 XmlBeanDefinitionReader类"></a>7.4.3.2 XmlBeanDefinitionReader类</h4><p>XmlBeanDefinitionReader类是专门用来解析xml配置文件的。该类实现BeanDefinitionReader接口并实现接口中的两个功能。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">XmlBeanDefinitionReader</span> <span class="keyword">implements</span> <span class="title class_">BeanDefinitionReader</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> BeanDefinitionRegistry registry;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">XmlBeanDefinitionReader</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.registry = <span class="keyword">new</span> <span class="title class_">SimpleBeanDefinitionRegistry</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> BeanDefinitionRegistry <span class="title function_">getRegistry</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> registry;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">loadBeanDefinitions</span><span class="params">(String configLocation)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> <span class="built_in">this</span>.getClass().getClassLoader().getResourceAsStream(configLocation);</span><br><span class="line">        <span class="type">SAXReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SAXReader</span>();</span><br><span class="line">        <span class="type">Document</span> <span class="variable">document</span> <span class="operator">=</span> reader.read(is);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">rootElement</span> <span class="operator">=</span> document.getRootElement();</span><br><span class="line">        <span class="comment">//解析bean标签</span></span><br><span class="line">        parseBean(rootElement);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">parseBean</span><span class="params">(Element rootElement)</span> &#123;</span><br><span class="line"></span><br><span class="line">        List&lt;Element&gt; elements = rootElement.elements();</span><br><span class="line">        <span class="keyword">for</span> (Element element : elements) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> element.attributeValue(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">className</span> <span class="operator">=</span> element.attributeValue(<span class="string">&quot;class&quot;</span>);</span><br><span class="line">            <span class="type">BeanDefinition</span> <span class="variable">beanDefinition</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BeanDefinition</span>();</span><br><span class="line">            beanDefinition.setId(id);</span><br><span class="line">            beanDefinition.setClassName(className);</span><br><span class="line">            List&lt;Element&gt; list = element.elements(<span class="string">&quot;property&quot;</span>);</span><br><span class="line">            <span class="type">MutablePropertyValues</span> <span class="variable">mutablePropertyValues</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MutablePropertyValues</span>();</span><br><span class="line">            <span class="keyword">for</span> (Element element1 : list) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> element1.attributeValue(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">ref</span> <span class="operator">=</span> element1.attributeValue(<span class="string">&quot;ref&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> element1.attributeValue(<span class="string">&quot;value&quot;</span>);</span><br><span class="line">                <span class="type">PropertyValue</span> <span class="variable">propertyValue</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PropertyValue</span>(name,ref,value);</span><br><span class="line">                mutablePropertyValues.addPropertyValue(propertyValue);</span><br><span class="line">            &#125;</span><br><span class="line">            beanDefinition.setPropertyValues(mutablePropertyValues);</span><br><span class="line"></span><br><span class="line">            registry.registerBeanDefinition(id,beanDefinition);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class XmlBeanDefinitionReader implements BeanDefinitionReader &#123;
 
+    private BeanDefinitionRegistry registry;
 
+    public XmlBeanDefinitionReader() &#123;
+        this.registry = new SimpleBeanDefinitionRegistry();
+    &#125;
 
+    @Override
+    public BeanDefinitionRegistry getRegistry() &#123;
+        return registry;
+    &#125;
+
+    @Override
+    public void loadBeanDefinitions(String configLocation) throws Exception &#123;
+
+        InputStream is = this.getClass().getClassLoader().getResourceAsStream(configLocation);
+        SAXReader reader = new SAXReader();
+        Document document = reader.read(is);
+        Element rootElement = document.getRootElement();
+        //解析bean标签
+        parseBean(rootElement);
+    &#125;
+
+    private void parseBean(Element rootElement) &#123;
+
+        List&lt;Element&gt; elements = rootElement.elements();
+        for (Element element : elements) &#123;
+            String id = element.attributeValue(&quot;id&quot;);
+            String className = element.attributeValue(&quot;class&quot;);
+            BeanDefinition beanDefinition = new BeanDefinition();
+            beanDefinition.setId(id);
+            beanDefinition.setClassName(className);
+            List&lt;Element&gt; list = element.elements(&quot;property&quot;);
+            MutablePropertyValues mutablePropertyValues = new MutablePropertyValues();
+            for (Element element1 : list) &#123;
+                String name = element1.attributeValue(&quot;name&quot;);
+                String ref = element1.attributeValue(&quot;ref&quot;);
+                String value = element1.attributeValue(&quot;value&quot;);
+                PropertyValue propertyValue = new PropertyValue(name,ref,value);
+                mutablePropertyValues.addPropertyValue(propertyValue);
+            &#125;
+            beanDefinition.setPropertyValues(mutablePropertyValues);
+
+            registry.registerBeanDefinition(id,beanDefinition);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
 <h3 id="7-4-4-IOC容器相关类"><a href="#7-4-4-IOC容器相关类" class="headerlink" title="7.4.4 IOC容器相关类"></a>7.4.4 IOC容器相关类</h3><h4 id="7-4-4-1-BeanFactory接口"><a href="#7-4-4-1-BeanFactory接口" class="headerlink" title="7.4.4.1 BeanFactory接口"></a>7.4.4.1 BeanFactory接口</h4><p>在该接口中定义IOC容器的统一规范即获取bean对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanFactory</span> &#123;</span><br><span class="line">	<span class="comment">//根据bean对象的名称获取bean对象</span></span><br><span class="line">    Object <span class="title function_">getBean</span><span class="params">(String name)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">	<span class="comment">//根据bean对象的名称获取bean对象，并进行类型转换</span></span><br><span class="line">    &lt;T&gt; T <span class="title function_">getBean</span><span class="params">(String name, Class&lt;? extends T&gt; clazz)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code class="java">public interface BeanFactory &#123;
+    //根据bean对象的名称获取bean对象
+    Object getBean(String name) throws Exception;
+    //根据bean对象的名称获取bean对象，并进行类型转换
+    &lt;T&gt; T getBean(String name, Class&lt;? extends T&gt; clazz) throws Exception;
+&#125;
+</code></pre>
 <h4 id="7-4-4-2-ApplicationContext接口"><a href="#7-4-4-2-ApplicationContext接口" class="headerlink" title="7.4.4.2 ApplicationContext接口"></a>7.4.4.2 ApplicationContext接口</h4><p>该接口的所以的子实现类对bean对象的创建都是非延时的，所以在该接口中定义 <code>refresh()</code> 方法，该方法主要完成以下两个功能：</p>
 <ul>
 <li>加载配置文件。</li>
 <li>根据注册表中的BeanDefinition对象封装的数据进行bean对象的创建。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ApplicationContext</span> <span class="keyword">extends</span> <span class="title class_">BeanFactory</span> &#123;</span><br><span class="line">	<span class="comment">//进行配置文件加载并进行对象创建</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">refresh</span><span class="params">()</span> <span class="keyword">throws</span> IllegalStateException, Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code class="java">public interface ApplicationContext extends BeanFactory &#123;
+    //进行配置文件加载并进行对象创建
+    void refresh() throws IllegalStateException, Exception;
+&#125;
+</code></pre>
 <h4 id="7-4-4-3-AbstractApplicationContext类"><a href="#7-4-4-3-AbstractApplicationContext类" class="headerlink" title="7.4.4.3 AbstractApplicationContext类"></a>7.4.4.3 AbstractApplicationContext类</h4><ul>
 <li><p>作为ApplicationContext接口的子类，所以该类也是非延时加载，所以需要在该类中定义一个Map集合，作为bean对象存储的容器。</p>
 </li>
@@ -478,8 +771,36 @@
 <p>BeanDefinitionReader类型的对象创建交由子类实现，因为只有子类明确到底创建BeanDefinitionReader哪儿个子实现类对象。</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbstractApplicationContext</span> <span class="keyword">implements</span> <span class="title class_">ApplicationContext</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> BeanDefinitionReader beanDefinitionReader;</span><br><span class="line">    <span class="comment">//用来存储bean对象的容器   key存储的是bean的id值，value存储的是bean对象</span></span><br><span class="line">    <span class="keyword">protected</span> Map&lt;String, Object&gt; singletonObjects = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, Object&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//存储配置文件的路径</span></span><br><span class="line">    <span class="keyword">protected</span> String configLocation;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">refresh</span><span class="params">()</span> <span class="keyword">throws</span> IllegalStateException, Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//加载BeanDefinition</span></span><br><span class="line">        beanDefinitionReader.loadBeanDefinitions(configLocation);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化bean</span></span><br><span class="line">        finishBeanInitialization();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//bean的初始化</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">finishBeanInitialization</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">BeanDefinitionRegistry</span> <span class="variable">registry</span> <span class="operator">=</span> beanDefinitionReader.getRegistry();</span><br><span class="line">        String[] beanNames = registry.getBeanDefinitionNames();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String beanName : beanNames) &#123;</span><br><span class="line">            <span class="type">BeanDefinition</span> <span class="variable">beanDefinition</span> <span class="operator">=</span> registry.getBeanDefinition(beanName);</span><br><span class="line">            getBean(beanName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public abstract class AbstractApplicationContext implements ApplicationContext &#123;
 
+    protected BeanDefinitionReader beanDefinitionReader;
+    //用来存储bean对象的容器   key存储的是bean的id值，value存储的是bean对象
+    protected Map&lt;String, Object&gt; singletonObjects = new HashMap&lt;String, Object&gt;();
+
+    //存储配置文件的路径
+    protected String configLocation;
+
+    public void refresh() throws IllegalStateException, Exception &#123;
+
+        //加载BeanDefinition
+        beanDefinitionReader.loadBeanDefinitions(configLocation);
+
+        //初始化bean
+        finishBeanInitialization();
+    &#125;
+
+    //bean的初始化
+    private void finishBeanInitialization() throws Exception &#123;
+        BeanDefinitionRegistry registry = beanDefinitionReader.getRegistry();
+        String[] beanNames = registry.getBeanDefinitionNames();
+
+        for (String beanName : beanNames) &#123;
+            BeanDefinition beanDefinition = registry.getBeanDefinition(beanName);
+            getBean(beanName);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
 <blockquote>
 <p>注意：该类finishBeanInitialization()方法中调用getBean()方法使用到了模板方法模式。</p>
 </blockquote>
@@ -489,7 +810,74 @@
 <li>在构造方法中，调用refresh()方法，用于进行配置文件加载、创建bean对象并存储到容器中。</li>
 <li>重写父接口中的getBean()方法，并实现依赖注入操作。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassPathXmlApplicationContext</span> <span class="keyword">extends</span> <span class="title class_">AbstractApplicationContext</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ClassPathXmlApplicationContext</span><span class="params">(String configLocation)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.configLocation = configLocation;</span><br><span class="line">        <span class="comment">//构建XmlBeanDefinitionReader对象</span></span><br><span class="line">        beanDefinitionReader = <span class="keyword">new</span> <span class="title class_">XmlBeanDefinitionReader</span>();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.refresh();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据bean的id属性值获取bean对象</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">getBean</span><span class="params">(String name)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//return singletonObjects.get(name);</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> singletonObjects.get(name);</span><br><span class="line">        <span class="keyword">if</span>(obj != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> obj;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">BeanDefinitionRegistry</span> <span class="variable">registry</span> <span class="operator">=</span> beanDefinitionReader.getRegistry();</span><br><span class="line">        <span class="type">BeanDefinition</span> <span class="variable">beanDefinition</span> <span class="operator">=</span> registry.getBeanDefinition(name);</span><br><span class="line">        <span class="keyword">if</span>(beanDefinition == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">String</span> <span class="variable">className</span> <span class="operator">=</span> beanDefinition.getClassName();</span><br><span class="line">        Class&lt;?&gt; clazz = Class.forName(className);</span><br><span class="line">        <span class="type">Object</span> <span class="variable">beanObj</span> <span class="operator">=</span> clazz.newInstance();</span><br><span class="line">        <span class="type">MutablePropertyValues</span> <span class="variable">propertyValues</span> <span class="operator">=</span> beanDefinition.getPropertyValues();</span><br><span class="line">        <span class="keyword">for</span> (PropertyValue propertyValue : propertyValues) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">propertyName</span> <span class="operator">=</span> propertyValue.getName();</span><br><span class="line">            <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> propertyValue.getValue();</span><br><span class="line">            <span class="type">String</span> <span class="variable">ref</span> <span class="operator">=</span> propertyValue.getRef();</span><br><span class="line">            <span class="keyword">if</span>(ref != <span class="literal">null</span> &amp;&amp; !<span class="string">&quot;&quot;</span>.equals(ref)) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="type">Object</span> <span class="variable">bean</span> <span class="operator">=</span> getBean(ref);</span><br><span class="line">                <span class="type">String</span> <span class="variable">methodName</span> <span class="operator">=</span> StringUtils.getSetterMethodNameByFieldName(propertyName);</span><br><span class="line">                Method[] methods = clazz.getMethods();</span><br><span class="line">                <span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(method.getName().equals(methodName)) &#123;</span><br><span class="line">                        method.invoke(beanObj,bean);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(value != <span class="literal">null</span> &amp;&amp; !<span class="string">&quot;&quot;</span>.equals(value)) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">methodName</span> <span class="operator">=</span> StringUtils.getSetterMethodNameByFieldName(propertyName);</span><br><span class="line">                <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> clazz.getMethod(methodName, String.class);</span><br><span class="line">                method.invoke(beanObj,value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        singletonObjects.put(name,beanObj);</span><br><span class="line">        <span class="keyword">return</span> beanObj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T&gt; T <span class="title function_">getBean</span><span class="params">(String name, Class&lt;? extends T&gt; clazz)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">Object</span> <span class="variable">bean</span> <span class="operator">=</span> getBean(name);</span><br><span class="line">        <span class="keyword">if</span>(bean != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> clazz.cast(bean);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class ClassPathXmlApplicationContext extends AbstractApplicationContext&#123;
+
+    public ClassPathXmlApplicationContext(String configLocation) &#123;
+        this.configLocation = configLocation;
+        //构建XmlBeanDefinitionReader对象
+        beanDefinitionReader = new XmlBeanDefinitionReader();
+        try &#123;
+            this.refresh();
+        &#125; catch (Exception e) &#123;
+        &#125;
+    &#125;
+
+    //根据bean的id属性值获取bean对象
+    @Override
+    public Object getBean(String name) throws Exception &#123;
+
+        //return singletonObjects.get(name);
+        Object obj = singletonObjects.get(name);
+        if(obj != null) &#123;
+            return obj;
+        &#125;
+
+        BeanDefinitionRegistry registry = beanDefinitionReader.getRegistry();
+        BeanDefinition beanDefinition = registry.getBeanDefinition(name);
+        if(beanDefinition == null) &#123;
+            return null;
+        &#125;
+        String className = beanDefinition.getClassName();
+        Class&lt;?&gt; clazz = Class.forName(className);
+        Object beanObj = clazz.newInstance();
+        MutablePropertyValues propertyValues = beanDefinition.getPropertyValues();
+        for (PropertyValue propertyValue : propertyValues) &#123;
+            String propertyName = propertyValue.getName();
+            String value = propertyValue.getValue();
+            String ref = propertyValue.getRef();
+            if(ref != null &amp;&amp; !&quot;&quot;.equals(ref)) &#123;
+
+                Object bean = getBean(ref);
+                String methodName = StringUtils.getSetterMethodNameByFieldName(propertyName);
+                Method[] methods = clazz.getMethods();
+                for (Method method : methods) &#123;
+                    if(method.getName().equals(methodName)) &#123;
+                        method.invoke(beanObj,bean);
+                    &#125;
+                &#125;
+            &#125;
+
+            if(value != null &amp;&amp; !&quot;&quot;.equals(value)) &#123;
+                String methodName = StringUtils.getSetterMethodNameByFieldName(propertyName);
+                Method method = clazz.getMethod(methodName, String.class);
+                method.invoke(beanObj,value);
+            &#125;
+        &#125;
+        singletonObjects.put(name,beanObj);
+        return beanObj;
+    &#125;
+
+    @Override
+    public &lt;T&gt; T getBean(String name, Class&lt;? extends T&gt; clazz) throws Exception &#123;
+
+        Object bean = getBean(name);
+        if(bean != null) &#123;
+            return clazz.cast(bean);
+        &#125;
+        return null;
+    &#125;
+&#125;
+</code></pre>
 
     
 
@@ -835,23 +1223,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Source</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">essays</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,15 +1239,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Source</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">essays</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,7 +1259,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">BinaryTree</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">BackTracking</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -895,11 +1283,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">BackTracking</a>
+                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
+                <a href="javascript:void(0)" class="js-tag color1">BinaryTree</a>
               </li>
             
             <div class="clearfix"></div>
@@ -951,8 +1339,8 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://github.com/dingxinliang88" target="_blank" 
-                class="search-title" title="记录工作和学习过程中的笔记：Java、前端开发、Hexo博客、、Linux笔记、ElasticSearch、ELK日志分析">
+              <a href="https://www.dingxinliang88.github.io" target="_blank" 
+                class="search-title" title="记录工作和学习过程中的笔记：Java、Hexo博客、Linux笔记、后端开发、算法学习">
                 
                   <img src="https://zhousiwei.gitee.io/ibooks/favicon.ico">
                 

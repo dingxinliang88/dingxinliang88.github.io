@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingxinliang88.github.io">
-  <title>Servlet技术简述 | 橘子的博客日常</title>
+  <title>Servlet技术简述 | CodeJuzi的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Servlet技术简述">
 <meta property="og:url" content="http://dingxinliang88.github.io/2022/11/27/Servlet%E6%8A%80%E6%9C%AF%E7%AE%80%E8%BF%B0/index.html">
-<meta property="og:site_name" content="橘子的博客日常">
+<meta property="og:site_name" content="CodeJuzi的博客">
 <meta property="og:description" content="JavaWeb 参考文章 &#x3D;&gt; Java Web - 随笔分类 - 有梦想的老王 - 博客园 (cnblogs.com) Servlet技术笔记  Servlet 参考文章 Java Web(一) Servlet详解！！ - 有梦想的老王 - 博客园 (cnblogs.com)  一、servlet1⃣️ 概述 Servlet时运行在web服务器端的应用程序，使用Java编写 Se">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94%E5%AE%A2%E6%88%B7%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BF%87%E7%A8%8B.png">
@@ -32,7 +32,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94%E5%AE%A2%E6%88%B7%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BF%87%E7%A8%8B.png">
   
-    <link rel="alternative" href="/atom.xml" title="橘子的博客日常" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="CodeJuzi的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -59,6 +59,9 @@
 
 
   
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
 
 </head>
 
@@ -79,7 +82,7 @@
 			<h1 class="header-author"><a href="/">CodeJuzi</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">一个憨憨的Code历程</p>
+		<p class="header-subtitle">be foolish, be hungry</p>
 		
 
 		<nav class="header-menu">
@@ -87,9 +90,9 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 			
-				<li><a href="https://www.github.com/dingxinliang88" target="_blank">技术笔记</a></li>
+				<li><a href="https://www.dingxinliang88.github.io" target="_blank">技术笔记</a></li>
 			
-				<li><a href="/tags/essays/" target="_blank">随笔</a></li>
+				<li><a href="/tags/essay/" target="_blank">随笔</a></li>
 			
 			</ul>
 		</nav>
@@ -117,7 +120,7 @@
 					
 				
 					
-						<a class="gitee" href="https://gitee.com/ding-xinliang" 
+						<a class="gitee" href="https://www.gitee.com/ding-xinliang" 
 												title="码云" target="_blank"><i class="icon-gitee"></i></a>
 					
 				
@@ -168,7 +171,7 @@
 			  <h1 class="header-author js-header-author">CodeJuzi</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个憨憨的Code历程<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>be foolish, be hungry<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -190,7 +193,7 @@
 					
 						
 						<a class="gitee" target="_blank" 
-							href="https://gitee.com/ding-xinliang" title="码云"><i class="icon-gitee"></i></a>
+							href="https://www.gitee.com/ding-xinliang" title="码云"><i class="icon-gitee"></i></a>
 						
 					
 						
@@ -217,9 +220,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://www.github.com/dingxinliang88">技术笔记</a></li>
+					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://www.dingxinliang88.github.io">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/essays/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/essay/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -304,8 +307,14 @@
 <span id="more"></span>
 
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94%E5%AE%A2%E6%88%B7%E8%AF%B7%E6%B1%82%E7%9A%84%E8%BF%87%E7%A8%8B.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">A[客户端] --&gt; |HTTP请求| B[HTTP服务器]</span><br><span class="line">B --&gt; C[Servlet服务器]</span><br><span class="line">C --&gt; D[Servlet]</span><br><span class="line">D --&gt; C</span><br><span class="line">C --&gt; B</span><br><span class="line">B --&gt; |HTTP响应| A</span><br></pre></td></tr></table></figure>
-
+<pre><code class="mermaid">graph LR;
+A[客户端] --&gt; |HTTP请求| B[HTTP服务器]
+B --&gt; C[Servlet服务器]
+C --&gt; D[Servlet]
+D --&gt; C
+C --&gt; B
+B --&gt; |HTTP响应| A
+</code></pre>
 <h4 id="2⃣️-Servlet接口"><a href="#2⃣️-Servlet接口" class="headerlink" title="2⃣️ Servlet接口"></a>2⃣️ Servlet接口</h4><ul>
 <li>Servlet就是实现了<strong>Servlet接口</strong>的类，它由Web服务器创建并调用，用于接收和响应用户的请求</li>
 <li>在Servlet接口中定义了五个抽象方法</li>
@@ -353,7 +362,19 @@
 <li><p><strong style="color:red">通常情况下使用继承HttpServlet抽象类的方式编写Servlet类</strong></p>
 </li>
 <li><p>实例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletDemo</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;doGet()方法执行了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        doGet(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<pre><code class="java">public class ServletDemo extends HttpServlet &#123;
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        System.out.println(&quot;doGet()方法执行了&quot;);
+    &#125;
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        doGet(req,resp);
+    &#125;
+&#125;
+</code></pre>
+</li>
 </ol>
 </li>
 <li><p>Servlet线程安全问题</p>
@@ -474,7 +495,20 @@
 <li><p>把Servlet映射到URL地址 &#x3D;&gt; 使用<code>&lt;servlet-mapping&gt;&lt;/servlet-mappint&gt;</code>进行映射，在<code>&lt;servlet-mapping&gt;</code>元素下配置<code>&lt;servlet-name&gt;&lt;/servlet-name&gt;</code>指出Servlet的名称，<strong>需要和之前在<code>&lt;servlet&gt;</code>标签下注册的相同</strong>；配置<code>&lt;url-pattern&gt;&lt;/url-pattern&gt;</code>映射URL地址，<strong>地址前需要添加&#x2F;</strong></p>
 </li>
 <li><p>实例</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指出Servlet名称--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletDemo<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指出Servlet全类名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.demo.ServletDemo<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--和servlet标签下的名称一致--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletDemo<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--映射地址，必须加斜杠--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/ServletDemo<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<pre><code class="xml">&lt;servlet&gt;
+    &lt;!--指出Servlet名称--&gt;
+    &lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;
+    &lt;!--指出Servlet全类名--&gt;
+    &lt;servlet-class&gt;com.demo.ServletDemo&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;!--和servlet标签下的名称一致--&gt;
+    &lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;
+    &lt;!--映射地址，必须加斜杠--&gt;
+    &lt;url-pattern&gt;/ServletDemo&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+</li>
 </ol>
 </li>
 <li><p>使用注解配置Servlet</p>
@@ -512,7 +546,20 @@
 </tbody></table>
 </li>
 <li><p>实例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(name = &quot;ServletDemo&quot;,urlPatterns = &quot;/ServletDemo&quot;,initParams = &#123;@WebInitParam(name = &quot;encoding&quot;,value = &quot;UTF-8&quot;),@WebInitParam(name = &quot;desc&quot;,value = &quot;this is ServletDemo&quot;)&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletDemo</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;ServletDemo运行了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        doGet(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<pre><code class="java">@WebServlet(name = &quot;ServletDemo&quot;,urlPatterns = &quot;/ServletDemo&quot;,initParams = &#123;@WebInitParam(name = &quot;encoding&quot;,value = &quot;UTF-8&quot;),@WebInitParam(name = &quot;desc&quot;,value = &quot;this is ServletDemo&quot;)&#125;)
+public class ServletDemo extends HttpServlet &#123;
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        System.out.println(&quot;ServletDemo运行了&quot;);
+    &#125;
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        doGet(req,resp);
+    &#125;
+&#125;
+</code></pre>
+</li>
 </ol>
 </li>
 </ul>
@@ -579,7 +626,26 @@
 </blockquote>
 </li>
 <li><p>实例</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletConfigDemo<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.juzi.ServletConfigDemo<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置encoding参数，使用一个init-param标签--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置desc参数，使用一个init-param标签--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>desc<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>this is ServletConfigDemo<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletConfigDemo<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/ServletConfigDemo<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<pre><code class="xml">&lt;servlet&gt;
+    &lt;servlet-name&gt;ServletConfigDemo&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;com.juzi.ServletConfigDemo&lt;/servlet-class&gt;
+    &lt;!--配置encoding参数，使用一个init-param标签--&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;encoding&lt;/param-name&gt;
+        &lt;param-value&gt;UTF-8&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;!--配置desc参数，使用一个init-param标签--&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;desc&lt;/param-name&gt;
+        &lt;param-value&gt;this is ServletConfigDemo&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;ServletConfigDemo&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/ServletConfigDemo&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+</li>
 </ul>
 <h3 id="三、ServletContext"><a href="#三、ServletContext" class="headerlink" title="三、ServletContext"></a>三、ServletContext</h3><h4 id="1⃣️概述-1"><a href="#1⃣️概述-1" class="headerlink" title="1⃣️概述"></a>1⃣️概述</h4><ul>
 <li>Servlet容器启动时会为每一个Web应用创建一个唯一的ServletContext对象代表当前Web应用，ServletContext对象<strong>封装了当前Web应用的所有信息</strong></li>
@@ -594,7 +660,16 @@
 <li><p><code>&lt;param-value&gt;</code>表示全局初始化参数的value</p>
 </li>
 <li><p>实例</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>globalEncoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>globaleDesc<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>This is SevletContext<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<pre><code class="xml">&lt;context-param&gt;
+    &lt;param-name&gt;globalEncoding&lt;/param-name&gt;
+    &lt;param-value&gt;UTF-8&lt;/param-value&gt;
+&lt;/context-param&gt;
+&lt;context-param&gt;
+    &lt;param-name&gt;globaleDesc&lt;/param-name&gt;
+    &lt;param-value&gt;This is SevletContext&lt;/param-value&gt;
+&lt;/context-param&gt;
+</code></pre>
+</li>
 </ul>
 </li>
 </ul>
@@ -710,8 +785,65 @@
 </li>
 </ol>
 <p>实例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(&quot;/HttpServletRequestDemo&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HttpServletRequestDemo</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> req.getMethod();</span><br><span class="line">        System.out.println(method);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">requestURI</span> <span class="operator">=</span> req.getRequestURI();</span><br><span class="line">        System.out.println(requestURI);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">queryString</span> <span class="operator">=</span> req.getQueryString();</span><br><span class="line">        System.out.println(queryString);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">protocol</span> <span class="operator">=</span> req.getProtocol();</span><br><span class="line">        System.out.println(protocol);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">contextPath</span> <span class="operator">=</span> req.getContextPath();</span><br><span class="line">        System.out.println(contextPath);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">servletPath</span> <span class="operator">=</span> req.getServletPath();</span><br><span class="line">        System.out.println(servletPath);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">remoteAddr</span> <span class="operator">=</span> req.getRemoteAddr();</span><br><span class="line">        System.out.println(remoteAddr);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">remoteHost</span> <span class="operator">=</span> req.getRemoteHost();</span><br><span class="line">        System.out.println(remoteHost);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">remotePort</span> <span class="operator">=</span> req.getRemotePort();</span><br><span class="line">        System.out.println(remotePort);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">localAddr</span> <span class="operator">=</span> req.getLocalAddr();</span><br><span class="line">        System.out.println(localAddr);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">localName</span> <span class="operator">=</span> req.getLocalName();</span><br><span class="line">        System.out.println(localName);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">localPort</span> <span class="operator">=</span> req.getLocalPort();</span><br><span class="line">        System.out.println(localPort);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">serverName</span> <span class="operator">=</span> req.getServerName();</span><br><span class="line">        System.out.println(serverName);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">serverPort</span> <span class="operator">=</span> req.getServerPort();</span><br><span class="line">        System.out.println(serverPort);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">scheme</span> <span class="operator">=</span> req.getScheme();</span><br><span class="line">        System.out.println(scheme);</span><br><span class="line"></span><br><span class="line">        <span class="type">StringBuffer</span> <span class="variable">requestURL</span> <span class="operator">=</span> req.getRequestURL();</span><br><span class="line">        System.out.println(requestURL);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        doGet(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">@WebServlet(&quot;/HttpServletRequestDemo&quot;)
+public class HttpServletRequestDemo extends HttpServlet &#123;
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        String method = req.getMethod();
+        System.out.println(method);
 
+        String requestURI = req.getRequestURI();
+        System.out.println(requestURI);
+
+        String queryString = req.getQueryString();
+        System.out.println(queryString);
+
+        String protocol = req.getProtocol();
+        System.out.println(protocol);
+
+        String contextPath = req.getContextPath();
+        System.out.println(contextPath);
+
+        String servletPath = req.getServletPath();
+        System.out.println(servletPath);
+
+        String remoteAddr = req.getRemoteAddr();
+        System.out.println(remoteAddr);
+
+        String remoteHost = req.getRemoteHost();
+        System.out.println(remoteHost);
+
+        int remotePort = req.getRemotePort();
+        System.out.println(remotePort);
+
+        String localAddr = req.getLocalAddr();
+        System.out.println(localAddr);
+
+        String localName = req.getLocalName();
+        System.out.println(localName);
+
+        int localPort = req.getLocalPort();
+        System.out.println(localPort);
+
+        String serverName = req.getServerName();
+        System.out.println(serverName);
+
+        int serverPort = req.getServerPort();
+        System.out.println(serverPort);
+
+        String scheme = req.getScheme();
+        System.out.println(scheme);
+
+        StringBuffer requestURL = req.getRequestURL();
+        System.out.println(requestURL);
+    &#125;
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        doGet(req,resp);
+    &#125;
+&#125;
+</code></pre>
 <p>输出结果：</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5809/HttpServletRequestDemo.png"></p>
 </li>
@@ -727,8 +859,23 @@
 <li><code>String getCharacterEncoding()</code> &#x3D;&gt; 获取请求消息的实体部分的字符集编码，通常从Content-Type字段中截取</li>
 </ol>
 <p>实例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(&quot;/HttpServletRequestDemo&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HttpServletRequestDemo</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        Enumeration&lt;String&gt; headerNames = req.getHeaderNames();</span><br><span class="line">        <span class="keyword">while</span>(headerNames.hasMoreElements())&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> headerNames.nextElement();</span><br><span class="line">            System.out.println(s+<span class="string">&quot;:&quot;</span>+req.getHeader(s));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        doGet(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">@WebServlet(&quot;/HttpServletRequestDemo&quot;)
+public class HttpServletRequestDemo extends HttpServlet &#123;
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        Enumeration&lt;String&gt; headerNames = req.getHeaderNames();
+        while(headerNames.hasMoreElements())&#123;
+            String s = headerNames.nextElement();
+            System.out.println(s+&quot;:&quot;+req.getHeader(s));
+        &#125;
+    &#125;
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        doGet(req,resp);
+    &#125;
+&#125;
+</code></pre>
 <p>输出结果：</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5809/HttpServletRequestDemo01.png"></p>
 </li>
@@ -740,8 +887,24 @@
 <li><code>Map getParameterMap()</code> &#x3D;&gt; 将参数名和参数值装入一个Map对象中返回</li>
 </ol>
 <p>实例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(&quot;/HttpServletRequestDemo&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HttpServletRequestDemo</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        Enumeration&lt;String&gt; parameterNames = req.getParameterNames();</span><br><span class="line">        <span class="keyword">while</span> (parameterNames.hasMoreElements()) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> parameterNames.nextElement();</span><br><span class="line">            String[] parameterValues = req.getParameterValues(s);</span><br><span class="line">            System.out.println(s+<span class="string">&quot;:&quot;</span>+Arrays.toString(parameterValues));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        doGet(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">@WebServlet(&quot;/HttpServletRequestDemo&quot;)
+public class HttpServletRequestDemo extends HttpServlet &#123;
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        Enumeration&lt;String&gt; parameterNames = req.getParameterNames();
+        while (parameterNames.hasMoreElements()) &#123;
+            String s = parameterNames.nextElement();
+            String[] parameterValues = req.getParameterValues(s);
+            System.out.println(s+&quot;:&quot;+Arrays.toString(parameterValues));
+        &#125;
+    &#125;
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        doGet(req,resp);
+    &#125;
+&#125;
+</code></pre>
 <p>输出结果：</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5809/HttpServletRequestDemo02.png"></p>
 </li>
@@ -881,7 +1044,42 @@
 </ol>
 </li>
 <li><p>示例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(&quot;/ServletDownloadDemo&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletDownloadDemo</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="comment">//1. 创建字节输入流，关联读取的文件</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">realPath</span> <span class="operator">=</span> getServletContext().getRealPath(<span class="string">&quot;/img/ServletLive.png&quot;</span>);</span><br><span class="line">        <span class="type">BufferedInputStream</span> <span class="variable">bis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(realPath));</span><br><span class="line">        <span class="comment">//2. 设置响应消息头支持的类型</span></span><br><span class="line">        <span class="comment">//Content-Type是消息头名称，表示支持的类型</span></span><br><span class="line">        <span class="comment">//application/octet-stream是消息头参数，表示字节流</span></span><br><span class="line">        resp.setHeader(<span class="string">&quot;Content-Type&quot;</span>,<span class="string">&quot;application/octet-stream&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 设置响应消息头以下载方式打开资源</span></span><br><span class="line">        <span class="comment">//Content-Disposition是消息头名称，表示处理形式</span></span><br><span class="line">        <span class="comment">//attachment;filename=ServletLive.png是消息头参数，表示附件形式处理，filename表示文件名称</span></span><br><span class="line">        resp.setHeader(<span class="string">&quot;Content-Disposition&quot;</span>,<span class="string">&quot;attachment;filename=ServletLive.png&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 通过响应对象获得字节输出流对象</span></span><br><span class="line">        <span class="type">ServletOutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> resp.getOutputStream();</span><br><span class="line">        <span class="comment">//5. 循环读写</span></span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> len;</span><br><span class="line">        <span class="keyword">while</span>((len = bis.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            outputStream.write(bytes,<span class="number">0</span>,len);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//6. 释放资源</span></span><br><span class="line">        bis.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        doGet(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<pre><code class="java">@WebServlet(&quot;/ServletDownloadDemo&quot;)
+public class ServletDownloadDemo extends HttpServlet &#123;
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        //1. 创建字节输入流，关联读取的文件
+        String realPath = getServletContext().getRealPath(&quot;/img/ServletLive.png&quot;);
+        BufferedInputStream bis = new BufferedInputStream(new FileInputStream(realPath));
+        //2. 设置响应消息头支持的类型
+        //Content-Type是消息头名称，表示支持的类型
+        //application/octet-stream是消息头参数，表示字节流
+        resp.setHeader(&quot;Content-Type&quot;,&quot;application/octet-stream&quot;);
+
+        //3. 设置响应消息头以下载方式打开资源
+        //Content-Disposition是消息头名称，表示处理形式
+        //attachment;filename=ServletLive.png是消息头参数，表示附件形式处理，filename表示文件名称
+        resp.setHeader(&quot;Content-Disposition&quot;,&quot;attachment;filename=ServletLive.png&quot;);
+
+        //4. 通过响应对象获得字节输出流对象
+        ServletOutputStream outputStream = resp.getOutputStream();
+        //5. 循环读写
+        byte[] bytes = new byte[1024];
+        int len;
+        while((len = bis.read(bytes)) != -1)&#123;
+            outputStream.write(bytes,0,len);
+        &#125;
+        //6. 释放资源
+        bis.close();
+    &#125;
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        doGet(req, resp);
+    &#125;
+&#125;
+</code></pre>
+</li>
 </ul>
 <h3 id="六、会话技术"><a href="#六、会话技术" class="headerlink" title="六、会话技术"></a>六、会话技术</h3><h4 id="1⃣️概述-4"><a href="#1⃣️概述-4" class="headerlink" title="1⃣️概述"></a>1⃣️概述</h4><ul>
 <li><strong>会话</strong>是指客户端和服务器之间的<strong>多次请求和响应</strong></li>
@@ -1109,11 +1307,26 @@
 </ul>
 </li>
 <li><p><code>web.xml</code>配置方式</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--在web.xml文件的web-app标签下写入以下内容--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>FilterDemo<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.juzi.filter.FilterDemo<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>FilterDemo<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/ServletDemo<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;!--在web.xml文件的web-app标签下写入以下内容--&gt;
+&lt;filter&gt;
+    &lt;filter-name&gt;FilterDemo&lt;/filter-name&gt;
+    &lt;filter-class&gt;com.juzi.filter.FilterDemo&lt;/filter-class&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;FilterDemo&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/ServletDemo&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</code></pre>
 </li>
 <li><p><code>@WebFilter</code>注解配置方式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(&quot;/ServletDemo&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FilterDemo</span> <span class="keyword">implements</span> <span class="title class_">Filter</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;FilterDemo doFilter()执行中......&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">@WebFilter(&quot;/ServletDemo&quot;)
+public class FilterDemo implements Filter &#123;
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123;
+        System.out.println(&quot;FilterDemo doFilter()执行中......&quot;);
+    &#125;
+&#125;
+</code></pre>
 <p><code>@WebFilter</code>常用属性</p>
 <table>
 <thead>
@@ -1165,9 +1378,11 @@
 </blockquote>
 </li>
 <li><p>如果需要拦截用户的所有请求，可以使用*****通配符</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(&quot;/*&quot;)</span></span><br></pre></td></tr></table></figure></li>
+<pre><code class="xml">&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+</code></pre>
+<pre><code class="java">@WebFilter(&quot;/*&quot;)
+</code></pre>
+</li>
 </ul>
 <h4 id="4⃣️FilterConfig接口"><a href="#4⃣️FilterConfig接口" class="headerlink" title="4⃣️FilterConfig接口"></a>4⃣️FilterConfig接口</h4><ul>
 <li><p>FilterConfig接口用于封装Filter的配置信息，在Filter初始化时，服务器将FilterConfig对象作为参数传递给Filter对象的<code>init()</code>方法</p>
@@ -1201,11 +1416,17 @@
 <li><p>配置初始化参数的方式</p>
 <ul>
 <li><p>在<code>web.xml</code>中配置，注意是在<code>&lt;filter&gt;</code>标签下方进行配置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>juzi<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;filter&gt;
+    &lt;init-param&gt;
+     &lt;param-name&gt;username&lt;/param-name&gt;
+     &lt;param-value&gt;juzi&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/filter&gt;
+</code></pre>
 </li>
 <li><p>在@WebFilter中使用<code>initParams</code>属性配置</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(initParams = &#123;@WebInitParam(name=&quot;username&quot;,value=&quot;liaoxiangqian&quot;)&#125;)</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">@WebFilter(initParams = &#123;@WebInitParam(name=&quot;username&quot;,value=&quot;liaoxiangqian&quot;)&#125;)
+</code></pre>
 <blockquote>
 <p>⚠️<code>initParams</code>属性类型是注解型数组</p>
 </blockquote>
@@ -1463,10 +1684,17 @@
 <li><p>注册监听器的方式有两种，一种是通过<code>web.xml</code>文件，一种是通过<code>@WebListener</code>注解的方式</p>
 <ol>
 <li><p>通过<code>web.xml</code>注册</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--&lt;listener-class&gt;标签中写的是监听器的实现类的全限定名类名--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>com.juzi.listener.MyListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;!--&lt;listener-class&gt;标签中写的是监听器的实现类的全限定名类名--&gt;
+&lt;listener&gt;
+        &lt;listener-class&gt;com.juzi.listener.MyListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+</code></pre>
 </li>
 <li><p>通过<code>@WebListener</code>注解注册</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在监听器实现类上方使用该注解进行注册</span></span><br><span class="line"><span class="meta">@WebListener</span></span><br></pre></td></tr></table></figure></li>
+<pre><code class="java">//在监听器实现类上方使用该注解进行注册
+@WebListener
+</code></pre>
+</li>
 </ol>
 </li>
 </ul>
@@ -1815,23 +2043,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Source</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">essays</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1843,15 +2059,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Source</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">essays</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1863,7 +2079,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">BinaryTree</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">BackTracking</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1875,11 +2103,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">BackTracking</a>
+                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
+                <a href="javascript:void(0)" class="js-tag color1">BinaryTree</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1931,8 +2159,8 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://github.com/dingxinliang88" target="_blank" 
-                class="search-title" title="记录工作和学习过程中的笔记：Java、前端开发、Hexo博客、、Linux笔记、ElasticSearch、ELK日志分析">
+              <a href="https://www.dingxinliang88.github.io" target="_blank" 
+                class="search-title" title="记录工作和学习过程中的笔记：Java、Hexo博客、Linux笔记、后端开发、算法学习">
                 
                   <img src="https://zhousiwei.gitee.io/ibooks/favicon.ico">
                 

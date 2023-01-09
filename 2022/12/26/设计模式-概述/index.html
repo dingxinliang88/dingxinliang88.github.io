@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingxinliang88.github.io">
-  <title>设计模式--概述 | 橘子的博客日常</title>
+  <title>设计模式--概述 | CodeJuzi的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式--概述">
 <meta property="og:url" content="http://dingxinliang88.github.io/2022/12/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A6%82%E8%BF%B0/index.html">
-<meta property="og:site_name" content="橘子的博客日常">
+<meta property="og:site_name" content="CodeJuzi的博客">
 <meta property="og:description" content="Table of Contents  generated with DocToc  一、设计模式总体把握 1.1 软件设计模式概念 1.2 学习设计模式的必要性 1.3 设计模式分类   二、UML图 2.1 类图概述 2.2 类图的作用 2.3 类图表示法 2.3.1 类的表示方法 2.3.2 类和类之间关系的表示方式 1、一般关联关系 2、聚合关系 3、组合关系 4、依赖关系 5、继承关系">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Employee.jpg">
@@ -44,7 +44,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/Employee.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="橘子的博客日常" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="CodeJuzi的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -71,6 +71,9 @@
 
 
   
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
 
 </head>
 
@@ -91,7 +94,7 @@
 			<h1 class="header-author"><a href="/">CodeJuzi</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">一个憨憨的Code历程</p>
+		<p class="header-subtitle">be foolish, be hungry</p>
 		
 
 		<nav class="header-menu">
@@ -99,9 +102,9 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 			
-				<li><a href="https://www.github.com/dingxinliang88" target="_blank">技术笔记</a></li>
+				<li><a href="https://www.dingxinliang88.github.io" target="_blank">技术笔记</a></li>
 			
-				<li><a href="/tags/essays/" target="_blank">随笔</a></li>
+				<li><a href="/tags/essay/" target="_blank">随笔</a></li>
 			
 			</ul>
 		</nav>
@@ -129,7 +132,7 @@
 					
 				
 					
-						<a class="gitee" href="https://gitee.com/ding-xinliang" 
+						<a class="gitee" href="https://www.gitee.com/ding-xinliang" 
 												title="码云" target="_blank"><i class="icon-gitee"></i></a>
 					
 				
@@ -180,7 +183,7 @@
 			  <h1 class="header-author js-header-author">CodeJuzi</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个憨憨的Code历程<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>be foolish, be hungry<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -202,7 +205,7 @@
 					
 						
 						<a class="gitee" target="_blank" 
-							href="https://gitee.com/ding-xinliang" title="码云"><i class="icon-gitee"></i></a>
+							href="https://www.gitee.com/ding-xinliang" title="码云"><i class="icon-gitee"></i></a>
 						
 					
 						
@@ -229,9 +232,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://www.github.com/dingxinliang88">技术笔记</a></li>
+					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://www.dingxinliang88.github.io">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/essays/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/essay/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -476,15 +479,73 @@
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E6%98%AF%E9%95%BF%E6%96%B9%E5%BD%A2.png" alt="正方形不是长方形"></p>
 <p>【代码】</p>
 <p><strong>长方形类（Rectangle）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> length;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> width;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getLength</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setLength</span><span class="params">(<span class="type">double</span> length)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.length = length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getWidth</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> width;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setWidth</span><span class="params">(<span class="type">double</span> width)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.width = width;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Rectangle &#123;
+    private double length;
+    private double width;
 
+    public double getLength() &#123;
+        return length;
+    &#125;
+
+    public void setLength(double length) &#123;
+        this.length = length;
+    &#125;
+
+    public double getWidth() &#123;
+        return width;
+    &#125;
+
+    public void setWidth(double width) &#123;
+        this.width = width;
+    &#125;
+&#125;
+</code></pre>
 <p><strong>正方形（Square）：</strong></p>
 <p>由于正方形的长和宽相同，所以在方法setLength和setWidth中，对长度和宽度都需要赋相同值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Square</span> <span class="keyword">extends</span> <span class="title class_">Rectangle</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setWidth</span><span class="params">(<span class="type">double</span> width)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.setLength(width);</span><br><span class="line">        <span class="built_in">super</span>.setWidth(width);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setLength</span><span class="params">(<span class="type">double</span> length)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.setLength(length);</span><br><span class="line">        <span class="built_in">super</span>.setWidth(length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Square extends Rectangle &#123;
+    
+    public void setWidth(double width) &#123;
+        super.setLength(width);
+        super.setWidth(width);
+    &#125;
 
+    public void setLength(double length) &#123;
+        super.setLength(length);
+        super.setWidth(length);
+    &#125;
+&#125;
+</code></pre>
 <p>类RectangleDemo是我们的软件系统中的一个组件，它有一个resize方法依赖基类Rectangle，resize方法是RectandleDemo类中的一个方法，用来实现宽度逐渐增长的效果。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RectangleDemo</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">resize</span><span class="params">(Rectangle rectangle)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (rectangle.getWidth() &lt;= rectangle.getLength()) &#123;</span><br><span class="line">            rectangle.setWidth(rectangle.getWidth() + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打印长方形的长和宽</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printLengthAndWidth</span><span class="params">(Rectangle rectangle)</span> &#123;</span><br><span class="line">        System.out.println(rectangle.getLength());</span><br><span class="line">        System.out.println(rectangle.getWidth());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Rectangle</span> <span class="variable">rectangle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>();</span><br><span class="line">        rectangle.setLength(<span class="number">20</span>);</span><br><span class="line">        rectangle.setWidth(<span class="number">10</span>);</span><br><span class="line">        resize(rectangle);</span><br><span class="line">        printLengthAndWidth(rectangle);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;============&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Rectangle</span> <span class="variable">rectangle1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Square</span>();</span><br><span class="line">        rectangle1.setLength(<span class="number">10</span>);</span><br><span class="line">        resize(rectangle1);</span><br><span class="line">        printLengthAndWidth(rectangle1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class RectangleDemo &#123;
+    
+    public static void resize(Rectangle rectangle) &#123;
+        while (rectangle.getWidth() &lt;= rectangle.getLength()) &#123;
+            rectangle.setWidth(rectangle.getWidth() + 1);
+        &#125;
+    &#125;
 
+    //打印长方形的长和宽
+    public static void printLengthAndWidth(Rectangle rectangle) &#123;
+        System.out.println(rectangle.getLength());
+        System.out.println(rectangle.getWidth());
+    &#125;
+
+    public static void main(String[] args) &#123;
+        Rectangle rectangle = new Rectangle();
+        rectangle.setLength(20);
+        rectangle.setWidth(10);
+        resize(rectangle);
+        printLengthAndWidth(rectangle);
+
+        System.out.println(&quot;============&quot;);
+
+        Rectangle rectangle1 = new Square();
+        rectangle1.setLength(10);
+        resize(rectangle1);
+        printLengthAndWidth(rectangle1);
+    &#125;
+&#125;
+</code></pre>
 <p>运行代码发现：</p>
 <ul>
 <li>假如我们把一个普通长方形作为参数传入<code>resize()</code>方法，就会看到长方形宽度逐渐增长的效果，当宽度大于长度,代码就会停止，这种行为的结果符合我们的预期；</li>
@@ -499,27 +560,126 @@
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99.png" alt="依赖倒转原则"></p>
 <p>【代码】</p>
 <p><strong>希捷硬盘类（XiJieHardDisk）:</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">XiJieHardDisk</span> <span class="keyword">implements</span> <span class="title class_">HardDisk</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">save</span><span class="params">(String data)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用希捷硬盘存储数据&quot;</span> + data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">get</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用希捷希捷硬盘取数据&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;数据&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class XiJieHardDisk implements HardDisk &#123;
 
+    public void save(String data) &#123;
+        System.out.println(&quot;使用希捷硬盘存储数据&quot; + data);
+    &#125;
+
+    public String get() &#123;
+        System.out.println(&quot;使用希捷希捷硬盘取数据&quot;);
+        return &quot;数据&quot;;
+    &#125;
+&#125;
+</code></pre>
 <p><strong>Intel处理器（IntelCpu）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IntelCpu</span> <span class="keyword">implements</span> <span class="title class_">Cpu</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用Intel处理器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class IntelCpu implements Cpu &#123;
 
+    public void run() &#123;
+        System.out.println(&quot;使用Intel处理器&quot;);
+    &#125;
+&#125;
+</code></pre>
 <p><strong>金士顿内存条（KingstonMemory）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KingstonMemory</span> <span class="keyword">implements</span> <span class="title class_">Memory</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">save</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;使用金士顿作为内存条&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class KingstonMemory implements Memory &#123;
 
+    public void save() &#123;
+        System.out.println(&quot;使用金士顿作为内存条&quot;);
+    &#125;
+&#125;
+</code></pre>
 <p><strong>电脑（Computer）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Computer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> XiJieHardDisk hardDisk;</span><br><span class="line">    <span class="keyword">private</span> IntelCpu cpu;</span><br><span class="line">    <span class="keyword">private</span> KingstonMemory memory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> IntelCpu <span class="title function_">getCpu</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCpu</span><span class="params">(IntelCpu cpu)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cpu = cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> KingstonMemory <span class="title function_">getMemory</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMemory</span><span class="params">(KingstonMemory memory)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.memory = memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> XiJieHardDisk <span class="title function_">getHardDisk</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setHardDisk</span><span class="params">(XiJieHardDisk hardDisk)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.hardDisk = hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;计算机工作&quot;</span>);</span><br><span class="line">        cpu.run();</span><br><span class="line">        memory.save();</span><br><span class="line">        <span class="type">String</span> <span class="variable">data</span> <span class="operator">=</span> hardDisk.get();</span><br><span class="line">        System.out.println(<span class="string">&quot;从硬盘中获取的数据为：&quot;</span> + data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Computer &#123;
 
+    private XiJieHardDisk hardDisk;
+    private IntelCpu cpu;
+    private KingstonMemory memory;
+
+    public IntelCpu getCpu() &#123;
+        return cpu;
+    &#125;
+
+    public void setCpu(IntelCpu cpu) &#123;
+        this.cpu = cpu;
+    &#125;
+
+    public KingstonMemory getMemory() &#123;
+        return memory;
+    &#125;
+
+    public void setMemory(KingstonMemory memory) &#123;
+        this.memory = memory;
+    &#125;
+
+    public XiJieHardDisk getHardDisk() &#123;
+        return hardDisk;
+    &#125;
+
+    public void setHardDisk(XiJieHardDisk hardDisk) &#123;
+        this.hardDisk = hardDisk;
+    &#125;
+
+    public void run() &#123;
+        System.out.println(&quot;计算机工作&quot;);
+        cpu.run();
+        memory.save();
+        String data = hardDisk.get();
+        System.out.println(&quot;从硬盘中获取的数据为：&quot; + data);
+    &#125;
+&#125;
+</code></pre>
 <p><strong>测试类（TestComputer）：</strong></p>
 <p>测试类用来组装电脑。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestComputer</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Computer</span> <span class="variable">computer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Computer</span>();</span><br><span class="line">        computer.setHardDisk(<span class="keyword">new</span> <span class="title class_">XiJieHardDisk</span>());</span><br><span class="line">        computer.setCpu(<span class="keyword">new</span> <span class="title class_">IntelCpu</span>());</span><br><span class="line">        computer.setMemory(<span class="keyword">new</span> <span class="title class_">KingstonMemory</span>());</span><br><span class="line"></span><br><span class="line">        computer.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class TestComputer &#123;
+    public static void main(String[] args) &#123;
+        Computer computer = new Computer();
+        computer.setHardDisk(new XiJieHardDisk());
+        computer.setCpu(new IntelCpu());
+        computer.setMemory(new KingstonMemory());
 
+        computer.run();
+    &#125;
+&#125;
+</code></pre>
 <p>【问题】上述代码已经组装了一台电脑，但是似乎组装的电脑的cpu只能是Intel的，内存条只能是金士顿的，硬盘只能是希捷的，这对用户肯定是不友好的，用户有了机箱肯定是想按照自己的喜好，选择自己喜欢的配件。</p>
 <p>【改进】修改<code>Computer</code>类，让<code>Computer</code>类依赖抽象（各个配件的接口），而不是依赖于各个组件具体的实现类。</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99%E6%94%B9%E8%BF%9B.png" alt="依赖倒转原则改进"></p>
 <p><strong>电脑（Computer）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Computer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> HardDisk hardDisk;</span><br><span class="line">    <span class="keyword">private</span> Cpu cpu;</span><br><span class="line">    <span class="keyword">private</span> Memory memory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> HardDisk <span class="title function_">getHardDisk</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setHardDisk</span><span class="params">(HardDisk hardDisk)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.hardDisk = hardDisk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Cpu <span class="title function_">getCpu</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCpu</span><span class="params">(Cpu cpu)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cpu = cpu;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Memory <span class="title function_">getMemory</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMemory</span><span class="params">(Memory memory)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.memory = memory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;计算机工作&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Computer &#123;
 
+    private HardDisk hardDisk;
+    private Cpu cpu;
+    private Memory memory;
+
+    public HardDisk getHardDisk() &#123;
+        return hardDisk;
+    &#125;
+
+    public void setHardDisk(HardDisk hardDisk) &#123;
+        this.hardDisk = hardDisk;
+    &#125;
+
+    public Cpu getCpu() &#123;
+        return cpu;
+    &#125;
+
+    public void setCpu(Cpu cpu) &#123;
+        this.cpu = cpu;
+    &#125;
+
+    public Memory getMemory() &#123;
+        return memory;
+    &#125;
+
+    public void setMemory(Memory memory) &#123;
+        this.memory = memory;
+    &#125;
+
+    public void run() &#123;
+        System.out.println(&quot;计算机工作&quot;);
+    &#125;
+&#125;
+</code></pre>
 <p>面向对象的开发很好的解决了这个问题，一般情况下抽象的变化概率很小，让用户程序依赖于抽象，实现的细节也依赖于抽象。即使实现细节不断变动，只要抽象不变，客户程序就不需要变化。这大大<strong>降低</strong>了客户程序与实现细节的<strong>耦合度</strong>。</p>
 <h2 id="3-4-接口隔离原则"><a href="#3-4-接口隔离原则" class="headerlink" title="3.4 接口隔离原则"></a>3.4 接口隔离原则</h2><p><strong>接口隔离原则：客户端不应该被迫依赖它不使用的方法；一个类对另一个类的依赖应该建立在最小的接口上</strong></p>
 <p>【例子】安全门案例</p>
@@ -530,20 +690,47 @@
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%991.png" alt="接口隔离原则1"></p>
 <p>【代码】</p>
 <p><strong>AntiTheft（接口）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AntiTheft</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">antiTheft</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">public interface AntiTheft &#123;
+    void antiTheft();
+&#125;
+</code></pre>
 <p><strong>Fireproof（接口）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Fireproof</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">fireproof</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">public interface Fireproof &#123;
+    void fireproof();
+&#125;
+</code></pre>
 <p><strong>Waterproof（接口）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Waterproof</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">waterproof</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">public interface Waterproof &#123;
+    void waterproof();
+&#125;
+</code></pre>
 <p><strong>HeiMaSafetyDoor（类）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HeiMaSafetyDoor</span> <span class="keyword">implements</span> <span class="title class_">AntiTheft</span>,Fireproof,Waterproof &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">antiTheft</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防盗&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fireproof</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防火&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">waterproof</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防水&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class HeiMaSafetyDoor implements AntiTheft,Fireproof,Waterproof &#123;
+    public void antiTheft() &#123;
+        System.out.println(&quot;防盗&quot;);
+    &#125;
 
+    public void fireproof() &#123;
+        System.out.println(&quot;防火&quot;);
+    &#125;
+
+
+    public void waterproof() &#123;
+        System.out.println(&quot;防水&quot;);
+    &#125;
+&#125;
+</code></pre>
 <p><strong>ItcastSafetyDoor（类）：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ItcastSafetyDoor</span> <span class="keyword">implements</span> <span class="title class_">AntiTheft</span>,Fireproof &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">antiTheft</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防盗&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fireproof</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;防火&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class ItcastSafetyDoor implements AntiTheft,Fireproof &#123;
+    public void antiTheft() &#123;
+        System.out.println(&quot;防盗&quot;);
+    &#125;
 
+    public void fireproof() &#123;
+        System.out.println(&quot;防火&quot;);
+    &#125;
+&#125;
+</code></pre>
 <h2 id="3-5-迪米特法则"><a href="#3-5-迪米特法则" class="headerlink" title="3.5 迪米特法则"></a>3.5 迪米特法则</h2><p><strong>最小知识原则</strong></p>
 <p><em>只和你的直接朋友交谈，不跟“陌生人”说话（Talk only to your immediate friends and not to strangers）。</em></p>
 <p>其含义是：如果两个软件实体无须直接通信，那么就不应当发生直接的相互调用，可以<strong>通过第三方转发该调用</strong>。其目的是降低类之间的耦合度，提高模块的相对独立性。</p>
@@ -553,17 +740,71 @@
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5143/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99.png" alt="迪米特法则"></p>
 <p>【代码】</p>
 <p><strong>明星类（Star）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Star</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Star</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Star &#123;
+    private String name;
 
+    public Star(String name) &#123;
+        this.name=name;
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+&#125;
+</code></pre>
 <p><strong>粉丝类（Fans）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fans</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Fans</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Fans &#123;
+    private String name;
 
+    public Fans(String name) &#123;
+        this.name=name;
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+&#125;
+</code></pre>
 <p><strong>媒体公司类（Company）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Company</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Company</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Company &#123;
+    private String name;
 
+    public Company(String name) &#123;
+        this.name=name;
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+&#125;
+</code></pre>
 <p><strong>经纪人类（Agent）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Agent</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Star star;</span><br><span class="line">    <span class="keyword">private</span> Fans fans;</span><br><span class="line">    <span class="keyword">private</span> Company company;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setStar</span><span class="params">(Star star)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.star = star;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setFans</span><span class="params">(Fans fans)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.fans = fans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCompany</span><span class="params">(Company company)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.company = company;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">meeting</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(fans.getName() + <span class="string">&quot;与明星&quot;</span> + star.getName() + <span class="string">&quot;见面了。&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">business</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(company.getName() + <span class="string">&quot;与明星&quot;</span> + star.getName() + <span class="string">&quot;洽淡业务。&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Agent &#123;
+    private Star star;
+    private Fans fans;
+    private Company company;
 
+    public void setStar(Star star) &#123;
+        this.star = star;
+    &#125;
+
+    public void setFans(Fans fans) &#123;
+        this.fans = fans;
+    &#125;
+
+    public void setCompany(Company company) &#123;
+        this.company = company;
+    &#125;
+
+    public void meeting() &#123;
+        System.out.println(fans.getName() + &quot;与明星&quot; + star.getName() + &quot;见面了。&quot;);
+    &#125;
+
+    public void business() &#123;
+        System.out.println(company.getName() + &quot;与明星&quot; + star.getName() + &quot;洽淡业务。&quot;);
+    &#125;
+&#125;
+</code></pre>
 <h2 id="3-6-合成复用原则"><a href="#3-6-合成复用原则" class="headerlink" title="3.6 合成复用原则"></a>3.6 合成复用原则</h2><p><strong>合成复用原则：尽量先使用组合或者聚合等关联关系来实现，其次才考虑继承关系来实现</strong></p>
 <p>通常类的复用分为继承复用和合成复用两种。</p>
 <p>1）继承复用虽然有<strong>简单</strong>和<strong>易实现</strong>的优点，但它也存在以下缺点：</p>
@@ -924,23 +1165,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Source</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">essays</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -952,15 +1181,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Source</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">essays</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -972,7 +1201,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">BinaryTree</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">BackTracking</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -984,11 +1225,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">BackTracking</a>
+                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">greedy</a>
+                <a href="javascript:void(0)" class="js-tag color1">BinaryTree</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1040,8 +1281,8 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://github.com/dingxinliang88" target="_blank" 
-                class="search-title" title="记录工作和学习过程中的笔记：Java、前端开发、Hexo博客、、Linux笔记、ElasticSearch、ELK日志分析">
+              <a href="https://www.dingxinliang88.github.io" target="_blank" 
+                class="search-title" title="记录工作和学习过程中的笔记：Java、Hexo博客、Linux笔记、后端开发、算法学习">
                 
                   <img src="https://zhousiwei.gitee.io/ibooks/favicon.ico">
                 
